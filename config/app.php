@@ -13,6 +13,8 @@ return [
     |
     */
 
+
+    'url' => env('CONFIRM_URL', 'http://localhost:8081'),
     'name' => env('APP_NAME', 'Laravel'),
 
     /*

@@ -1,16 +1,34 @@
 <?php
 
 namespace App\Http\Controllers;
+use Mail;
 use App\User;
 use App\UserWallet;
+use App\Mail\ConfirmEmail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
+
+use Validator;
 
 class UsersController extends Controller
 {
     public function Register(Request $request){
       //  dd("raybaba int");
+
+    //   $validator = Validator::make($request->all(), [
+    //     'name' => 'required|max:255',
+    //     'email' => 'required|unique:users|max:255',
+    //     'username' => 'required|unique:users|max:255',
+    //     'password' => 'required',
+    // ]);
+
+    // if ($validator->fails()) {
+    //    dd($validator);
+    //    $errors = $validator->errors();
+    // }
+    $url = config('app.url');
+    $callback_url = $request->callback_url;
 
 
         $user = new User;
@@ -23,6 +41,10 @@ class UsersController extends Controller
         $user->save();
 
 
+    $call_back_url = base64_encode($callback_url);
+    $user_id = base64_encode($user->id);
+    $url .= "/verify?redirect_callback=" . $call_back_url . "&email_token=$user->email_token" . "&user_id=$user_id";
+
 
         $create_wallet = UserWallet::create([
 
@@ -31,7 +53,45 @@ class UsersController extends Controller
             'actual_amount' => 0
         ]);
 
+        $data = [];
+        if($user){
+        $data['username'] = $user->username;
+        $data['email_token'] = $user->email_token;
+        $data['url'] = $url;
+
+        }
+          // Send Confirm Email Notification to User
+          try {
+            Mail::to($user->email)->send(new ConfirmEmail($data));
+            // Notification::send($user, new WelcomeNotify($data));
+        } catch (Exception $e) {
+        }
+
+
+        return JSON(200, $create_wallet->toArray(), 'success');
+
     }
+
+    public function emailToken(Request $request)
+    {
+
+        $user = User::where(['email_token' => $request->email_token])->first();
+
+        if (!$user) {
+
+            $url = $url[0].'login';
+            return Redirect::to($url);
+        }
+
+        $url = base64_decode($request->redirect_callback).'?status=success'.'&user_id='.request()->user_id;
+        $user->email_token = null;
+            $user->save();
+        return Redirect::to($url);
+    }
+
+
+
+
 
     private function random_str($length, $keyspace = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ')
     {
