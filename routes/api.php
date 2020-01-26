@@ -1,8 +1,5 @@
 <?php
 
-use App\Http\Controllers\UsersController;
-use Illuminate\Http\Request;
-
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -18,10 +15,11 @@ use Illuminate\Http\Request;
 //     return $request->user();
 // });
 
+Route::post('login', 'Api\Auth\LoginController@Login');
+Route::post('register/user', 'Api\UsersController@Register');
 
-Route::post('register/user', 'UsersController@Register');
 
 
 Route::group(['middleware' => 'auth:api'], function(){
-
+    Route::get('post/all', 'Api\PostController@self');
 });
