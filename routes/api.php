@@ -17,6 +17,7 @@
 
 Route::post('login', 'Api\Auth\LoginController@Login');
 Route::post('register/user', 'Api\UsersController@Register');
+Route::post('hello', 'Api\UsersController@hello');
 
 
 
