@@ -24,13 +24,15 @@ class RegisterRequest extends FormRequest
     public function rules()
     {
         return [
-            'email' => 'required|string|email|exists:users',
+            'email' => 'required|string|email',
+            'password' => 'required|string'
         ];
     }
     public function messages()
     {
         return [
             "email.required" => "Enter a valid email address",
+            "password.required" => "Enter your password"
         ];
     }
 }

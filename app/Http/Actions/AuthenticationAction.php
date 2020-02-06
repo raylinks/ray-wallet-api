@@ -7,8 +7,11 @@ use App\Http\Requests\RegisterRequest;
 use App\Mail\ConfirmEmail;
 use App\User;
 use App\Traits\HasApiResponses;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 use http\Exception;
+
 
 
 class AuthenticationAction
@@ -25,7 +28,7 @@ class AuthenticationAction
         if ($validation->fails()) {
          return $this->formValidationErrorAlert($validation->errors());
         }
-dd("hi");config('patricia.status_codes.validation_failed'
+
 
         $url = config('app.url');
         $callback_url = $request->callback_url;
@@ -46,6 +49,7 @@ dd("hi");config('patricia.status_codes.validation_failed'
         if ($user) {
             $data['email_token'] = $user->email_token;
             $data['url'] = $url;
+            $data['email'] =$user->email ;
 
         }
         // Send Confirm Email Notification to User
@@ -56,7 +60,7 @@ dd("hi");config('patricia.status_codes.validation_failed'
         }
 
 
-        return JSON(200, $user->toArray(), 'success');
+        return JSON(200, $user->toArray(), 'A confirmation mail has been sent to youe email, please check to confirm');
 
     }
 

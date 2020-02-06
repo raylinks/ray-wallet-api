@@ -23,11 +23,11 @@ trait HasApiResponses
         }
 
         $response = [
-            'statusCode' => config('patricia.status_codes.server_error'),
+            'statusCode' => config('responses.status_codes.server_error'),
             'message' => $message,
         ];
 
-        return Response::json($response, config('patricia.status_codes.server_error'));
+        return Response::json($response, config('responses.status_codes.server_error'));
     }
 
     /**
@@ -40,7 +40,7 @@ trait HasApiResponses
     public function formValidationErrorAlert($errors, array $data = []): JsonResponse
     {
         $response = [
-            'statusCode' => config('patricia.status_codes.validation_failed'),
+            'statusCode' => config('responses.status_codes.validation_failed'),
             'message' => 'Whoops. Validation failed.',
             'validationErrors' => $errors,
         ];
@@ -49,7 +49,7 @@ trait HasApiResponses
             $response['data'] = $data;
         }
 
-        return Response::json($response, config('patricia.status_codes.validation_failed'));
+        return Response::json($response, config('responses.status_codes.validation_failed'));
     }
 
     /**
@@ -62,7 +62,7 @@ trait HasApiResponses
     public function badRequestAlert($message, array $data = []): JsonResponse
     {
         $response = [
-            'statusCode' => config('patricia.status_codes.bad_request'),
+            'statusCode' => config('responses.status_codes.bad_request'),
             'message' => $message,
         ];
 
@@ -70,7 +70,7 @@ trait HasApiResponses
             $response['data'] = $data;
         }
 
-        return Response::json($response, config('patricia.status_codes.bad_request'));
+        return Response::json($response, config('responses.status_codes.bad_request'));
     }
 
     /**
@@ -83,7 +83,7 @@ trait HasApiResponses
     public function successResponse($message, array $data = []): JsonResponse
     {
         $response = [
-            'statusCode' => config('patricia.status_codes.success'),
+            'statusCode' => config('responses.status_codes.success'),
             'message' => $message,
         ];
 
@@ -91,7 +91,7 @@ trait HasApiResponses
             $response['data'] = $data;
         }
 
-        return Response::json($response, config('patricia.status_codes.success'));
+        return Response::json($response, config('responses.status_codes.success'));
     }
 
     /**
@@ -104,7 +104,7 @@ trait HasApiResponses
     public function notFoundAlert($message, array $data = []): JsonResponse
     {
         $response = [
-            'statusCode' => config('patricia.status_codes.not_found'),
+            'statusCode' => config('responses.status_codes.not_found'),
             'message' => $message,
         ];
 
@@ -112,6 +112,6 @@ trait HasApiResponses
             $response['data'] = $data;
         }
 
-        return Response::json($response, config('patricia.status_codes.not_found'));
+        return Response::json($response, config('responses.status_codes.not_found'));
     }
 }

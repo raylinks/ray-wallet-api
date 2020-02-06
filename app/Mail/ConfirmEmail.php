@@ -38,7 +38,7 @@ class ConfirmEmail extends Mailable implements ShouldQueue
     {
         return $this->view('emails.confirmMail')
             ->with([
-                'username' => $this->data['username'],
+                'username' => $this->data['email'],
             ]);
     }
 
