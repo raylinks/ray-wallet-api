@@ -18,6 +18,9 @@
 Route::post('login', 'Api\Auth\LoginController@Login');
 Route::post('register/user', 'Api\UsersController@Register');
 Route::post('hello', 'Api\UsersController@hello');
+Route::post('role', 'Api\Auth\PermissionsController@createRole');
+Route::get('get/roles', 'Api\Auth\PermissionsController@get');
+Route::post('assign', 'Api\Auth\PermissionsController@assignPermissionToRole');
 
 
 

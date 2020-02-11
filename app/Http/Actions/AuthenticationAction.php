@@ -36,7 +36,6 @@ class AuthenticationAction
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
         $user->email_token = $this->random_str(6);
-        $user->verified_status = 0;
         $user->save();
 
 
@@ -47,6 +46,8 @@ class AuthenticationAction
 
         $data = [];
         if ($user) {
+            $user->assignRole('writer');
+            $user->givePermissionTo('edit articles');
             $data['email_token'] = $user->email_token;
             $data['url'] = $url;
             $data['email'] =$user->email ;
