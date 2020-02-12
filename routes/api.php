@@ -21,6 +21,7 @@ Route::post('hello', 'Api\UsersController@hello');
 Route::post('role', 'Api\Auth\PermissionsController@createRole');
 Route::get('get/roles', 'Api\Auth\PermissionsController@get');
 Route::post('assign', 'Api\Auth\PermissionsController@assignPermissionToRole');
+Route::post('forgotpassword', 'Api\ForgotController@ForgotPassword');
 
 
 

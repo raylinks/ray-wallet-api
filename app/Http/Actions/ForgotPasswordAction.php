@@ -1,13 +1,14 @@
 <?php
 namespace App\Http\Actions;
+use App\Http\Requests\ForgotPassswordRequest;
+use App\Http\Requests\RegisterRequest;
 use App\Mail\ForgetPasswordMail;
 use App\Models\PasswordReset;
 use App\User;
 use App\Traits\HasApiResponses;
-
-
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Validator;
 /**
  * Class ForgotPasswordAction
@@ -22,18 +23,22 @@ class ForgotPasswordAction
      * @return \Illuminate\Http\JsonResponse
      * @throws \Exception
      */
-    public function execute(Request $request): JsonResponse
+    public function execute(ForgotPassswordRequest $request): JsonResponse
     {
+        $validation = new ForgotPassswordRequest($request->all());
 
+        $validation = Validator::make($validation->all(), $validation->rules(), $validation->messages());
+
+        if ($validation->fails()) {
+            return $this->formValidationErrorAlert($validation->errors());
+        }
             $user = User::where('email', $request->email);
-
+    dd($user);
             if(!user){
                 return $this->notFoundAlert('Your account could not be found.', []);
             }
 
             return $this->redirectToUrl($user);
-
-
     }
 
 
@@ -47,7 +52,7 @@ class ForgotPasswordAction
 //        $url .= /forgetpassword?"token"{$passwordReset->token}
         $message = 'Amail has been sent to your mail';
         $data = ['token' => $passwordReset->token];
-        Mail::send(new ForgetPasswordMail($user, $passwordReset->token));
+        Mail::send(new ForgetPasswordMail([$user, $passwordReset->token]));
         return $this->notFoundAlert('Your account could not be found.', []);
 
 
