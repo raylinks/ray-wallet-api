@@ -34,7 +34,7 @@ class ForgotPasswordAction
         }
 
        // $user = User::where('email', $request->email)->pluck('email');
-        $user = User::where('email', $request->email)->get();
+        $user = User::where('email', $request->email)->first();
 
         if(!$user){
             return $this->notFoundAlert('Your account could not be found.', []);
@@ -45,18 +45,19 @@ class ForgotPasswordAction
 
 
     public function redirectToUrl($user){
-        //dd($user);
-        $passwordReset = PasswordReset::updateOrCreate(
-            ['email' => $user[0]->email],
-            ['token' => $this->randomStr(32)]
-        );
+
+        $passwordReset = PasswordReset::updateOrCreate([
+            'email' => $user->email,
+            'token' => $this->randomStr(32),
+        ]);
 
 //        $url = config('app.url');
 //        $url .= /forgetpassword?"token"{$passwordReset->token}
-        $message = 'Amail has been sent to your mail';
+        $message = 'Click the link to reset your password';
         $data = ['token' => $passwordReset->token];
-        Mail::send(new ForgetPasswordMail([$passwordReset, $user, $data]));
-        return $this->notFoundAlert($message, [$data]);
+        Mail::send(new ForgetPasswordMail($user,$passwordReset));
+
+        return $this->successResponse($message,$data);
 
 
 

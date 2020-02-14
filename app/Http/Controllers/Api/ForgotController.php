@@ -13,14 +13,11 @@ class ForgotController extends Controller
 {
     public function ForgotPassword(Request $request)
     {
-//dd('here with me');
-        try {
+
             return (new ForgotPasswordAction())->execute(
                 new ForgotPassswordRequest($request->all())
             );
-        } catch (\Exception $e) {
-            dd($e);
-        }
+
     }
 
 }

@@ -16,7 +16,7 @@ class ForgetPasswordMail extends Mailable implements ShouldQueue
     public const RESET_PASSWORD_URL = '/resetpassword';
     public $reset_password_link;
     public $user;
-    public $a;
+    public $tok;
 
     /**
      * Create a new message instance.
@@ -25,12 +25,12 @@ class ForgetPasswordMail extends Mailable implements ShouldQueue
      * @param $token
      * @param string|null $redirect_url
      */
-    public function __construct($passwordReset,  string $redirect_url = null)
+    public function __construct($user, string $passwordReset ,string $redirect_url = null)
     {
-     //   dd($user);
-       // dd($this->user->email);
-        $this->setResetPasswordLink($passwordReset, $redirect_url);
-       $this->user =$passwordReset;
+        $this->setResetPasswordLink( $redirect_url);
+        $this->user = $user;
+        $this->tok = $passwordReset;
+
     }
 
     /**
@@ -40,16 +40,14 @@ class ForgetPasswordMail extends Mailable implements ShouldQueue
      */
     public function build()
     {
-
         return $this->subject('Reset Your Password')
-
             ->to($this->user->email)
             ->view('emails.confirmMail');
     }
 
-    private function setResetPasswordLink($data, string $redirect_url = null)
+    private function setResetPasswordLink( string $redirect_url = null)
     {
         $redirect_url = $redirect_url ?: rtrim(config('app.url'), '/') . static::RESET_PASSWORD_URL;
-        $this->reset_password_link = $redirect_url ;
+        $this->reset_password_link = $redirect_url . "?token={token}";
     }
 }
