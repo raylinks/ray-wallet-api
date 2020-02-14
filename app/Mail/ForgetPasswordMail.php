@@ -3,30 +3,34 @@
 namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
+use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
-use Illuminate\Contracts\Queue\ShouldQueue;
+use App\User;
 
 class ForgetPasswordMail extends Mailable implements ShouldQueue
 {
-    use Queueable, SerializesModels;
+    use Queueable;
+    use SerializesModels;
 
-    // const VERIFY_EMAIL_URL = '/verify-registration-email';
-    //const VERIFY_EMAIL_URL = '/login';
-
-    public $verify_email_link;
-
-    public $data;
+    public const RESET_PASSWORD_URL = '/resetpassword';
+    public $reset_password_link;
+    public $user;
+    public $a;
 
     /**
      * Create a new message instance.
      *
-     * @return void
+     * @param User $user
+     * @param $token
+     * @param string|null $redirect_url
      */
-    public function __construct($data)
+    public function __construct($passwordReset,  string $redirect_url = null)
     {
-        $this->setVerifyEmailLink($data['url']);
-        $this->data = $data;
+     //   dd($user);
+       // dd($this->user->email);
+        $this->setResetPasswordLink($passwordReset, $redirect_url);
+       $this->user =$passwordReset;
     }
 
     /**
@@ -36,16 +40,16 @@ class ForgetPasswordMail extends Mailable implements ShouldQueue
      */
     public function build()
     {
-        return $this->view('emails.confirmMail')
-            ->with([
-                'username' => $this->data['email'],
-            ]);
+
+        return $this->subject('Reset Your Password')
+
+            ->to($this->user->email)
+            ->view('emails.confirmMail');
     }
 
-    protected function setVerifyEmailLink($url)
+    private function setResetPasswordLink($data, string $redirect_url = null)
     {
-        $this->verify_email_link = $url;
-
-        // $this->verify_email_link = rtrim(config('app.app_url'), '/') . static::VERIFY_EMAIL_URL . "?token={$token}";
+        $redirect_url = $redirect_url ?: rtrim(config('app.url'), '/') . static::RESET_PASSWORD_URL;
+        $this->reset_password_link = $redirect_url ;
     }
 }
