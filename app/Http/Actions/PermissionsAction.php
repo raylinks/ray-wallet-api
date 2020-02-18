@@ -26,6 +26,7 @@ class PermissionsAction
         //A permission can be assigned to a role:
         $role->givePermissionTo($permission);
 
+
         return JSON(200, $role->toArray(), 'Roles And permission Created');
     }
 
