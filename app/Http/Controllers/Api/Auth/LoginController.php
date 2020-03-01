@@ -5,12 +5,15 @@ namespace App\Http\Controllers\Api\Auth;
 use App\Http\Actions\LoginAction;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\LoginRequest;
+use App\Traits\HasApiResponses;
 use App\User;
 use Illuminate\Http\Request;
 use Laravel\Socialite\Facades\Socialite;
 
 class LoginController extends Controller
 {
+    use HasApiResponses;
+
     public function Login(Request $request)
     {
         return (new LoginAction())->execute(
@@ -30,22 +33,24 @@ class LoginController extends Controller
     public function redirectToProvider($provider)
     {
         return Socialite::driver($provider)->stateless()->redirect();
+        //return Socialite::driver('google')->stateless()->user();
     }
 
     /**
      * Obtain the user information from the Provider.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      */
     public function handleProviderCallback($provider)
     {
-        dd($provider);
         $user = Socialite::driver($provider)->user();
 
 
         $authUser =  $this->findOrCreateUser($user,$provider);
         //login user
         //response
+        $message = "you are logged in with goggle";
+        return $this->successResponse($message,$authUser);
     }
 
     public function findOrCreateUser($user, $provider)
@@ -56,12 +61,13 @@ class LoginController extends Controller
         }else{
             return
             User::create([
-            'firstname'=> $user->userDetails->firstname,
-            'email' =>  $user->email
+                'provider'  => $provider,
+                'provider_id' => $user->id,
+
+                'email' =>  $user->email,
             ]);
             UserDetail::create([
-                'provider'  => $provider,
-                'provider_id' => $user->id
+                'firstname'=> $user->userDetails->firstname,
                 ]);
         }
     }

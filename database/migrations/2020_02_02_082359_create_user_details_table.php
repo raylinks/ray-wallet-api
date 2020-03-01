@@ -19,8 +19,6 @@ class CreateUserDetailsTable extends Migration
             $table->integer('google_id');
             $table->string('username')->unique();
             $table->string('name');
-            $table->string('provider');
-            $table->string('provider_id');
             $table->boolean('verified_status');
             $table->timestamps();
         });

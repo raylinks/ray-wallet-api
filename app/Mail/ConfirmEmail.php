@@ -11,8 +11,8 @@ class ConfirmEmail extends Mailable implements ShouldQueue
 {
     use Queueable, SerializesModels;
 
-    // const VERIFY_EMAIL_URL = '/verify-registration-email';
-    //const VERIFY_EMAIL_URL = '/login';
+    const VERIFY_EMAIL_URL = '/verify-registration-email';
+    const REDIRECT_EMAIL_URL = '/login';
 
     public $verify_email_link;
 
@@ -21,7 +21,7 @@ class ConfirmEmail extends Mailable implements ShouldQueue
     /**
      * Create a new message instance.
      *
-     * @return void
+     * @return void/
      */
     public function __construct($data)
     {
@@ -46,6 +46,6 @@ class ConfirmEmail extends Mailable implements ShouldQueue
     {
         $this->verify_email_link = $url;
 
-        // $this->verify_email_link = rtrim(config('app.app_url'), '/') . static::VERIFY_EMAIL_URL . "?token={$token}";
+         $this->verify_email_link = rtrim(config('app.app_url'), '/') . static::VERIFY_EMAIL_URL . "?token={$this->data['email_token']}";
     }
 }

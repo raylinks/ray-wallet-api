@@ -22,7 +22,7 @@
             valign="top">
             <br>
             
-            Hi <b><?php echo e($user->userDetails->email); ?></b>,
+          
             <br>
             <br>
             We may need to send you critical information about our service and it is important that we have an accurate email address.
@@ -36,7 +36,7 @@
             style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; vertical-align: top; margin: 0; padding: 0 0 20px;"
             valign="top">
             <center>
-                <a href="<?php echo e($reset_password_link); ?>" class="btn-primary"
+                <a href="<?php echo e($verify_email_link); ?>" class="btn-primary"
                     style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; color: #FFF; text-decoration: none; line-height: 2em; font-weight: bold; text-align: center; cursor: pointer; display: inline-block; border-radius: 5px; text-transform: capitalize; background-color: #5fbeaa; margin: 0; border-color: #5fbeaa; border-style: solid; border-width: 10px 20px;">Confirm Email Address</a>
             </center>
 
