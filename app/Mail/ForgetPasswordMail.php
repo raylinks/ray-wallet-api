@@ -42,7 +42,7 @@ class ForgetPasswordMail extends Mailable implements ShouldQueue
     {
         return $this->subject('Reset Your Password')
             ->to($this->user->email)
-            ->view('emails.confirmMail');
+            ->view('emails.resetPassword');
     }
 
     private function setResetPasswordLink( string $redirect_url = null)
