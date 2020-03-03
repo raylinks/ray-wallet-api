@@ -4,24 +4,26 @@ namespace App\Http\Actions;
 
 
 use App\Http\Requests\LoginRequest;
+use App\Http\Requests\PersonalDetailsRequest;
 use App\Mail\ConfirmEmail;
 use App\User;
 use App\Traits\HasApiResponses;
-use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use App\UserDetail;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 use Tymon\JWTAuth\Facades\JWTAuth;
 
 
-class LoginAction
+class ResumeAction
 {
-    use HasApiResponses, AuthenticatesUsers;
+    use HasApiResponses;
 
-    public function execute(LoginRequest $request)
+    public function execute(PersonalDetailsRequest $request)
     {
 
-        $validation = new LoginRequest($request->all());
+        $validation = new PersonalDetailsRequest($request->all());
 
         $validation = Validator::make($validation->all(), $validation->rules(), $validation->messages());
 
@@ -29,16 +31,7 @@ class LoginAction
             return $this->formValidationErrorAlert($validation->errors());
         }
 
-        $cred = $request->only(['email', 'password']);
-
-        if (!$token = JWTAuth::attempt($cred)) {
-            return JSON(400, [], 'incorrect login details');
-
-        } else {
-            return JSON(200, ['token' => $token, 'data' => $cred], 'success');
-        }
-
-
+        $user = Auth::user();
 
     }
 

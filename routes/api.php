@@ -23,7 +23,7 @@ Route::get('get/roles', 'Api\Auth\PermissionsController@get');
 Route::post('assign', 'Api\Auth\PermissionsController@assignPermissionToRole');
 Route::post('forgotpassword', 'Api\ForgotController@ForgotPassword');
 Route::post('resetpassword', 'Api\ResetPasswordController@ResetPassword');
-
+Route::post('personal/detail', 'Api\ResumeController@PersonalDetails');
 
 //Route::get('login/github', 'Auth\LoginController@redirectToProvider');
 //Route::get('login/github/callback', 'Auth\LoginController@handleProviderCallback');
@@ -34,4 +34,5 @@ Route::get('auth/{provider}/callback','Api\Auth\LoginController@handleProviderCa
 
 Route::group(['middleware' => 'auth:api'], function(){
     Route::get('post/all', 'Api\PostController@self');
+
 });
