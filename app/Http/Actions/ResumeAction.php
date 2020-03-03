@@ -3,8 +3,10 @@
 namespace App\Http\Actions;
 
 
+use App\Http\Requests\AwardRequest;
 use App\Http\Requests\LoginRequest;
 use App\Http\Requests\PersonalDetailsRequest;
+use App\Http\Requests\SkillRequest;
 use App\Mail\ConfirmEmail;
 use App\User;
 use App\Traits\HasApiResponses;
@@ -35,4 +37,26 @@ class ResumeAction
 
     }
 
+    public function skills(SkillRequest $request)
+    {
+        $validation = new SkillRequest($request->all());
+
+        $validation = Validator::make($validation->all(), $validation->rules(), $validation->messages());
+
+        if ($validation->fails()) {
+            return $this->formValidationErrorAlert($validation->errors());
+        }
+    }
+
+
+    public function  award(AwardRequest $request)
+    {
+        $validation = new SkillRequest($request->all());
+
+        $validation = Validator::make($validation->all(), $validation->rules(), $validation->messages());
+
+        if ($validation->fails()) {
+            return $this->formValidationErrorAlert($validation->errors());
+        }
+    }
 }
