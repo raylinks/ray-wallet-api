@@ -4,7 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Certificate extends Model
+class Ref extends Model
 {
-    protected $guarded = [];
+    protected $fillable = [
+        'name'
+    ];
 }

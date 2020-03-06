@@ -24,9 +24,10 @@ class PersonalDetailsRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required|string|email',
+            'title' => 'required|string',
             'firstname' => 'required|string',
             'lastname' =>  'required',
+            'username' => 'required',
             'date_of_birth' => 'required',
             'nationality' =>'required',
             'phone' =>'required',
@@ -41,17 +42,18 @@ class PersonalDetailsRequest extends FormRequest
     public function messages()
     {
         return [
-            'title' => 'Enter your title',
-            'firstname' => 'enter your firstname',
-            'lastname' =>  'Enter your lastname',
-            'date_of_birth' => 'your date of birth is empty',
-            'nationality' =>'Enter your Nationality',
-            'phone' =>'Enter your mobile number',
-            'email' => 'Enter your Email',
-            'web' => 'Enter a web address',
-            'address' => 'Enter your address',
-            'profile' => 'Enter your profile',
-            'interest' => 'Enter your interest'
+            'title.required' => 'Enter your title',
+            'username.required' => 'Enter your username',
+            'firstname.required' => 'enter your firstname',
+            'lastname.required' =>  'Enter your lastname',
+            'date_of_birth.required' => 'your date of birth is empty',
+            'nationality.required' =>'Enter your Nationality',
+            'phone.required' =>'Enter your mobile number',
+            'email.required' => 'Enter your Email',
+            'web.required' => 'Enter a web address',
+            'address.required' => 'Enter your address',
+            'profile.required' => 'Enter your profile',
+            'interest.required' => 'Enter your interest'
         ];
     }
 }
