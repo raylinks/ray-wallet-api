@@ -2,6 +2,7 @@
 namespace App\Http\Actions;
 use App\Http\Requests\ForgotPassswordRequest;
 use App\Http\Requests\RegisterRequest;
+use App\Jobs\PasswordResetNotification;
 use App\Mail\ForgetPasswordMail;
 use App\Models\PasswordReset;
 use App\User;
@@ -55,7 +56,11 @@ class ForgotPasswordAction
 //        $url .= /forgetpassword?"token"{$passwordReset->token}
         $message = 'Click the link to reset your password';
         $data = ['token' => $passwordReset->token];
-        Mail::send(new ForgetPasswordMail($user,$passwordReset));
+
+        dispatch(new PasswordResetNotification([
+            'user' => $user,
+            'token' => $passwordReset
+        ]));
 
         return $this->successResponse($message,$data);
 

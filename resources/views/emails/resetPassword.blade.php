@@ -24,7 +24,7 @@
                 valign="top">
                 <br>
                 {{--  <p style="">Hi <b>alloyking1</b>, Welcome to Patricia.</p>  --}}
-                Hi <b>{{ $user->userDetails}}</b>,
+                Hi <b></b>,
                 <br>
                 <br>
                 We may need to send you critical information about our service and it is important that we have an accurate email address.
