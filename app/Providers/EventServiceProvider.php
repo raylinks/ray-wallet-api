@@ -24,6 +24,9 @@ class EventServiceProvider extends ServiceProvider
         'App\Events\PasswordResetSuccess' => [
             'App\Listeners\SendPasswordResetEmail',
         ],
+        'App\Events\VerificationEmail' => [
+            'App\Listeners\SendVerificationEmail',
+        ],
     ];
 
     /**

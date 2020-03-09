@@ -16,6 +16,7 @@ return [
 
     'url' => env('CONFIRM_URL', 'http://localhost:8081'),
     'name' => env('APP_NAME', 'Laravel'),
+    'app_url' =>env('APP_URL2', 'https://localhost:8080'),
 
     /*
     |--------------------------------------------------------------------------

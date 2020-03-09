@@ -4,9 +4,11 @@ namespace App\Http\Actions;
 
 
 use App\Http\Requests\RegisterRequest;
+use App\Jobs\EmailVerification;
 use App\Mail\ConfirmEmail;
 use App\User;
 use App\Traits\HasApiResponses;
+use http\Exception;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
@@ -54,7 +56,9 @@ class AuthenticationAction
         }
         // Send Confirm Email Notification to User
         try {
-            Mail::to($user->email)->send(new ConfirmEmail($data));
+            dispatch(new  EmailVerification([
+                'user' => $data
+            ]));
             // Notification::send($user, new WelcomeNotify($data));
         } catch (Exception $e) {
         }

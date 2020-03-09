@@ -25,7 +25,8 @@ class ConfirmEmail extends Mailable implements ShouldQueue
      */
     public function __construct($data)
     {
-        $this->setVerifyEmailLink($data['url']);
+      //  $this->setVerifyEmailLink($data['url']);
+      //  $this->data = (object) $data;
         $this->data = $data;
     }
 
@@ -34,11 +35,15 @@ class ConfirmEmail extends Mailable implements ShouldQueue
      *
      * @return $this
      */
-    public function build()
+    public function build():self
     {
+
+        $this->setVerifyEmailLink($this->data);
         return $this->view('emails.confirmMail')
+            ->to($this->data['user']['email'])
             ->with([
-                'username' => $this->data['email'],
+                'email' => $this->data['user']['email'],
+                'email_link' => $this->verify_email_link
             ]);
     }
 
@@ -46,6 +51,6 @@ class ConfirmEmail extends Mailable implements ShouldQueue
     {
         $this->verify_email_link = $url;
 
-         $this->verify_email_link = rtrim(config('app.app_url'), '/') . static::VERIFY_EMAIL_URL . "?token={$this->data['email_token']}";
+         $this->verify_email_link = rtrim(config('app.app_url'), '/') . static::VERIFY_EMAIL_URL . "?token={$this->data['user']['email_token']}";
     }
 }
