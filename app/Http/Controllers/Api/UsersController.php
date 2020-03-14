@@ -18,9 +18,8 @@ class UsersController extends Controller
         );
     }
 
-    public function hello(Request $request){
-        dd('love');
+
+    public function ProfileImage(Request $request){
+        return (new AuthenticationAction())->imageUpload($request);
     }
-
-
 }

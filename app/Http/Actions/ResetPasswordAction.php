@@ -3,6 +3,8 @@ namespace App\Http\Actions;
 use App\Http\Requests\ResetPasswordRequest;
 use App\Http\Requests\RegisterRequest;
 use App\Mail\ForgetPasswordMail;
+use App\Http\Requests\ResetPassswordRequest;
+use App\Http\Requests\ResetPasswordRequest;
 use App\Models\PasswordReset;
 use App\User;
 use App\Traits\HasApiResponses;
@@ -11,7 +13,11 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Validator;
 /**
+
  * Class ForgotPasswordAction
+
+ * Class ResetPasswordAction
+
  * @package App\Http\Actions
  */
 class ResetPasswordAction
@@ -33,6 +39,7 @@ class ResetPasswordAction
             return $this->formValidationErrorAlert($validation->errors());
         }
 
+
         // $user = User::where('email', $request->email)->pluck('email');
         $userToken = PasswordReset::where('token', $request->token)->first();
 
@@ -47,8 +54,20 @@ class ResetPasswordAction
 
         return $this->successResponse($message);
 
+
+        $userToken = PasswordReset::where('token', $request->token)->first();
+         $user = User::where('email', $userToken->email)->first();
+
+        if($userToken){
+            $data = ['token' => $userToken->token];
+            $message ="You have successfully reset your password";
+            $password = bcrypt($request['password']);
+            $user->update(['password'=> $password]);
+            $userToken->update(['token' => null]);
+            return $this->successResponse($message, $data);
+
+        }
+        return $this->notFoundAlert('token does not exist.', []);
     }
-
-
 
 }

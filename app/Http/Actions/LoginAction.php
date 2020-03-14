@@ -7,16 +7,16 @@ use App\Http\Requests\LoginRequest;
 use App\Mail\ConfirmEmail;
 use App\User;
 use App\Traits\HasApiResponses;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
-
-
+use Tymon\JWTAuth\Facades\JWTAuth;
 
 
 class LoginAction
 {
-    use HasApiResponses;
+    use HasApiResponses, AuthenticatesUsers;
 
     public function execute(LoginRequest $request)
     {
@@ -31,12 +31,14 @@ class LoginAction
 
         $cred = $request->only(['email', 'password']);
 
-        if (!$token = $this->guard()->attempt($cred)) {
+        if (!$token = JWTAuth::attempt($cred)) {
             return JSON(400, [], 'incorrect login details');
 
         } else {
             return JSON(200, ['token' => $token, 'data' => $cred], 'success');
         }
+
+
 
     }
 

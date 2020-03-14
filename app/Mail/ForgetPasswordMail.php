@@ -16,7 +16,7 @@ class ForgetPasswordMail extends Mailable implements ShouldQueue
     public const RESET_PASSWORD_URL = '/resetpassword';
     public $reset_password_link;
     public $user;
-    public $tok;
+    public $data;
 
     /**
      * Create a new message instance.
@@ -25,11 +25,14 @@ class ForgetPasswordMail extends Mailable implements ShouldQueue
      * @param $token
      * @param string|null $redirect_url
      */
-    public function __construct($user, string $passwordReset ,string $redirect_url = null)
+    //public function __construct($user, string $passwordReset ,string $redirect_url = null)
+    public function __construct(array $data)
     {
-        $this->setResetPasswordLink( $redirect_url);
-        $this->user = $user;
-        $this->tok = $passwordReset;
+        $this->data = $data;
+
+//        $this->setResetPasswordLink( $redirect_url);
+//        $this->user = $user;
+//        $this->tok = $passwordReset;
 
     }
 
@@ -38,16 +41,21 @@ class ForgetPasswordMail extends Mailable implements ShouldQueue
      *
      * @return $this
      */
-    public function build()
+    public function build():self
     {
+        $this->setResetPasswordLink($this->data);
         return $this->subject('Reset Your Password')
-            ->to($this->user->email)
-            ->view('emails.confirmMail');
+            ->to($this->data['user']->email)
+            ->with([
+                'passwordResetLink' => $this->reset_password_link,
+            ])
+            ->view('emails.resetPassword');
     }
 
-    private function setResetPasswordLink( string $redirect_url = null)
+    private function setResetPasswordLink(array $data):void
     {
-        $redirect_url = $redirect_url ?: rtrim(config('app.url'), '/') . static::RESET_PASSWORD_URL;
-        $this->reset_password_link = $redirect_url . "?token={token}";
+       // dd($data);
+        $redirect_url =  rtrim(config('app.url'), '/') . static::RESET_PASSWORD_URL;
+        $this->reset_password_link = $redirect_url . "%s?token={$data['token']->token}";
     }
 }
