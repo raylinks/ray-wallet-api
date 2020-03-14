@@ -17,4 +17,9 @@ class UsersController extends Controller
             new RegisterRequest($request->all())
         );
     }
+
+
+    public function ProfileImage(Request $request){
+        return (new AuthenticationAction())->imageUpload($request);
+    }
 }

@@ -27,6 +27,7 @@ Route::post('forgotpassword', 'Api\ForgotController@ForgotPassword');
 Route::post('resetpassword', 'Api\ResetPasswordController@ResetPassword');
 Route::post('personal/detail', 'Api\ResumeController@PersonalDetails');
 Route::post('get/request', 'Api\PaystackController@getLinkUrl');
+Route::post('image/upload', 'Api\UsersController@ProfileImage');
 
 //Route::get('login/github', 'Auth\LoginController@redirectToProvider');
 //Route::get('login/github/callback', 'Auth\LoginController@handleProviderCallback');

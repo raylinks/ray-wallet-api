@@ -8,7 +8,9 @@ use App\Jobs\EmailVerification;
 use App\Mail\ConfirmEmail;
 use App\User;
 use App\Traits\HasApiResponses;
-use http\Exception;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
@@ -77,6 +79,83 @@ class AuthenticationAction
         }
 
         return $str;
+    }
+
+
+    public function imageUpload(Request $request): JsonResponse
+    {
+        $user = Auth::user();
+        $ext = "only supported jpeg files";
+        $extension = $request->file('avatar')->extension();
+        $os = array("jpeg", "png");
+        if (!in_array("ooo", $os))
+       {
+           return $this->formValidationErrorAlert(ooo);
+       }
+
+        // store file locally
+        Storage::disk('local')->put('file.txt', 'Contents');
+
+        Storage::disk('s3')->put('avatars/1', $fileContents);
+        $path = Storage::putFile('avatars', $request->file('avatar'));
+
+        $path = $request->file('avatar')->store('avatars');
+       $fileee =  $request->file('avatar')->store::putFileAs('ray_image_bucket', 'gcp',$user->id);
+        $path = Storage::putFile('avatars', $request->file('avatar'));
+        return $fileee;
+    }
+
+
+    public function updateProfileImage(Request $request): JsonResponse
+    {
+        if (!isset($_FILES['file']['name'])) {
+            return JSON(400, ['fail' => true, 'message' => 'No image selected'], 'error');
+        }//$request->file('name');
+
+        $user = User::whereUuid($request->user_uuid)->first();
+        $fail = false;
+        $message = 'success';
+        $file = $_FILES['file'];
+        $extension = $this->getFileExtension($file['name']);
+        $fileName = str_shuffle(md5(time() . $user->uuid)) . ".{$extension}";
+        $bucketUrl = Storage::disk('profile_pictures')->url('');
+
+        try {
+            $uploadDirectory = storage_path('app/public/profile_pictures');
+
+            if (!file_exists($uploadDirectory) && !mkdir($uploadDirectory) && !is_dir($uploadDirectory)) {
+                throw new RuntimeException(sprintf('Directory "%s" was not created', $uploadDirectory));
+            }
+
+            if (move_uploaded_file($file['tmp_name'], "{$uploadDirectory}/{$fileName}")) {
+                $contents = Storage::disk('local_profile_pics')->get($fileName);
+
+                $s3FileName = $user->profile_pic !== 'user_default.png'
+                    ? str_replace($bucketUrl, '', $user->profile_pic)
+                    : '';
+
+                if (Storage::disk('profile_pictures')->put($fileName, $contents)) {
+                    Storage::disk('profile_pictures')->delete($s3FileName);
+                    $user->profile_pic = $fileName;
+                    $user->save();
+
+                    $fail = false;
+
+                    Storage::disk('local_profile_pics')->delete($fileName);
+                }
+            }
+
+            return JSON(200, [
+                'fail' => $fail,
+                'storage' => $bucketUrl . $user->profile_pic,
+                'image' => $user->profile_pic,
+                'status' => $message,
+            ], $message);
+        } catch (Exception $exception) {
+            Storage::disk('local_profile_pics')->delete($fileName);
+
+            return JSON(200, ['fail' => true], $exception->getMessage());
+        }
     }
 
 }
