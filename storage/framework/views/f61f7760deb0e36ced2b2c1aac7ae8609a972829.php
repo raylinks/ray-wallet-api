@@ -11,7 +11,23 @@
             margin-left: 10%;
             margin-right: 10%;
             color: geeen;"
-                valign="top">
+
+            valign="top">
+            
+            <h3 style="font-size:22px">Welcome to Raybaba.</h3>
+        </td>
+    </tr>
+    <tr style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; margin: 0;">
+        <td class="content-block"
+            style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; vertical-align: top; margin: 0; padding: 0 0 20px;"
+            valign="top">
+            <br>
+
+
+            <br>
+            <br>
+            We may need to send you critical information about our service and it is important that we have an accurate email address.
+                valign="top"
                   Hi <b><?php echo e($email); ?></b>, Welcome to Raybaba site
                 <h3 style="font-size:22px">Welcome to Raybaba.</h3>
             </td>

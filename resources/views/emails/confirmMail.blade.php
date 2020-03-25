@@ -24,8 +24,8 @@
             style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; vertical-align: top; margin: 0; padding: 0 0 20px;"
             valign="top">
             <br>
-            {{--  <p style="">Hi <b>alloyking1</b>, Welcome to Patricia.</p>  --}}
-            Hi <b>{{ $user->userDetails->email}}</b>,
+
+
             <br>
             <br>
             We may need to send you critical information about our service and it is important that we have an accurate email address.

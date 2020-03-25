@@ -44,7 +44,7 @@ class AuthenticationAction
 
         $call_back_url = base64_encode($callback_url);
         $user_id = base64_encode($user->id);
-        $url .= "/verify?redirect_callback=" . $call_back_url . "&email_token=$user->email_token" . "&user_id=$user_id";
+        $url .= "/verify/success?redirect_callback=" . $call_back_url . "&email_token=$user->email_token" . "&user_id=$user_id";
 
 
         $data = [];
