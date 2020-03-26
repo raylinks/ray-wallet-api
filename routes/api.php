@@ -24,7 +24,7 @@ Route::post('role', 'Api\Auth\PermissionsController@createRole');
 Route::get('get/roles', 'Api\Auth\PermissionsController@get');
 Route::post('assign', 'Api\Auth\PermissionsController@assignPermissionToRole');
 Route::post('forgotpassword', 'Api\ForgotController@ForgotPassword');
-Route::post('verify', 'Api\VerificationController@VerifyEmailRegistration');
+Route::get('verify', 'Api\VerificationController@VerifyEmailRegistration');
 Route::post('resetpassword', 'Api\ResetPasswordController@ResetPassword');
 Route::post('personal/detail', 'Api\ResumeController@PersonalDetails');
 Route::post('get/request', 'Api\PaystackController@getLinkUrl');

@@ -18,7 +18,7 @@ class LoginAction
 {
     use HasApiResponses, AuthenticatesUsers;
 
-    public function execute(LoginRequest $request)
+    public function execute(LoginRequest $request): \Illuminate\Http\JsonResponse
     {
 
         $validation = new LoginRequest($request->all());
@@ -32,10 +32,18 @@ class LoginAction
         $cred = $request->only(['email', 'password']);
 
         if (!$token = JWTAuth::attempt($cred)) {
-            return JSON(400, [], 'incorrect login details');
+            return $this->formValidationErrorAlert(
+                'incorrect login details');
 
-        } else {
-            return JSON(200, ['token' => $token, 'data' => $cred], 'success');
+        }else {
+            $user = auth()->user()->load('userDetails');
+
+            if (is_null($user->email_verified_at)) {
+                return $this->badRequestAlert(
+                    'You are yet to verify your email address');
+            }
+            return $this->successResponse(
+                $token, $cred);
         }
 
 

@@ -10,6 +10,7 @@ use App\User;
 use App\Traits\HasApiResponses;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
@@ -21,39 +22,26 @@ class VerificationAction
 {
     use HasApiResponses;
 
-    public function execute(EmailVerifyRequest $request): JsonResponse
+    public function execute(EmailVerifyRequest $request)
     {
-    //dd("bimbo");
         $validation = new EmailVerifyRequest($request->all());
-
         $validation = Validator::make($validation->all(), $validation->rules(), $validation->messages());
-
         if ($validation->fails()) {
          return $this->formValidationErrorAlert($validation->errors());
         }
-
-
-
-
         $url = config('app.app_url');
         $callback_url = $request->callback_url;
-        $user = User::where('email_token', $request->email_token)->first();
-
+        $user = User::where('email_token', $request->token)->first();
         if(!$user)
         {
-            return $this->notFoundAlert('Your token could not be found.', []);
+            return $this->notFoundAlert('Your Email has been verified.', []);
         }
-
         $user->email_token = null;
+        $user->email_verified_at = now();
         $user->save();
-
-
-
         $call_back_url = base64_encode($callback_url);
         $user_id = base64_encode($user->id);
         $url .= "/verify?redirect_callback=" . $call_back_url . "&user_id=$user->id";
-        
-
         return Redirect::to($url);
 
     }

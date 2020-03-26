@@ -25,14 +25,14 @@ class EmailVerifyRequest extends FormRequest
     {
         return [
 
-            'email_token' => 'required',
+            'token' => 'required',
 
         ];
     }
     public function messages()
     {
         return [
-            'email_token' => 'token is required',
+            'token' => 'token is required',
 
         ];
     }
