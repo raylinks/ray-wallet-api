@@ -42,8 +42,7 @@ class LoginAction
                 return $this->badRequestAlert(
                     'You are yet to verify your email address');
             }
-            return $this->successResponse(
-                $token, $cred);
+            return $this->successResponse($token, $cred);
         }
 
 

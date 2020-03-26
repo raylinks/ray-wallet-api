@@ -21,7 +21,7 @@ class AuthenticationAction
 {
     use HasApiResponses;
 
-    public function execute(RegisterRequest $request)
+    public function execute(RegisterRequest $request): \Illuminate\Http\JsonResponse
     {
 
         $validation = new RegisterRequest($request->all());
@@ -64,10 +64,11 @@ class AuthenticationAction
             ]));
             // Notification::send($user, new WelcomeNotify($data));
         } catch (Exception $e) {
+            return $this->successResponse($e);
         }
 
 
-        return JSON(200, $user->toArray(), 'A confirmation mail has been sent to youe email, please check to confirm');
+        return $this->successResponse('A confirmation mail has been sent to your mail');
 
     }
 
