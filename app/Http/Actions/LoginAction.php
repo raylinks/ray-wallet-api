@@ -32,7 +32,7 @@ class LoginAction
         $cred = $request->only(['email', 'password']);
 
         if (!$token = JWTAuth::attempt($cred)) {
-            return $this->formValidationErrorAlert(
+            return $this->notFoundAlert(
                 'incorrect login details');
 
         }else {

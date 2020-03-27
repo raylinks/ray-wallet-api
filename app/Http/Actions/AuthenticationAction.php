@@ -64,7 +64,7 @@ class AuthenticationAction
             ]));
             // Notification::send($user, new WelcomeNotify($data));
         } catch (Exception $e) {
-            return $this->successResponse($e);
+            return $this->serverErrorAlert($e);
         }
 
 
