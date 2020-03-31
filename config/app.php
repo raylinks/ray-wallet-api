@@ -15,7 +15,6 @@ return [
 
 
     'url' => env('CONFIRM_URL'),
-    'api_url' => env('API_URL', 'https://ray-wallet-api.run'),
     'name' => env('APP_NAME', 'Laravel'),
     'app_url' =>env('APP_URL2', 'https://localhost:8080'),
 
