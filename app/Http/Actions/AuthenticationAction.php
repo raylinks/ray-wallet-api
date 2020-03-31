@@ -108,56 +108,6 @@ class AuthenticationAction
     }
 
 
-    public function updateProfileImage(Request $request): JsonResponse
-    {
-        if (!isset($_FILES['file']['name'])) {
-            return JSON(400, ['fail' => true, 'message' => 'No image selected'], 'error');
-        }//$request->file('name');
-
-        $user = User::whereUuid($request->user_uuid)->first();
-        $fail = false;
-        $message = 'success';
-        $file = $_FILES['file'];
-        $extension = $this->getFileExtension($file['name']);
-        $fileName = str_shuffle(md5(time() . $user->uuid)) . ".{$extension}";
-        $bucketUrl = Storage::disk('profile_pictures')->url('');
-
-        try {
-            $uploadDirectory = storage_path('app/public/profile_pictures');
-
-            if (!file_exists($uploadDirectory) && !mkdir($uploadDirectory) && !is_dir($uploadDirectory)) {
-                throw new RuntimeException(sprintf('Directory "%s" was not created', $uploadDirectory));
-            }
-
-            if (move_uploaded_file($file['tmp_name'], "{$uploadDirectory}/{$fileName}")) {
-                $contents = Storage::disk('local_profile_pics')->get($fileName);
-
-                $s3FileName = $user->profile_pic !== 'user_default.png'
-                    ? str_replace($bucketUrl, '', $user->profile_pic)
-                    : '';
-
-                if (Storage::disk('profile_pictures')->put($fileName, $contents)) {
-                    Storage::disk('profile_pictures')->delete($s3FileName);
-                    $user->profile_pic = $fileName;
-                    $user->save();
-
-                    $fail = false;
-
-                    Storage::disk('local_profile_pics')->delete($fileName);
-                }
-            }
-
-            return JSON(200, [
-                'fail' => $fail,
-                'storage' => $bucketUrl . $user->profile_pic,
-                'image' => $user->profile_pic,
-                'status' => $message,
-            ], $message);
-        } catch (Exception $exception) {
-            Storage::disk('local_profile_pics')->delete($fileName);
-
-            return JSON(200, ['fail' => true], $exception->getMessage());
-        }
-    }
+    
 
 }
