@@ -23,9 +23,9 @@ class AuthenticationAction
 
     public function execute(RegisterRequest $request): \Illuminate\Http\JsonResponse
     {
+        //dd($request->all());
 
         $validation = new RegisterRequest($request->all());
-
         $validation = Validator::make($validation->all(), $validation->rules(), $validation->messages());
 
         if ($validation->fails()) {
@@ -108,6 +108,6 @@ class AuthenticationAction
     }
 
 
-    
+
 
 }

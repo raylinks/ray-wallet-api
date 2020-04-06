@@ -19,15 +19,16 @@ class CurriculumAction
 
     public function execute(PersonalDetailsRequest $request): JsonResponse
     {
-        $validation = new PersonalDetailsRequest($request->all());
-
-        $validation = Validator::make($validation->all(), $validation->rules(), $validation->messages());
-
-        if ($validation->fails()) {
-            return $this->formValidationErrorAlert($validation->errors());
-        }
+//        $validation = new PersonalDetailsRequest($request->all());
+//
+//        $validation = Validator::make($validation->all(), $validation->rules(), $validation->messages());
+//
+//        if ($validation->fails()) {
+//            return $this->formValidationErrorAlert($validation->errors());
+//        }
 
         $user = Auth::user();
+
         $submitPersonalDetails = UserDetail::create([
             'user_id' => $user->id,
             'title'=> $request->title,

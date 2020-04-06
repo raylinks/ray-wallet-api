@@ -10,7 +10,14 @@ class PaystackController extends Controller
     public function getLinkUrl()
     {
         $urlLink = new Paystack();
-        $urlLink->getRaybaba();
+        $urlLink->getAuthorizationUrl();
+    }
+
+
+    public  function verifyResponseFromPay()
+    {
+        $verify = new Paystack();
+        $verify->getPaymentData();
     }
 
 }

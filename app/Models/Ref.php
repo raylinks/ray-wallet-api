@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Ref extends Model
 {
     protected $fillable = [
-        'name'
+        'user_id', 'val', 'amount'
     ];
 }
