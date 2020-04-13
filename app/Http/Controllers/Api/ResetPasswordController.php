@@ -10,11 +10,6 @@ use Illuminate\Http\Request;
 class ResetPasswordController extends Controller
 {
 
-    public function ResetPassword(Request $request)
-    {
-
-        return (new ResetPasswordAction())->execute(
-
     public function ResetPassword(Request $request){
         return(new ResetPasswordAction())->execute(
             new ResetPasswordRequest($request->all())

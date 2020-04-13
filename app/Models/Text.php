@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Text extends Model
 {
     protected $fillable = [
-        'note'
+       'user_id', 'note'
     ];
 }

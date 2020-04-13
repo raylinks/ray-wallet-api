@@ -26,7 +26,7 @@ class ResumeController extends Controller
     }
 
     public function PostSkills(Request $request){
-        return (new ResumeAction())->skills(
+        return (new CurriculumAction())->skills(
             new SkillRequest($request->all())
         );
     }

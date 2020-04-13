@@ -33,6 +33,11 @@ Route::middleware(['cors'])->group(function () {
     Route::post('personal/detail', 'Api\ResumeController@PersonalDetails');
     Route::post('paystack/auhorization', 'Api\PaystackController@getLinkUrl');
     Route::post('verify/pay', 'Api\PaystackController@verifyResponseFromPay');
+    Route::get('verify', 'Api\VerificationController@VerifyEmailRegistration');
+    Route::post('personal/details', 'Api\ResumeController@PersonalDetails');
+    Route::post('skills/details', 'Api\ResumeController@PostSkills');
+     Route::post('education/details', 'Api\ResumeController@Education');
+
 });
 
 //Route::get('login/github', 'Auth\LoginController@redirectToProvider');
@@ -45,5 +50,5 @@ Route::get('auth/{provider}/callback', 'Api\Auth\LoginController@handleProviderC
 Route::group(['middleware' => 'auth:api'], function () {
     Route::get('post/all', 'Api\PostController@self');
 
-    Route::post('personal/details', 'Api\ResumeController@PersonalDetails');
+
 });

@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Certificate extends Model
 {
-    protected $guarded = [];
+    protected $fillale = ['user_id','name', 'authority', 'url', 'date'];
 }

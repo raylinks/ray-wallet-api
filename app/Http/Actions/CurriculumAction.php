@@ -2,8 +2,11 @@
 namespace App\Http\Actions;
 
 use App\Http\Requests\AwardRequest;
+use App\Http\Requests\EducationRequest;
 use App\Http\Requests\PersonalDetailsRequest;
 use App\Http\Requests\SkillRequest;
+use App\Models\Education;
+use App\Models\Skill;
 use App\UserDetail;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Auth;
@@ -19,13 +22,13 @@ class CurriculumAction
 
     public function execute(PersonalDetailsRequest $request): JsonResponse
     {
-//        $validation = new PersonalDetailsRequest($request->all());
-//
-//        $validation = Validator::make($validation->all(), $validation->rules(), $validation->messages());
-//
-//        if ($validation->fails()) {
-//            return $this->formValidationErrorAlert($validation->errors());
-//        }
+       $validation = new PersonalDetailsRequest($request->all());
+
+       $validation = Validator::make($validation->all(), $validation->rules(), $validation->messages());
+
+       if ($validation->fails()) {
+           return $this->formValidationErrorAlert($validation->errors());
+       }
 
         $user = Auth::user();
 
@@ -63,6 +66,73 @@ class CurriculumAction
         if ($validation->fails()) {
             return $this->formValidationErrorAlert($validation->errors());
         }
+
+        $user = Auth::user();
+
+        $submitSkills = Skill::create([
+            'user_id' => $user->id,
+            'skill_category'=> $request->skill_category,
+            'skill_name' => $request->skill_name,
+            'skill_level'=> $request->skill_level,
+
+        ]);
+
+        $message = "You have created your skills details";
+        return $this->successResponse($message);
+
+    }
+
+    public function  Education(EducationRequest $request)
+    {
+        $validation = new EducationRequest($request->all());
+
+        $validation = Validator::make($validation->all(), $validation->rules(), $validation->messages());
+
+        if ($validation->fails()) {
+            return $this->formValidationErrorAlert($validation->errors());
+        }
+        $user = Auth::user();
+
+        $submitEducation = Education::create([
+            'user_id' => "1",
+            'institution'=> $request->institution,
+            'field_of_study' => $request->field_of_study,
+            'country'=> $request->country,
+            'city' => $request->city,
+            'time_from'=> $request->time_from,
+            'time_to'=> $request->time_to,
+            'note'=> $request->note,
+
+        ]);
+
+        $message = "You have created your Education details";
+        return $this->successResponse($message);
+    }
+
+
+    public function  Reference(ReferenceRequest $request)
+    {
+        $validation = new EducationRequest($request->all());
+
+        $validation = Validator::make($validation->all(), $validation->rules(), $validation->messages());
+
+        if ($validation->fails()) {
+            return $this->formValidationErrorAlert($validation->errors());
+        }
+        $user = Auth::user();
+
+        $submitEducation = Reference::create([
+            'user_id' => $user->id,
+            'company_name'=> $request->company_name,
+            'name' => $request->name,
+            'contact_1'=> $request->contact_1,
+            'contact_2' => $request->contact_2,
+            'note'=> $request->note,
+
+        ]);
+
+        $message = "You have created your Reference details";
+        return $this->successResponse($message);
     }
 
 
@@ -71,10 +141,76 @@ class CurriculumAction
         $validation = new SkillRequest($request->all());
 
         $validation = Validator::make($validation->all(), $validation->rules(), $validation->messages());
+        if ($validation->fails()) {
+            return $this->formValidationErrorAlert($validation->errors());
+        }
+        $user = Auth::user();
+
+        $submitEducation = Award::create([
+            'user_id' => $user->id,
+            'title'=> $request->title,
+            'issuer' => $request->issuer,
+            'web_url'=> $request->web_url,
+            'date' => $request->date,
+            'note'=> $request->note,
+        ]);
+
+        $message = "You have created your award details";
+        return $this->successResponse($message);
+    }
+
+    public function  postWorkExperience(WorkExperienceRequest $request)
+    {
+        $validation = new WorkExperienceRequest($request->all());
+
+        $validation = Validator::make($validation->all(), $validation->rules(), $validation->messages());
 
         if ($validation->fails()) {
             return $this->formValidationErrorAlert($validation->errors());
         }
+        $user = Auth::user();
+
+        $WorkExperience = WorkExperience::create([
+            'user_id' => $user->id,
+            'company_name'=> $request->company_name,
+            'job_title' => $request->job_title,
+            'country'=> $request->country,
+            'city' => $request->city,
+            'time_from'=> $request->time_from,
+            'time_to'=> $request->time_to,
+            'currently_work'=> $request->currently_work,
+            'note'=> $request->note,
+
+        ]);
+
+        $message = "You have created your WorkExperience details";
+        return $this->successResponse($message);
+    }
+
+
+    public function  Certificate(CertificateRequest $request)
+    {
+        $validation = new CertificateRequest($request->all());
+
+        $validation = Validator::make($validation->all(), $validation->rules(), $validation->messages());
+
+        if ($validation->fails()) {
+            return $this->formValidationErrorAlert($validation->errors());
+        }
+        $user = Auth::user();
+
+        $WorkExperience = Certificate::create([
+            'user_id' => $user->id,
+            'name'=> $request->name,
+            'authority' => $request->authority,
+            'url'=> $request->url,
+            'date'=> $request->date,
+
+
+        ]);
+
+        $message = "You have created your WorkExperience details";
+        return $this->successResponse($message);
     }
 
 }
