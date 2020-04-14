@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Award extends Model
 {
-    protected $fillale = ['user_id', 'title', 'issuer', 'url', 'date'];
+    protected $fillable = ['user_id', 'title', 'issuer', 'web_url', 'date'];
 }

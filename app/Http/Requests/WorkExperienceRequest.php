@@ -29,7 +29,7 @@ class WorkExperienceRequest extends FormRequest
             'job_title' => 'required',
             'country' => 'required',
             'city' => 'required',
-            'time_from' => 'required'
+            'time_from' => 'required',
             'time_to' => 'required',
             'currently_work' => 'required',
             'note' => 'required'

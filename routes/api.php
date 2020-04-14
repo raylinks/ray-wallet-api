@@ -36,7 +36,14 @@ Route::middleware(['cors'])->group(function () {
     Route::get('verify', 'Api\VerificationController@VerifyEmailRegistration');
     Route::post('personal/details', 'Api\ResumeController@PersonalDetails');
     Route::post('skills/details', 'Api\ResumeController@PostSkills');
-     Route::post('education/details', 'Api\ResumeController@Education');
+    Route::post('education/details', 'Api\ResumeController@Education');
+     Route::post('reference/details', 'Api\ResumeController@sumitReference');
+     Route::post('award/details', 'Api\ResumeController@Award');
+     Route::post('work/experience', 'Api\ResumeController@WorkExperience');
+      Route::post('certificate', 'Api\ResumeController@postCertificate');
+      Route::post('post/recruitment', 'Api\RecruitmentController@Recruitment');
+      Route::get('get/recruitment', 'Api\RecruitmentController@getAllRecruitment');
+       Route::post('publish/recruitment', 'Api\RecruitmentController@pulishRecruitment');
 
 });
 

@@ -21,7 +21,9 @@ class CreateRecruitmentsTable extends Migration
             $table->string('experience');
             $table->string('description');
             $table->string('requirement');
-            $table->string('responsiility');
+            $table->boolean('is_paid');;
+            $table->boolean('is_published');
+            $table->string('responsibility');
             $table->string('qualification');
             $table->string('scope_of_work');
             $table->string('closing_date');

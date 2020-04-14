@@ -18,7 +18,7 @@ class CreateAwardsTable extends Migration
             $table->integer('user_id');
             $table->string('title');
             $table->string('issuer');
-            $table->string('url');
+            $table->string('web_url');
             $table->string('date');
             $table->timestamps();
         });

@@ -2,11 +2,18 @@
 namespace App\Http\Actions;
 
 use App\Http\Requests\AwardRequest;
+use App\Http\Requests\CertificateRequest;
 use App\Http\Requests\EducationRequest;
 use App\Http\Requests\PersonalDetailsRequest;
+use App\Http\Requests\ReferenceRequest;
 use App\Http\Requests\SkillRequest;
+use App\Http\Requests\WorkExperienceRequest;
+use App\Models\Award;
+use App\Models\Certificate;
 use App\Models\Education;
+use App\Models\Reference;
 use App\Models\Skill;
+use App\Models\WorkExperience;
 use App\UserDetail;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Auth;
@@ -82,7 +89,7 @@ class CurriculumAction
 
     }
 
-    public function  Education(EducationRequest $request)
+    public function  executeEducation(EducationRequest $request)
     {
         $validation = new EducationRequest($request->all());
 
@@ -94,7 +101,7 @@ class CurriculumAction
         $user = Auth::user();
 
         $submitEducation = Education::create([
-            'user_id' => "1",
+            'user_id' => $user->id,
             'institution'=> $request->institution,
             'field_of_study' => $request->field_of_study,
             'country'=> $request->country,
@@ -105,14 +112,15 @@ class CurriculumAction
 
         ]);
 
+
         $message = "You have created your Education details";
         return $this->successResponse($message);
     }
 
 
-    public function  Reference(ReferenceRequest $request)
+    public function postReference(ReferenceRequest $request)
     {
-        $validation = new EducationRequest($request->all());
+        $validation = new ReferenceRequest($request->all());
 
         $validation = Validator::make($validation->all(), $validation->rules(), $validation->messages());
 
@@ -136,9 +144,9 @@ class CurriculumAction
     }
 
 
-    public function  award(AwardRequest $request)
+    public function  postaward(AwardRequest $request)
     {
-        $validation = new SkillRequest($request->all());
+        $validation = new AwardRequest($request->all());
 
         $validation = Validator::make($validation->all(), $validation->rules(), $validation->messages());
         if ($validation->fails()) {
@@ -200,7 +208,7 @@ class CurriculumAction
         $user = Auth::user();
 
         $WorkExperience = Certificate::create([
-            'user_id' => $user->id,
+            'user_id' => "1",
             'name'=> $request->name,
             'authority' => $request->authority,
             'url'=> $request->url,
@@ -209,7 +217,7 @@ class CurriculumAction
 
         ]);
 
-        $message = "You have created your WorkExperience details";
+        $message = "You have created your Certificate details";
         return $this->successResponse($message);
     }
 

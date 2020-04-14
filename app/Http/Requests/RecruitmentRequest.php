@@ -29,10 +29,10 @@ class RecruitmentRequest extends FormRequest
             'location' => 'required',
             'skills' => 'required',
             'experience' => 'required',
-            'description' => 'required'
+            'description' => 'required',
             'closing_date' => 'required',
             'requirement' => 'required',
-            'responsiility' => 'required'
+            'responsibility' => 'required',
             'qualification' => 'required',
             'scope_of_work' => 'required'
         ];
@@ -47,7 +47,7 @@ class RecruitmentRequest extends FormRequest
             'description' => 'Enter your description',
             'closing_date' => 'Enter your closing_date',
             'requirement' => 'Enter your requirement',
-            'responsiility' => 'Enter your responsiility',
+            'responsibility' => 'Enter your responsibility',
             'qualification' => 'Enter your qualification',
             'scope_of_work' => 'Enter your scope_of_work'
         ];
