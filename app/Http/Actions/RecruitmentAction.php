@@ -74,7 +74,7 @@ class RecruitmentAction
         }
 
         return $this->successResponse('Recruitment unpublish');
-        } catch(\Exception $e)   {
+        } catch(\Exception $e)   { 
             return $this->serverErrorAlert('sometin went  wron');
         }
 

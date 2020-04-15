@@ -44,7 +44,7 @@ class CurriculumAction
             'title'=> $request->title,
             'firstname' => $request->firstname,
             'lastname'=> $request->lastname,
-            'date_of_birth' =>$request->date_of_work,
+            'date_of_birth' =>$request->date_of_birth,
             'nationality' => $request->nationality,
             'phone' => $request->phone,
             'email' => $request->email,
