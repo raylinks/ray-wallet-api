@@ -34,10 +34,10 @@ class AwardRequest extends FormRequest
     public function messages()
     {
         return [
-            'title' => 'Enter your Skill level',
-            'issuer' => 'Enter your Skill name',
+            'title' => 'Enter your title level',
+            'issuer' => 'Enter your issuer name',
             'date' =>'date is required',
-            'note' => 'Enter a text'
+            'note' => 'Enter a note'
         ];
     }
 }

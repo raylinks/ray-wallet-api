@@ -208,7 +208,7 @@ class CurriculumAction
         $user = Auth::user();
 
         $WorkExperience = Certificate::create([
-            'user_id' => "1",
+            'user_id' => $user->id,
             'name'=> $request->name,
             'authority' => $request->authority,
             'url'=> $request->url,
