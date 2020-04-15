@@ -32,7 +32,6 @@ class PersonalDetailsRequest extends FormRequest
             'nationality' =>'required',
             'phone' =>'required',
             'email' => 'required',
-            'web' => 'required',
             'address' => 'required',
             'profile' => 'required',
             'picture_url' => 'required',
@@ -50,7 +49,6 @@ class PersonalDetailsRequest extends FormRequest
             'nationality.required' =>'Enter your Nationality',
             'phone.required' =>'Enter your mobile number',
             'email.required' => 'Enter your Email',
-            'web.required' => 'Enter a web address',
             'address.required' => 'Enter your address',
             'profile.required' => 'Enter your profile',
             'interest.required' => 'Enter your interest'

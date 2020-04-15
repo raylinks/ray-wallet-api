@@ -27,7 +27,6 @@ class AwardRequest extends FormRequest
 
             'title' => 'required',
             'issuer' => 'required',
-            'web_url' => 'required',
             'date' => 'required',
             'note' => 'required'
         ];
@@ -37,7 +36,6 @@ class AwardRequest extends FormRequest
         return [
             'title' => 'Enter your Skill level',
             'issuer' => 'Enter your Skill name',
-            'web_url' => 'Enter your skill category',
             'date' =>'date is required',
             'note' => 'Enter a text'
         ];

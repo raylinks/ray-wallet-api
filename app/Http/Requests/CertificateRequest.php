@@ -27,9 +27,8 @@ class CertificateRequest extends FormRequest
 
             'name' => 'required',
             'authority' => 'required',
-            'url' => 'required',
             'date' => 'required',
-        
+
         ];
     }
     public function messages()
@@ -37,7 +36,6 @@ class CertificateRequest extends FormRequest
         return [
             'name' => 'Enter your Skill level',
             'authority' => 'Enter your Skill name',
-            'url' => 'Enter your skill category',
             'date' =>'date is required',
         ];
     }
