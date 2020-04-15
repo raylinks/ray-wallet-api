@@ -34,7 +34,7 @@ class PersonalDetailsRequest extends FormRequest
             'email' => 'required',
             'address' => 'required',
             'profile' => 'required',
-            'picture_url' => 'required',
+        
             'interest' => 'required'
         ];
     }
@@ -50,7 +50,7 @@ class PersonalDetailsRequest extends FormRequest
             'phone.required' =>'Enter your mobile number',
             'email.required' => 'Enter your Email',
             'address.required' => 'Enter your address',
-            'profile.required' => 'Enter your profile',
+          
             'interest.required' => 'Enter your interest'
         ];
     }
