@@ -49,8 +49,8 @@ class AuthenticationAction
 
         $data = [];
         if ($user) {
-            $user->assignRole('writer');
-            $user->givePermissionTo('edit articles');
+            // $user->assignRole('writer');
+            // $user->givePermissionTo('edit articles');
             $data['email_token'] = $user->email_token;
             $data['url'] = $url;
             $data['email'] =$user->email ;
