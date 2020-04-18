@@ -34,7 +34,7 @@ Route::middleware(['cors'])->group(function () {
     Route::post('paystack/auhorization', 'Api\PaystackController@getLinkUrl');
     Route::post('verify/pay', 'Api\PaystackController@verifyResponseFromPay');
     Route::get('verify', 'Api\VerificationController@VerifyEmailRegistration');
-    Route::post('personal/details', 'Api\ResumeController@PersonalDetails');
+
     Route::post('skills/details', 'Api\ResumeController@PostSkills');
     Route::post('education/details', 'Api\ResumeController@Education');
      Route::post('reference/details', 'Api\ResumeController@sumitReference');
@@ -53,9 +53,10 @@ Route::middleware(['cors'])->group(function () {
 
 Route::get('auth/{provider}', 'Api\Auth\LoginController@redirectToProvider');
 Route::get('auth/{provider}/callback', 'Api\Auth\LoginController@handleProviderCallback');
-
+Route::post('personal/details', 'Api\ResumeController@PersonalDetails');
 Route::group(['middleware' => 'auth:api'], function () {
     Route::get('post/all', 'Api\PostController@self');
+
 
 
 });
