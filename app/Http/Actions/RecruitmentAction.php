@@ -58,6 +58,12 @@ class RecruitmentAction
         return $this->successResponse($recruis);
     }
 
+    public function  getUserAvailableJobs(): JsonResponse
+    {
+       $allJobs = Recruitment::where('is_paid',1)->get();
+        return $this->successResponse($allJobs);
+    }
+
     public  function postPublish(): JsonResponse
     {
         try {
@@ -74,7 +80,7 @@ class RecruitmentAction
         }
 
         return $this->successResponse('Recruitment unpublish');
-        } catch(\Exception $e)   { 
+        } catch(\Exception $e)   {
             return $this->serverErrorAlert('sometin went  wron');
         }
 

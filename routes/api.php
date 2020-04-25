@@ -41,9 +41,22 @@ Route::middleware(['cors'])->group(function () {
      Route::post('award/details', 'Api\ResumeController@Award');
      Route::post('work/experience', 'Api\ResumeController@WorkExperience');
       Route::post('certificate', 'Api\ResumeController@postCertificate');
+
+      //Recruitment  route
       Route::post('post/recruitment', 'Api\RecruitmentController@Recruitment');
       Route::get('get/recruitment', 'Api\RecruitmentController@getAllRecruitment');
        Route::post('publish/recruitment', 'Api\RecruitmentController@pulishRecruitment');
+      Route::get('get/all/jobs', 'Api\RecruitmentController@ShowUsersJobs');
+
+
+       //Blog  route
+       Route::post('submit/posts', 'Api\PostController@submitPost');
+       Route::post('get/posts', 'Api\PostController@displayPostToUsers');
+       Route::post('admin/all/posts', 'Api\PostController@getdPostToAdmin');
+       Route::post('admin/publish/posts', 'Api\PostController@AdminToPublishPost');
+        Route::get('get/comment/post', 'Api\CommentController@getCommentPost');
+        Route::get('get/commentable', 'Api\CommentController@Commentable');
+
 
 });
 

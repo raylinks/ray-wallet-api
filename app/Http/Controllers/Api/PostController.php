@@ -14,22 +14,25 @@ use App\Post;
 class PostController extends Controller
 {
 
-    public function self()
+    public function submitPost(Request $request)
     {
-        $user = auth()->user();
-        $post = $user->posts;
-
-        try {
-            $user = auth()->userOrFail();
-        } catch (\Tymon\JWTAuth\Exceptions\UserNotDefinedException $e) {
-            // do something
-            return JSON(200, ['token'=> "success", $e->getMessage()], 'fail');
-        }
-
-        return JSON(200, ['success'=> "success",  'data' => $post], 'success');
-
+        return(new PostAction())->execute(
+            new PostRequest($request->all())
+        );
     }
 
+    public function displayPostToUsers(){
+        return(new PostAction())->showAllPostUser();
+    }
+
+    public function getdPostToAdmin(){
+        return(new PostAction())->showAllPostTOAdmin();
+    }
+
+    public function AdminToPublishPost(){
+        return(new PostAction())->PublishPost();
+    }
+    
     
 
 }

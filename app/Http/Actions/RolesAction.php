@@ -6,7 +6,7 @@ use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 use App\Traits\HasApiResponses;
 
-class RolesActions
+class RolesAction
 {
     use HasApiResponses;
 

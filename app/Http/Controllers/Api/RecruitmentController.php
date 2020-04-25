@@ -23,6 +23,11 @@ class RecruitmentController extends Controller
 
     }
 
+    public function ShowUsersJobs(){
+        return(new RecruitmentAction())->getUserAvailableJobs();
+
+    }
+
     public function pulishRecruitment(){
         return(new RecruitmentAction())->postPublish();
 
