@@ -1,12 +1,13 @@
 <?php
 namespace App\Http\Actions;
 
+use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Request;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 use App\Traits\HasApiResponses;
 
-class RolesAction
+class RolesAndPermissionAction
 {
     use HasApiResponses;
 
@@ -26,4 +27,24 @@ class RolesAction
 
     }
 
+
+    public function executek(Request $request): JsonResponse
+    {
+        $role = Role::create(['name' => 'Graphics']);
+        return JSON(200, $role->toArray(), 'Roles Created');
+
+
+    }
+
+    public function assign(): JsonResponse
+    {
+        // dd("love");
+        $role = Role::findById(1);
+        $permission = Permission::findById(1);
+        //A permission can be assigned to a role:
+        $role->givePermissionTo($permission);
+
+
+        return JSON(200, $role->toArray(), 'Roles And permission Created');
+    }
 }

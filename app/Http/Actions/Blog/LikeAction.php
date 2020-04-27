@@ -20,7 +20,7 @@ class LikeAction
         $post = Post::where('id', $id)->first();
         # create an object of the like Model
         $like = new Like();
-        $like->user_id = $user->id;
+        $like->user_id =1;
         $like->post_id = $post->id;
         $post->likes()->save($like);
         return $this->successResponse($post);
@@ -36,7 +36,7 @@ class LikeAction
         if(count($post))
         {
 
-            Like::where('user_id', $user->id)->delete();
+            Like::where('user_id',1)->delete();
         }
         # create an object of the like Model
         return $this->successResponse($post);
