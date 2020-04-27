@@ -51,11 +51,14 @@ Route::middleware(['cors'])->group(function () {
 
        //Blog  route
        Route::post('submit/posts', 'Api\PostController@submitPost');
-       Route::post('get/posts', 'Api\PostController@displayPostToUsers');
-       Route::post('admin/all/posts', 'Api\PostController@getdPostToAdmin');
+       Route::get('get/posts/users', 'Api\PostController@displayPostToUsers');
+       Route::get('admin/all/posts', 'Api\PostController@getPostToAdmin');
        Route::post('admin/publish/posts', 'Api\PostController@AdminToPublishPost');
-        Route::get('get/comment/post', 'Api\CommentController@getCommentPost');
-        Route::get('get/commentable', 'Api\CommentController@Commentable');
+      // Route::get('get/comment/post', 'Api\CommentController@getCommentPost');
+       Route::post('submit/comment', 'Api\CommentController@submitComment');
+      // Route::get('get/commentable', 'Api\CommentController@Commentable');
+    Route::get('post/{id}/', 'Api\PostController@showPostByID');
+
 
 
 });

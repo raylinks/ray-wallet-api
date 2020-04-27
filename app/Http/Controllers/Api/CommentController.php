@@ -4,12 +4,8 @@ namespace App\Http\Controllers\Api;
 
 
 use App\Http\Actions\Blog\CommentAction;
-use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Str;
-use Illuminate\Http\JsonResponse;
-use App\Helpers\FileStorage;
-use Symfony\Component\HttpFoundation\File\File;
-use Illuminate\Support\Facades\Validator;
+use App\Http\Requests\Blog\CommentRequest;
+use Illuminate\Http\Request;
 
 class CommentController extends Controller
 {
@@ -24,5 +20,12 @@ class CommentController extends Controller
         return(new CommentAction())->getCommentbyPos();
     }
 
+
+    public function submitComment(Request $request)
+    {
+        return(new CommentAction())->postComment(
+            new  CommentRequest($request->all())
+        );
+    }
 
 }

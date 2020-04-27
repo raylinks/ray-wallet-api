@@ -64,8 +64,10 @@ class RecruitmentAction
         return $this->successResponse($allJobs);
     }
 
+    // PASS  the ID
     public  function postPublish(): JsonResponse
     {
+        // PASS  the ID
         try {
 
         $toActive = Recruitment::where('is_paid', 0)
@@ -81,7 +83,7 @@ class RecruitmentAction
 
         return $this->successResponse('Recruitment unpublish');
         } catch(\Exception $e)   {
-            return $this->serverErrorAlert('sometin went  wron');
+            return $this->serverErrorAlert('sometin went  wrong');
         }
 
     }

@@ -2,14 +2,10 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Http\Actions\Blog\PostAction;
+use App\Http\Requests\Blog\PostRequest;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Str;
-use Illuminate\Http\JsonResponse;
-use App\Helpers\FileStorage;
-use Symfony\Component\HttpFoundation\File\File;
-use Illuminate\Support\Facades\Validator;
-use App\Post;
+
 
 class PostController extends Controller
 {
@@ -25,14 +21,20 @@ class PostController extends Controller
         return(new PostAction())->showAllPostUser();
     }
 
-    public function getdPostToAdmin(){
+    public function getPostToAdmin(){
         return(new PostAction())->showAllPostTOAdmin();
     }
 
     public function AdminToPublishPost(){
         return(new PostAction())->PublishPost();
     }
-    
-    
+
+    public function showPostByID($id)
+    {
+        return(new PostAction())->showPost($id);
+    }
+
+
+
 
 }

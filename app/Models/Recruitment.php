@@ -17,4 +17,6 @@ use Illuminate\Database\Eloquent\Model;
          'inactive' => 0
      ];
 
+
+
  }

@@ -18,4 +18,8 @@ use Illuminate\Database\Eloquent\Model;
          return $this->morphMany('App\Models\Comment', 'commentable');
      }
 
+     public function likes()
+     {
+         return $this->hasMany(\App\Models\Like::class);
+     }
  }

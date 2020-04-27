@@ -1,17 +1,27 @@
 <?php
 namespace App\Http\Actions\Blog;
-use App\Http\Requests\PostRequest;
+use App\Http\Requests\Blog\PostRequest;
 use App\Models\Post;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Validator;
-use Spatie\Permission\Models\Role;
-use Spatie\Permission\Models\Permission;
+
+use Exception;
 use App\Traits\HasApiResponses;
 use Illuminate\Support\Facades\Auth;
 
 class PostAction
 {
     use HasApiResponses;
+
+    public function  showPost($id)
+    {
+        $post = Post::where('id', $id)->withCount(['likes', 'comments'])->get();
+        return $this->successResponse($post);
+    }
+
+
+
 
     public function execute(PostRequest $request)
     {
@@ -29,7 +39,7 @@ class PostAction
 
             'user_id' => $user->id,
             'title' => $request->title,
-            'content' => $request->blog_content,
+            'body' => $request->body,
             'status' => false,
         ]);
 
@@ -53,7 +63,7 @@ class PostAction
         }
     }
 
-    public function showAllPostTOAdmin()
+    public function showAllPostTOAdmin(): JsonResponse
     {
         $post = Post::all();
 
@@ -64,25 +74,26 @@ class PostAction
             return $this->successResponse($post);
         }
     }
-
+    // PASS  the ID
     public  function PublishPost(): JsonResponse
     {
         try {
+            // PASS  the ID
 
-        $toActive = Post::where('is_paid', 0)
+        $toActive = Post::where('status', 0)
             ->where('id', request()->id)
-            ->update(['is_paid' => 1]);
+            ->update(['status' => 1]);
         if(!$toActive){
-            $fromActive = Post::where('is_paid', 1)
+            $fromActive = Post::where('status', 1)
                 ->where('id', request()->id)
-                ->update(['is_paid' => 0]);
+                ->update(['status' => 0]);
         }else{
             return $this->successResponse('Post has been publish');
         }
 
         return $this->successResponse('Post unpublish');
-        } catch(\Exception $e)   {
-            return $this->serverErrorAlert('sometin went  wron');
+        } catch (Exception $e) {
+            return $this->serverErrorAlert( $e);
         }
 
     }
