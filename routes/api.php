@@ -57,8 +57,11 @@ Route::middleware(['cors'])->group(function () {
       // Route::get('get/comment/post', 'Api\CommentController@getCommentPost');
        Route::post('submit/comment', 'Api\CommentController@submitComment');
       // Route::get('get/commentable', 'Api\CommentController@Commentable');
-    Route::get('post/{id}/', 'Api\PostController@showPostByID');
+         Route::get('post/{id}/', 'Api\PostController@showPostByID');
 
+    //blog  like  and Unlike
+    Route::post('like/{id}/post', 'Api\LikeController@PostLike');
+    Route::post('unlike/{id}/post', 'Api\LikeController@PostUnlike');
 
 
 });
