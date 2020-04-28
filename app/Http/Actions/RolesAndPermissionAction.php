@@ -1,8 +1,12 @@
 <?php
 namespace App\Http\Actions;
 
+use App\Http\Requests\AwardRequest;
+use App\Http\Requests\PermissionRequest;
+use App\Http\Requests\RoleRequest;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Request;
+use Illuminate\Support\Facades\Validator;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 use App\Traits\HasApiResponses;
@@ -11,34 +15,52 @@ class RolesAndPermissionAction
 {
     use HasApiResponses;
 
-    public function execute(Request $request)
+    public function Permission(PermissionRequest $request)
     {
-        $role = Role::find($request->id);
-      //  $permission = Permission::create(['name' => 'edit articles']);
-       // $role->givePermissionTo($permission);
-      //  $role->givePermissionTo($permission);
 
-        //$role = Role::findById($request->id);
-        $permission = Permission::findById($request->id);
-        //A permission can be assigned to a role using 1 of these methods:
-        $role->givePermissionTo($permission);
+        $validation = new PermissionRequest($request->all());
 
-        return JSON(200, $role->toArray(), 'Roles And permission Created');
+        $validation = Validator::make($validation->all(), $validation->rules(), $validation->messages());
+        if ($validation->fails()) {
+            return $this->formValidationErrorAlert($validation->errors());
+        }
+        try {
+        $permission = Permission::create([
+            'name' => $request->name,
+            'guard_name' => 'web'
+        ]);
+        }catch (\Exception $exception){
+            return $this->serverErrorAlert($exception);
+        }
+        return $this->successResponse($permission);
 
     }
 
 
-    public function executek(Request $request): JsonResponse
+    public function Role(RoleRequest $request): JsonResponse
     {
-        $role = Role::create(['name' => 'Graphics']);
-        return JSON(200, $role->toArray(), 'Roles Created');
+        $validation = new RoleRequest($request->all());
+
+        $validation = Validator::make($validation->all(), $validation->rules(), $validation->messages());
+        if ($validation->fails()) {
+            return $this->formValidationErrorAlert($validation->errors());
+        }
+        try {
+            $role = Role::create([
+                'name' => $request->name,
+                'guard_name' => 'web'
+            ]);
+        }catch (\Exception $exception){
+            return $this->serverErrorAlert($exception);
+        }
+        return $this->successResponse($role);
 
 
     }
 
-    public function assign(): JsonResponse
+    public function assignPermission(): JsonResponse
     {
-        // dd("love");
+
         $role = Role::findById(1);
         $permission = Permission::findById(1);
         //A permission can be assigned to a role:

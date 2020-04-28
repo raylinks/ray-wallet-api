@@ -16,7 +16,6 @@ use App\Http\Requests\ResetPasswordRequest;
 use App\Http\Requests\SkillRequest;
 use App\Http\Requests\WorkExperienceRequest;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
 class ResumeController extends Controller
 {
