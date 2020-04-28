@@ -1,12 +1,16 @@
 <?php
 namespace App\Http\Actions\Blog;
 
+use App\Http\Requests\Blog\UnlikeRequest;
+use App\Http\Requests\RoleRequest;
 use App\Models\Like;
 
 use App\Models\Post;
 use App\Traits\HasApiResponses;
+use Illuminate\Support\Facades\Request;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 class LikeAction
 {
@@ -27,19 +31,22 @@ class LikeAction
     }
 
 
-    public function UnLikePost($id)
+    public function UnLikePost(UnlikeRequest $id)
     {
-        $user = Auth::user();
+        $validation = new UnlikeRequest(request()->all());
+        $validation = Validator::make($validation->all(), $validation->rules(), $validation->messages());
+        if ($validation->fails()) {
+            return $this->formValidationErrorAlert($validation->errors());
+        }
         # Get all the post where the id is the same as the id being passed in the function
         $like = new Like();
         $post = Post::where('id', $id)->first();
-        if(count($post))
+        if(count(array($post)))
         {
-
-            Like::where('user_id',1)->delete();
+           $unlike = Like::where('user_id',request()->user_id)->delete();
         }
         # create an object of the like Model
-        return $this->successResponse($post);
+        return $this->successResponse($unlike);
     }
 
 }

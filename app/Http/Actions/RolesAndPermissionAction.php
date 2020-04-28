@@ -58,10 +58,16 @@ class RolesAndPermissionAction
 
     }
 
-    public function assignPermission(): JsonResponse
+    public function assignPermission($roleId): JsonResponse
     {
+        $validation = new RoleRequest($request->all());
 
-        $role = Role::findById(1);
+        $validation = Validator::make($validation->all(), $validation->rules(), $validation->messages());
+        if ($validation->fails()) {
+            return $this->formValidationErrorAlert($validation->errors());
+        }
+
+        $role = Role::findById($roleId);
         $permission = Permission::findById(1);
         //A permission can be assigned to a role:
         $role->givePermissionTo($permission);

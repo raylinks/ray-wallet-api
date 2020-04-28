@@ -61,7 +61,7 @@ Route::middleware(['cors'])->group(function () {
 
     //blog  like  and Unlike
     Route::post('like/{id}/post', 'Api\LikeController@PostLike');
-   // Route::post('unlike/{id}/post', 'Api\LikeController@PostUnlike');
+    Route::post('unlike/{id}/post', 'Api\LikeController@PostUnlike');
 
     //ADMIN ROLES  AND PERMISSION  ROUtes
     Route::post('post/role', 'Api\RolesAndPermissionController@createRole');
