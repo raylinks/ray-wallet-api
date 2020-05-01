@@ -64,7 +64,7 @@ class RolesAndPermissionAction
 
     }
 
-    public function assignRole($id)
+    public function assignRole(AssignRoleRequest $id)
     {
         $validation = new AssignRoleRequest(request()->all());
 
@@ -72,28 +72,51 @@ class RolesAndPermissionAction
         if ($validation->fails()) {
             return $this->formValidationErrorAlert($validation->errors());
         }
-        $user = Auth::user();
-        $user = new User;
-        $user->assignRole('customer');
-        return $this->successResponse($role);
+        $user1 = new User;
+        $user2 = Auth::user();
+        $admin = User::findOrFail($id);
+        try {
+            if ($admin->id != $user2->id) {
+                $user1->syncRoles(request()->role);
+                return $this->successResponse('role successfully updated');
+            } else {
+                return $this->notFoundAlert('role no updated');
+            }
+        } catch (\Exception $e) {
+            return $this->serverErrorAlert('server error');
+        }
 
     }
 
-    public function assignPermission($id): JsonResponse
+    public function assignPermissionToRole($id): JsonResponse
     {
-        $validation = new RoleRequest(request()->all());
+        $role = new User();
+        request()->validate(['permission' => 'required|string', 'role' => 'required']);
+        $permission = strtolower(request()->permission);
 
-        $validation = Validator::make($validation->all(), $validation->rules(), $validation->messages());
-        if ($validation->fails()) {
-            return $this->formValidationErrorAlert($validation->errors());
+
+        $role = Role::findOrFail(request()->role);
+        try {
+            if(request()->grant_privelege){
+                $p_name = $permission;
+            }else{
+                $p_name = $role->name . '.' . $permission;
+            }
+
+            if(!$permission = Permission::where('name', $p_name)->first()){
+                $permission = Permission::create(['name' => $p_name, 'guard_name' => 'web']);
+            }
+            if($role->hasPermissionTo($p_name))
+            {
+                $message = ['status' => 'info', 'message' => $role->name . ' already have ' . $permission->name . ' permission.'];
+            }else{
+                $role->givePermissionTo($permission->id);
+                $message = ['status' => 'success', 'message' => 'new permission successfully added'];
+            }
+        } catch (Exception $e) {
+            $message = ['status' => 'warning', 'message' => 'new permission not added'];
         }
+        return redirect()->back()->with($message);
 
-        $role = Role::findById($id);
-        $permission = Permission::findById(1);
-        //A permission can be assigned to a role:
-        $role->givePermissionTo($permission);
-
-
-        return JSON(200, $role->toArray(), 'Roles And permission Created');
     }
 }
