@@ -2,18 +2,24 @@
 namespace App\Http\Actions;
 
 use App\Http\Requests\AwardRequest;
+use App\Http\Requests\Blog\AssignRoleRequest;
 use App\Http\Requests\PermissionRequest;
 use App\Http\Requests\RoleRequest;
+use App\User;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Validator;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 use App\Traits\HasApiResponses;
+use Spatie\Permission\Traits\HasRoles;
+
 
 class RolesAndPermissionAction
 {
     use HasApiResponses;
+    use HasRoles;
 
     public function Permission(PermissionRequest $request)
     {
@@ -58,16 +64,31 @@ class RolesAndPermissionAction
 
     }
 
-    public function assignPermission($roleId): JsonResponse
+    public function assignRole($id)
     {
-        $validation = new RoleRequest($request->all());
+        $validation = new AssignRoleRequest(request()->all());
+
+        $validation = Validator::make($validation->all(), $validation->rules(), $validation->messages());
+        if ($validation->fails()) {
+            return $this->formValidationErrorAlert($validation->errors());
+        }
+        $user = Auth::user();
+        $user = new User;
+        $user->assignRole('customer');
+        return $this->successResponse($role);
+
+    }
+
+    public function assignPermission($id): JsonResponse
+    {
+        $validation = new RoleRequest(request()->all());
 
         $validation = Validator::make($validation->all(), $validation->rules(), $validation->messages());
         if ($validation->fails()) {
             return $this->formValidationErrorAlert($validation->errors());
         }
 
-        $role = Role::findById($roleId);
+        $role = Role::findById($id);
         $permission = Permission::findById(1);
         //A permission can be assigned to a role:
         $role->givePermissionTo($permission);
