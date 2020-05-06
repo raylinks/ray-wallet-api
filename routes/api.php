@@ -68,6 +68,8 @@ Route::middleware(['cors'])->group(function () {
     Route::post('update/role', 'Api\RolesAndPermissionController@updateRole');
      Route::post('create/permission', 'Api\RolesAndPermissionController@createPermission');
       Route::post('assign/role/permission', 'Api\RolesAndPermissionController@assignPermission');
+      Route::get('all/permission', 'Api\RolesAndPermissionController@allPermisson');
+    Route::get('all/roles', 'Api\RolesAndPermissionController@index');
 
 
 });

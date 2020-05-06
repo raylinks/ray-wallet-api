@@ -78,6 +78,8 @@ class RolesAndPermissionAction
 
     public function assignRole(AssignRoleRequest $id)
     {
+        // chang user role from "Customer  to other
+
         $validation = new AssignRoleRequest(request()->all());
 
         $validation = Validator::make($validation->all(), $validation->rules(), $validation->messages());
@@ -134,14 +136,14 @@ class RolesAndPermissionAction
         $role = Role::findOrFail($id);
 
         //Validate name and permission fields
-        $validator = Validator::make($request->all(), [
-            'name' => 'required|max:40|unique:roles,name,' . $id,
-            'permissions' => 'required',
-        ]);
+//        $validator = Validator::make($request->all(), [
+//            'name' => 'required|max:40|unique:roles,name,' . $id,
+//            'permissions' => 'required',
+//        ]);
 
-        if ($validator->fails()) {
-            return $this->formValidationErrorAlert($validator->errors());
-        }
+//        if ($validator->fails()) {
+//            return $this->formValidationErrorAlert($validator->errors());
+//        }
 
         $input = $request->except(['permissions']);
         $permissions = $request['permissions'];
