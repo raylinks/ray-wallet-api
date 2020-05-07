@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRefsTable extends Migration
+class CreateTransactionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class CreateRefsTable extends Migration
      */
     public function up()
     {
-        Schema::create('refs', function (Blueprint $table) {
+        Schema::create('transactions', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('uuid');
+            $table->string('reference_code');
             $table->integer('user_id');
-            $table->string('val');
-            $table->string('amount');
-            $table->boolean('status');
-
+            $table->string('type');
+            $table->string('status');
             $table->timestamps();
         });
     }
@@ -31,6 +31,6 @@ class CreateRefsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('refs');
+        Schema::dropIfExists('transactions');
     }
 }

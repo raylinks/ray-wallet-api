@@ -72,6 +72,11 @@ Route::middleware(['cors'])->group(function () {
     Route::get('all/roles', 'Api\RolesAndPermissionController@index');
 
 
+    //Flutterwave Routes
+    Route::post('redirection', 'Api\FlutterwaveController@flutterwaveRedirectLink');
+     Route::post('verify/flutterwave/{redirect_callback}/', 'Api\FlutterwaveController@verifyFlutterwavePayment');
+
+
 });
 
 //Route::get('login/github', 'Auth\LoginController@redirectToProvider');
