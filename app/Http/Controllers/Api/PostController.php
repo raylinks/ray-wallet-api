@@ -4,11 +4,16 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Actions\Blog\PostAction;
 use App\Http\Requests\Blog\PostRequest;
+use App\Models\CvFormat;
 use Illuminate\Http\Request;
+use App\Traits\HasApiResponses;
+use Illuminate\Http\JsonResponse;
+use App\Traits\UploadImage;
 
 
 class PostController extends Controller
 {
+    use HasApiResponses , UploadImage;
 
     public function submitPost(Request $request)
     {
@@ -33,6 +38,24 @@ class PostController extends Controller
     {
         return(new PostAction())->showPost($id);
     }
+
+    public function photo(Request $request): JsonResponse
+    {
+        $cv_format  = CvFormat::where('id', $request->id);
+
+        $imagePath = null;
+        if ($request->hasFile('image')) {
+            $imagePath = $this->uploadFile($request->file('image'), 'cards', 'public');
+            if (! $imagePath) {
+                $this->badRequestAlert('Image not uploadable');
+            }
+            dd($imagePath);
+        }
+        return $this->successResponse('Success,Your Image has been successful');
+
+    }
+
+
 
 
 

@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Models\CvFormat;
+use App\Models\CvPricing;
+use App\Models\CvTransaction;
 use App\Services\Flutterwave;
 use Illuminate\Http\Request;
 use App\Models\Ref;
@@ -14,6 +17,19 @@ use Illuminate\Support\Str;
 
 class FlutterwaveController extends Controller
 {
+    public function selectCvFormat(Request $request){
+
+        $cv_format  = CvFormat::where('id', $request->formatid);
+        $cv_pricing  = CvPricing::where('id', $request->pricingid);
+        $cv_Transaction = CvTransaction::create([
+            'cvformat_id' =>  $cv_format->name,
+            'cvpricing_id' => $cv_pricing->name,
+            'status' => false
+
+        ]);
+    }
+
+
 
         public function flutterwaveRedirectLink(Request $request)
         {
