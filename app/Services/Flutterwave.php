@@ -52,7 +52,7 @@ class Flutterwave extends Service
         $user = Auth::user();
         $protocol = Util::isRequestSecure() ? 'https://' : 'http://';
         $url = $protocol.rtrim($_SERVER['HTTP_HOST'], '/');
-        $url .= '/payment/bank/flutterwave/verify/'.base64_encode($redirect_callback);
+        $url .= '/verify/flutterwave/'.base64_encode($redirect_callback);
 
         $ref = $this->generateRef();
         Ref::create([
