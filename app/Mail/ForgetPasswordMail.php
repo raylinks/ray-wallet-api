@@ -13,7 +13,7 @@ class ForgetPasswordMail extends Mailable implements ShouldQueue
     use Queueable;
     use SerializesModels;
 
-    public const RESET_PASSWORD_URL = '/resetpassword';
+    public const RESET_PASSWORD_URL = '/reset-password';
     public $reset_password_link;
     public $user;
     public $data;
@@ -55,7 +55,7 @@ class ForgetPasswordMail extends Mailable implements ShouldQueue
     private function setResetPasswordLink(array $data):void
     {
        // dd($data);
-        $redirect_url =  rtrim(config('app.url'), '/') . static::RESET_PASSWORD_URL;
+        $redirect_url =  rtrim(config('app.app_url'), '/') . static::RESET_PASSWORD_URL;
         $this->reset_password_link = $redirect_url . "%s?token={$data['token']->token}";
     }
 }
