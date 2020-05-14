@@ -36,7 +36,7 @@ Route::middleware(['cors'])->group(function () {
     Route::get('verify', 'Api\VerificationController@VerifyEmailRegistration');
     Route::post('personal/details', 'Api\ResumeController@PersonalDetails');
     Route::post('skills/details', 'Api\ResumeController@PostSkills');
-   // Route::post('education/details', 'Api\ResumeController@Education');
+    Route::post('education/details', 'Api\ResumeController@Education');
      Route::post('reference/details', 'Api\ResumeController@sumitReference');
      Route::post('award/details', 'Api\ResumeController@Award');
      Route::post('work/experience', 'Api\ResumeController@WorkExperience');
@@ -65,14 +65,14 @@ Route::middleware(['cors'])->group(function () {
     Route::post('upload', 'Api\PostController@photo');
 
     //ADMIN ROLES  AND PERMISSION  ROUtes
-    Route::middleware(['role:Admin|Supervisor'])->group(static function () {
+   // Route::middleware(['role:Admin|Supervisor'])->group(static function () {
     Route::post('post/role', 'Api\RolesAndPermissionController@createRole');
-    Route::post('update/role', 'Api\RolesAndPermissionController@updateRole');
+  //  Route::post('update/role/{id}/', 'Api\RolesAndPermissionController@ChangeUserRole');
      Route::post('create/permission', 'Api\RolesAndPermissionController@createPermission');
-      Route::post('assign/role/permission', 'Api\RolesAndPermissionController@assignPermission');
+     // Route::post('assign/role/permission', 'Api\RolesAndPermissionController@assignPermission');
       Route::get('all/permission', 'Api\RolesAndPermissionController@allPermisson');
     Route::get('all/roles', 'Api\RolesAndPermissionController@index');
-    });
+ //   });
 
 
     //Flutterwave Routes

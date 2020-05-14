@@ -623,6 +623,7 @@ class ComposerStaticInit9009315a1705d6cc36728a2bd9e19dac
         'App\\Models\\CvPricing' => __DIR__ . '/../..' . '/app/Models/CvPricing.php',
         'App\\Models\\CvTransaction' => __DIR__ . '/../..' . '/app/Models/CvTransaction.php',
         'App\\Models\\Deposit' => __DIR__ . '/../..' . '/app/Models/Deposit.php',
+        'App\\Models\\Educate' => __DIR__ . '/../..' . '/app/Models/Educate.php',
         'App\\Models\\Education' => __DIR__ . '/../..' . '/app/Models/Education.php',
         'App\\Models\\Like' => __DIR__ . '/../..' . '/app/Models/Like.php',
         'App\\Models\\PasswordReset' => __DIR__ . '/../..' . '/app/Models/PasswordReset.php',

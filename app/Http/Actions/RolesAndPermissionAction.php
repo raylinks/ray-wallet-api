@@ -10,6 +10,7 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Validator;
+use Exception;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 use App\Traits\HasApiResponses;
@@ -89,15 +90,18 @@ class RolesAndPermissionAction
         $user1 = new User;
         $user2 = Auth::user();
         $admin = User::findOrFail($id);
+        foreach ($admin  as $sel)
         try {
-            if ($admin->id != $user2->id) {
-                $user1->syncRoles(request()->role);
+            if ($sel->id != "99") {
+dd($sel->id);
+                $sel->syncRoles(request()->role);
                 return $this->successResponse('role successfully updated');
             } else {
                 return $this->notFoundAlert('role no updated');
             }
-        } catch (\Exception $e) {
-            return $this->serverErrorAlert('server error');
+        } catch(Exception $exception) {
+            return $this->serverErrorAlert('server error', $exception);
+
         }
 
     }

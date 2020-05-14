@@ -25,14 +25,15 @@ class AssignRoleRequest extends FormRequest
     {
         return [
 
-            'user_id' => 'required',
+            'role' => 'required',
+
 
         ];
     }
     public function messages()
     {
         return [
-            'user_id.required' => 'user_id is required',
+            'role.required' => 'role is required',
 
         ];
     }

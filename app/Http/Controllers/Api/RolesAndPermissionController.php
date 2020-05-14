@@ -40,20 +40,27 @@ class RolesAndPermissionController extends Controller
 
     }
 
-    public  function updateRole($id)
+    public  function ChangeUserRole($id)
     {
         return(new RolesAndPermissionAction())->assignRole(
-            new AssignRoleRequest($id)
+            new AssignRoleRequest([request()->all(),$id])
         );
 
     }
 
-    public  function assignPermission(Request $request)
-    {
-        return(new RolesAndPermissionAction())->assignPermissionToRole();
+//public  function assignPermission(Request $request)
+//{
+//    return(new RolesAndPermissionAction())->assignPermissionToRole();
+//
+//
+//}
 
-
-    }
+//    public  function assignPermission(Request $request)
+//    {
+//        return(new RolesAndPermissionAction())->assignPermissionToRole();
+//
+//
+//    }
     public  function updatePermissionToRole( $id)
     {
     return(new RolesAndPermissionAction())->updatePermissionToRole($id);

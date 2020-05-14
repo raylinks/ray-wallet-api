@@ -73,6 +73,10 @@ class AuthenticationAction
 
     }
 
+
+
+
+
     private function random_str($length, $keyspace = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ')
     {
         $str = '';

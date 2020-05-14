@@ -104,6 +104,7 @@ return array(
     'App\\Models\\CvPricing' => $baseDir . '/app/Models/CvPricing.php',
     'App\\Models\\CvTransaction' => $baseDir . '/app/Models/CvTransaction.php',
     'App\\Models\\Deposit' => $baseDir . '/app/Models/Deposit.php',
+    'App\\Models\\Educate' => $baseDir . '/app/Models/Educate.php',
     'App\\Models\\Education' => $baseDir . '/app/Models/Education.php',
     'App\\Models\\Like' => $baseDir . '/app/Models/Like.php',
     'App\\Models\\PasswordReset' => $baseDir . '/app/Models/PasswordReset.php',

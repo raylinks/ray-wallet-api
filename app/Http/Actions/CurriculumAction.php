@@ -10,7 +10,7 @@ use App\Http\Requests\SkillRequest;
 use App\Http\Requests\WorkExperienceRequest;
 use App\Models\Award;
 use App\Models\Certificate;
-use App\Models\Education;
+use App\Models\Educate;
 use App\Models\Reference;
 use App\Models\Skill;
 use App\Models\WorkExperience;
@@ -100,7 +100,7 @@ class CurriculumAction
         }
         $user = Auth::user();
 
-        $submitEducation = Education::create([
+        $submitEducation = Educate::create([
             'user_id' => $user->id,
             'institution'=> $request->institution,
             'field_of_study' => $request->field_of_study,
