@@ -60,6 +60,7 @@ class AuthenticationAction
 
         // Send Confirm Email Notification to User
         try {
+
             dispatch(new  EmailVerification([
                 'user' => $data
             ]));
@@ -69,7 +70,7 @@ class AuthenticationAction
         }
 
 
-        return $this->successResponse('A confirmation mail has been sent to your mail');
+        return $this->successResponse($user);
 
     }
 

@@ -28,7 +28,7 @@ class User extends Authenticatable implements JWTSubject
     public const OPERATING_AGENT_ROLE = 'Operating Agent';
 
     /** @var string USER_ROLE */
-    public const USER_ROLE = 'User';
+    public const USER_ROLE = 'customer';
 
     /**
      * The attributes that are mass assignable.
