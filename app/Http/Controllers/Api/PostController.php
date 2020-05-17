@@ -55,6 +55,11 @@ class PostController extends Controller
 
     }
 
+    public function UpdatePost(Request $request ,$id): JsonResponse
+    {
+        return(new PostAction())->updatePost($request ,$id);
+    }
+
 
 
 

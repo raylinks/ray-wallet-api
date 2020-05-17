@@ -44,7 +44,10 @@ class LoginAction
                 return $this->badRequestAlert(
                     'You are yet to verify your email address');
             }
-            return $this->successResponse($auth_user);
+            return JSON(200, [
+                $token,
+               $auth_user
+            ]);
         }
 
 

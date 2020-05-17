@@ -5,6 +5,7 @@ use App\Models\Post;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Arr;
 
 use Exception;
 use App\Traits\HasApiResponses;
@@ -96,6 +97,36 @@ class PostAction
             return $this->serverErrorAlert( $e);
         }
 
+    }
+
+    public function updatePost($request , $id)
+    {
+        $validator = Validator::make($request->only('body', 'title'), [
+            'title' => 'required',
+            'body' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return $this->formValidationErrorAlert(Arr::flatten($validator->errors()->toArray()));
+        }
+
+        $upd = Post::findOrFail($id);
+
+        $upd->title =  $request->title;
+        $upd->body = $request->body;
+        // if($request->hasFile('post_image')) {
+        //     #we get the image from the form
+        //      $file = $request->file('post_image');
+        //     $thePostImages = "";
+        //     $filename = $file->getClientOriginalName();
+        //     $destination = 'post_images/' . microtime(true);
+        //     $thePostImages = $destination . '/' . $filename;
+        //     $upload_success = $file->move($destination, $filename);
+
+        //     $post->image = $thePostImages;
+        // }
+        $upd->save();
+        return $this->successResponse('Post has been updated');
     }
 
 }

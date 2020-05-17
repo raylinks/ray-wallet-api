@@ -51,6 +51,7 @@ Route::middleware(['cors'])->group(function () {
 
        //Blog  route
        Route::post('submit/posts', 'Api\PostController@submitPost');
+       Route::post('update/post/{id}/', 'Api\PostController@UpdatePost');
        Route::get('get/posts/users', 'Api\PostController@displayPostToUsers');
        Route::get('admin/all/posts', 'Api\PostController@getPostToAdmin');
        Route::post('admin/publish/posts', 'Api\PostController@AdminToPublishPost');
@@ -62,7 +63,8 @@ Route::middleware(['cors'])->group(function () {
     //blog  like  and Unlike
     Route::post('like/{id}/post', 'Api\LikeController@PostLike');
     Route::post('unlike/{id}/post', 'Api\LikeController@PostUnlike');
-    Route::post('upload', 'Api\PostController@photo');
+    //Route::post('upload', 'Api\PostController@photo');
+   
 
     //ADMIN ROLES  AND PERMISSION  ROUtes
    // Route::middleware(['role:Admin|Supervisor'])->group(static function () {

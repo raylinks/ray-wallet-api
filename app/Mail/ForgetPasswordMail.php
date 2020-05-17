@@ -56,6 +56,6 @@ class ForgetPasswordMail extends Mailable implements ShouldQueue
     {
        // dd($data);
         $redirect_url =  rtrim(config('app.app_url'), '/') . static::RESET_PASSWORD_URL;
-        $this->reset_password_link = $redirect_url . "%s?token={$data['token']->token}";
+        $this->reset_password_link = $redirect_url . "?token={$data['token']->token}";
     }
 }
