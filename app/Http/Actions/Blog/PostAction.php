@@ -35,12 +35,24 @@ class PostAction
         }
         $user = Auth::user();
         try{
+
+            if ($request->hasFile('image')) {
+                foreach ($request->file('image') as $file) {
+                    $fileNameToStore = $this->uploadImages($file);
+                    dd($fileNameToStore);
+
+                }
+            } else {
+                return $this->notFoundAlert(' image not found');
+            }
+
         $post = Post::create([
 
 
             'user_id' => $user->id,
             'title' => $request->title,
             'body' => $request->body,
+            'picture' => $fileNameToStore,
             'status' => false,
         ]);
 

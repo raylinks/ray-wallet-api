@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCvformatsTable extends Migration
+class Createcv_formatsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateCvformatsTable extends Migration
      */
     public function up()
     {
-        Schema::create('cvformat', function (Blueprint $table) {
+        Schema::create('cv_formats', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('image');
@@ -28,6 +28,6 @@ class CreateCvformatsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cvformats');
+        Schema::dropIfExists('cv_formats');
     }
 }

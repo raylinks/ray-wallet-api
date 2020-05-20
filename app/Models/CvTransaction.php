@@ -9,7 +9,7 @@ class CvTransaction extends Model
     const NIGERIA = 1;
 
     protected $fillable = [
-        'id', 'cvformat_id', 'cvpricing_id', 'status'
+        'id','user_id', 'cvformat_id', 'cvpricing_id', 'status'
     ];
 
     protected $hidden = [

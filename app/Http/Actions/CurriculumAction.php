@@ -6,11 +6,16 @@ use App\Http\Requests\CertificateRequest;
 use App\Http\Requests\EducationRequest;
 use App\Http\Requests\PersonalDetailsRequest;
 use App\Http\Requests\ReferenceRequest;
+use App\Http\Requests\CvformatRequest;
+use App\Http\Requests\CvPricingRequest;
+use App\Models\CvPricing;
 use App\Http\Requests\SkillRequest;
 use App\Http\Requests\WorkExperienceRequest;
 use App\Models\Award;
 use App\Models\Certificate;
+use App\Models\CvTransaction;
 use App\Models\Educate;
+use App\Models\CvFormat;
 use App\Models\Reference;
 use App\Models\Skill;
 use App\Models\WorkExperience;
@@ -19,13 +24,14 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Validator;
+use App\Traits\UploadLocalImage;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 use App\Traits\HasApiResponses;
 
 class CurriculumAction
 {
-    use HasApiResponses;
+    use HasApiResponses, UploadLocalImage;
 
     public function execute(PersonalDetailsRequest $request): JsonResponse
     {
@@ -220,5 +226,84 @@ class CurriculumAction
         $message = "You have created your Certificate details";
         return $this->successResponse($message);
     }
+
+    public function  cvFormat(CvformatRequest $request)
+    {
+
+        $validation = new CvformatRequest($request->all());
+
+        $validation = Validator::make($validation->all(), $validation->rules(), $validation->messages());
+
+        if ($validation->fails()) {
+            return $this->formValidationErrorAlert($validation->errors());
+        }
+
+        $imagePath = null;
+        if (request()->hasFile('image')) {
+
+            $imagePath = $this->uploadImages(request()->file('image'));
+
+            if (! $imagePath) {
+                $this->badRequestAlert('Image not uploadable');
+            }
+
+        }
+
+        $cvformat = CvFormat::create([
+            'name' => $request->name,
+            'image' => $imagePath
+
+        ]);
+        return $this->successResponse('success, cv format  is added ');
+    }
+
+    public function  cvPricing()
+    {
+
+        $imagePath = null;
+        if (request()->hasFile('image')) {
+            $imagePath = $this->uploadImages(request()->file('image'));
+
+            if (! $imagePath) {
+                $this->badRequestAlert('Image not uploadable');
+            }
+
+        }
+        $cv = CvPricing::create([
+            'name' => request()->name,
+            'image' => $imagePath
+
+        ]);
+        return $this->successResponse( $cv);
+    }
+
+     public function  getCvPricing()
+     {
+         $cvPricing = CvPricing::all();
+         return $this->successResponse( $cvPricing);
+
+     }
+
+     public function  getCvFormat()
+     {
+         $cvformat = CvFormat::all();
+         return $this->successResponse( $cvformat);
+     }
+
+     public function  formatPricingTransacTion()
+     {
+
+         $user = Auth::user();
+
+
+         $transaction = CvTransaction::create([
+             'user_id' => $user->id,
+             'cvformat_id' => request()->format_id,
+             'cvpricing_id' => request()->price,
+             'status'  => false
+             ]);
+              return $this->successResponse( $transaction);
+
+     }
 
 }

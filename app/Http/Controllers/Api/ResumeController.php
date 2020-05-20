@@ -9,6 +9,7 @@ use App\Http\Actions\ResumeAction;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\AwardRequest;
 use App\Http\Requests\CertificateRequest;
+use App\Http\Requests\CvformatRequest;
 use App\Http\Requests\EducationRequest;
 use App\Http\Requests\PersonalDetailsRequest;
 use App\Http\Requests\ReferenceRequest;
@@ -62,5 +63,30 @@ class ResumeController extends Controller
         return (new CurriculumAction())->Certificate(
             new CertificateRequest($request->all())
         );
+    }
+
+    public function  postCvformat(Request $request){
+        return (new CurriculumAction())->cvFormat(
+            new CvformatRequest($request->all())
+        );
+    }
+
+    public function  postCvpricing(){
+        return (new CurriculumAction())->cvPricing();
+
+    }
+
+    public function  getAllPricing(){
+        return (new CurriculumAction())->getCvPricing();
+
+    }
+
+    public function  getAllCvFormat(){
+        return (new CurriculumAction())->getCvFormat();
+
+    }
+    public function  cvFormatTransaction(){
+        return (new CurriculumAction())->formatPricingTransacTion();
+
     }
 }

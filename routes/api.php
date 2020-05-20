@@ -60,11 +60,18 @@ Route::middleware(['cors'])->group(function () {
       // Route::get('get/commentable', 'Api\CommentController@Commentable');
          Route::get('post/{id}/', 'Api\PostController@showPostByID');
 
+         Route::post('submit/cvformat', 'Api\ResumeController@postCvformat');
+         Route::post('submit/cvpricing', 'Api\ResumeController@postCvpricing');
+        Route::post('submit/cvtransaction', 'Api\ResumeController@cvFormatTransaction');
+         Route::get('get/cvpricing', 'Api\ResumeController@getAllPricing');
+        Route::get('get/cvformat', 'Api\ResumeController@getAllCvFormat');
+
+
     //blog  like  and Unlike
     Route::post('like/{id}/post', 'Api\LikeController@PostLike');
     Route::post('unlike/{id}/post', 'Api\LikeController@PostUnlike');
     //Route::post('upload', 'Api\PostController@photo');
-   
+
 
     //ADMIN ROLES  AND PERMISSION  ROUtes
    // Route::middleware(['role:Admin|Supervisor'])->group(static function () {
