@@ -1790,3 +1790,17 @@
 #42 /Users/raymond/.composer/vendor/laravel/valet/server.php(158): require('/Users/raymond/...')
 #43 {main}
 "} 
+[2020-05-21 20:18:34] local.ERROR: Too many arguments, expected arguments "command". {"exception":"[object] (Symfony\\Component\\Console\\Exception\\RuntimeException(code: 0): Too many arguments, expected arguments \"command\". at /Users/raymond/Documents/my-works/ray-wallet-api/vendor/symfony/console/Input/ArgvInput.php:174)
+[stacktrace]
+#0 /Users/raymond/Documents/my-works/ray-wallet-api/vendor/symfony/console/Input/ArgvInput.php(85): Symfony\\Component\\Console\\Input\\ArgvInput->parseArgument('link')
+#1 /Users/raymond/Documents/my-works/ray-wallet-api/vendor/symfony/console/Input/Input.php(55): Symfony\\Component\\Console\\Input\\ArgvInput->parse()
+#2 /Users/raymond/Documents/my-works/ray-wallet-api/vendor/symfony/console/Command/Command.php(214): Symfony\\Component\\Console\\Input\\Input->bind(Object(Symfony\\Component\\Console\\Input\\InputDefinition))
+#3 /Users/raymond/Documents/my-works/ray-wallet-api/vendor/laravel/framework/src/Illuminate/Console/Command.php(188): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#4 /Users/raymond/Documents/my-works/ray-wallet-api/vendor/symfony/console/Application.php(1012): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 /Users/raymond/Documents/my-works/ray-wallet-api/vendor/symfony/console/Application.php(272): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Foundation\\Console\\StorageLinkCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#6 /Users/raymond/Documents/my-works/ray-wallet-api/vendor/symfony/console/Application.php(148): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#7 /Users/raymond/Documents/my-works/ray-wallet-api/vendor/laravel/framework/src/Illuminate/Console/Application.php(93): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 /Users/raymond/Documents/my-works/ray-wallet-api/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(131): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#9 /Users/raymond/Documents/my-works/ray-wallet-api/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#10 {main}
+"} 
