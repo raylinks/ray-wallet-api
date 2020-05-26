@@ -11,6 +11,10 @@
 |
 */
 
+use Illuminate\Support\Facades\Response;
+use Illuminate\Support\Facades\Route;
+
+
 Route::get('/', function () {
     return Response::json([
         'name' => 'Welcome to genius consult API service',
@@ -19,6 +23,5 @@ Route::get('/', function () {
     ]);
 });
 
-Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
