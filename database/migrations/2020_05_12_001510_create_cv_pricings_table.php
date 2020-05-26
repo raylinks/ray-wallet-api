@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Createcv_pricingsTable extends Migration
+class CreateCVpricingsTable extends Migration
 {
     /**
      * Run the migrations.

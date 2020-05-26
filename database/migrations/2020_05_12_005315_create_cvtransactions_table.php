@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCvtransactionsTable extends Migration
+class CreateCvTransactionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateCvtransactionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('cvtransactions', function (Blueprint $table) {
+        Schema::create('cv_transactions', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('cvformat_id');
             $table->string('cvpricing_id');
