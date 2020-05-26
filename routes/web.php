@@ -12,7 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return Response::json([
+        'name' => 'Welcome to genius consult API service',
+        'version' => '1.0',
+        'base_url' => '',
+    ]);
 });
 
 Auth::routes();

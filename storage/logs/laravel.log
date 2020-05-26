@@ -1790,3 +1790,494 @@
 #42 /Users/raymond/.composer/vendor/laravel/valet/server.php(158): require('/Users/raymond/...')
 #43 {main}
 "} 
+[2020-05-26 15:21:23] production.ERROR: There are no commands defined in the "generate" namespace. {"exception":"[object] (Symfony\\Component\\Console\\Exception\\NamespaceNotFoundException(code: 0): There are no commands defined in the \"generate\" namespace. at C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\symfony\\console\\Application.php:598)
+[stacktrace]
+#0 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\symfony\\console\\Application.php(651): Symfony\\Component\\Console\\Application->findNamespace('generate')
+#1 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\symfony\\console\\Application.php(236): Symfony\\Component\\Console\\Application->find('generate:key')
+#2 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\symfony\\console\\Application.php(148): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(93): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(131): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 C:\\Users\\user\\Desktop\ay-wallet-api\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#6 {main}
+"} 
+[2020-05-26 15:21:23] production.ERROR: SQLSTATE[HY000] [1045] Access denied for user 'forge'@'localhost' (using password: NO) (SQL: select count(*) as aggregate from `telescope_entries` where `type` = exception and `family_hash` = 7d160a95980a1a4642ffe8a3b5f873f3) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 1045): SQLSTATE[HY000] [1045] Access denied for user 'forge'@'localhost' (using password: NO) (SQL: select count(*) as aggregate from `telescope_entries` where `type` = exception and `family_hash` = 7d160a95980a1a4642ffe8a3b5f873f3) at C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php:669)
+[stacktrace]
+#0 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(629): Illuminate\\Database\\Connection->runQueryCallback('select count(*)...', Array, Object(Closure))
+#1 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(338): Illuminate\\Database\\Connection->run('select count(*)...', Array, Object(Closure))
+#2 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2132): Illuminate\\Database\\Connection->select('select count(*)...', Array, true)
+#3 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2120): Illuminate\\Database\\Query\\Builder->runSelect()
+#4 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2586): Illuminate\\Database\\Query\\Builder->Illuminate\\Database\\Query\\{closure}()
+#5 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2121): Illuminate\\Database\\Query\\Builder->onceWithColumns(Array, Object(Closure))
+#6 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2513): Illuminate\\Database\\Query\\Builder->get(Array)
+#7 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2441): Illuminate\\Database\\Query\\Builder->aggregate('count', Array)
+#8 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Storage\\DatabaseEntriesRepository.php(122): Illuminate\\Database\\Query\\Builder->count()
+#9 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Storage\\DatabaseEntriesRepository.php(164): Laravel\\Telescope\\Storage\\DatabaseEntriesRepository->countExceptionOccurences(Object(Laravel\\Telescope\\IncomingExceptionEntry))
+#10 [internal function]: Laravel\\Telescope\\Storage\\DatabaseEntriesRepository->Laravel\\Telescope\\Storage\\{closure}(Object(Laravel\\Telescope\\IncomingExceptionEntry), 0)
+#11 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Collection.php(638): array_map(Object(Closure), Array, Array)
+#12 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Storage\\DatabaseEntriesRepository.php(177): Illuminate\\Support\\Collection->map(Object(Closure))
+#13 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Traits\\EnumeratesValues.php(176): Laravel\\Telescope\\Storage\\DatabaseEntriesRepository->Laravel\\Telescope\\Storage\\{closure}(Object(Illuminate\\Support\\Collection), 0)
+#14 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Storage\\DatabaseEntriesRepository.php(178): Illuminate\\Support\\Collection->each(Object(Closure))
+#15 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Storage\\DatabaseEntriesRepository.php(139): Laravel\\Telescope\\Storage\\DatabaseEntriesRepository->storeExceptions(Object(Illuminate\\Support\\Collection))
+#16 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Telescope.php(568): Laravel\\Telescope\\Storage\\DatabaseEntriesRepository->store(Object(Illuminate\\Support\\Collection))
+#17 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\ListensForStorageOpportunities.php(44): Laravel\\Telescope\\Telescope::store(Object(Laravel\\Telescope\\Storage\\DatabaseEntriesRepository))
+#18 [internal function]: Laravel\\Telescope\\Telescope::Laravel\\Telescope\\{closure}()
+#19 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(32): call_user_func_array(Object(Closure), Array)
+#20 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(36): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#21 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(78): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#22 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(34): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Object(Closure), Object(Closure))
+#23 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(590): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Object(Closure), Array, NULL)
+#24 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1047): Illuminate\\Container\\Container->call(Object(Closure))
+#25 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(158): Illuminate\\Foundation\\Application->terminate()
+#26 C:\\Users\\user\\Desktop\ay-wallet-api\\artisan(51): Illuminate\\Foundation\\Console\\Kernel->terminate(Object(Symfony\\Component\\Console\\Input\\ArgvInput), 1)
+#27 {main}
+
+[previous exception] [object] (PDOException(code: 1045): SQLSTATE[HY000] [1045] Access denied for user 'forge'@'localhost' (using password: NO) at C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connectors\\Connector.php:70)
+[stacktrace]
+#0 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connectors\\Connector.php(70): PDO->__construct('mysql:host=127....', 'forge', '', Array)
+#1 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connectors\\Connector.php(46): Illuminate\\Database\\Connectors\\Connector->createPdoConnection('mysql:host=127....', 'forge', '', Array)
+#2 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connectors\\MySqlConnector.php(24): Illuminate\\Database\\Connectors\\Connector->createConnection('mysql:host=127....', Array, Array)
+#3 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connectors\\ConnectionFactory.php(182): Illuminate\\Database\\Connectors\\MySqlConnector->connect(Array)
+#4 [internal function]: Illuminate\\Database\\Connectors\\ConnectionFactory->Illuminate\\Database\\Connectors\\{closure}()
+#5 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(924): call_user_func(Object(Closure))
+#6 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(959): Illuminate\\Database\\Connection->getPdo()
+#7 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(404): Illuminate\\Database\\Connection->getReadPdo()
+#8 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(330): Illuminate\\Database\\Connection->getPdoForSelect(true)
+#9 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(662): Illuminate\\Database\\Connection->Illuminate\\Database\\{closure}('select count(*)...', Array)
+#10 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(629): Illuminate\\Database\\Connection->runQueryCallback('select count(*)...', Array, Object(Closure))
+#11 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(338): Illuminate\\Database\\Connection->run('select count(*)...', Array, Object(Closure))
+#12 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2132): Illuminate\\Database\\Connection->select('select count(*)...', Array, true)
+#13 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2120): Illuminate\\Database\\Query\\Builder->runSelect()
+#14 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2586): Illuminate\\Database\\Query\\Builder->Illuminate\\Database\\Query\\{closure}()
+#15 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2121): Illuminate\\Database\\Query\\Builder->onceWithColumns(Array, Object(Closure))
+#16 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2513): Illuminate\\Database\\Query\\Builder->get(Array)
+#17 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2441): Illuminate\\Database\\Query\\Builder->aggregate('count', Array)
+#18 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Storage\\DatabaseEntriesRepository.php(122): Illuminate\\Database\\Query\\Builder->count()
+#19 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Storage\\DatabaseEntriesRepository.php(164): Laravel\\Telescope\\Storage\\DatabaseEntriesRepository->countExceptionOccurences(Object(Laravel\\Telescope\\IncomingExceptionEntry))
+#20 [internal function]: Laravel\\Telescope\\Storage\\DatabaseEntriesRepository->Laravel\\Telescope\\Storage\\{closure}(Object(Laravel\\Telescope\\IncomingExceptionEntry), 0)
+#21 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Collection.php(638): array_map(Object(Closure), Array, Array)
+#22 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Storage\\DatabaseEntriesRepository.php(177): Illuminate\\Support\\Collection->map(Object(Closure))
+#23 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Traits\\EnumeratesValues.php(176): Laravel\\Telescope\\Storage\\DatabaseEntriesRepository->Laravel\\Telescope\\Storage\\{closure}(Object(Illuminate\\Support\\Collection), 0)
+#24 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Storage\\DatabaseEntriesRepository.php(178): Illuminate\\Support\\Collection->each(Object(Closure))
+#25 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Storage\\DatabaseEntriesRepository.php(139): Laravel\\Telescope\\Storage\\DatabaseEntriesRepository->storeExceptions(Object(Illuminate\\Support\\Collection))
+#26 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Telescope.php(568): Laravel\\Telescope\\Storage\\DatabaseEntriesRepository->store(Object(Illuminate\\Support\\Collection))
+#27 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\ListensForStorageOpportunities.php(44): Laravel\\Telescope\\Telescope::store(Object(Laravel\\Telescope\\Storage\\DatabaseEntriesRepository))
+#28 [internal function]: Laravel\\Telescope\\Telescope::Laravel\\Telescope\\{closure}()
+#29 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(32): call_user_func_array(Object(Closure), Array)
+#30 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(36): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#31 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(78): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#32 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(34): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Object(Closure), Object(Closure))
+#33 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(590): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Object(Closure), Array, NULL)
+#34 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1047): Illuminate\\Container\\Container->call(Object(Closure))
+#35 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(158): Illuminate\\Foundation\\Application->terminate()
+#36 C:\\Users\\user\\Desktop\ay-wallet-api\\artisan(51): Illuminate\\Foundation\\Console\\Kernel->terminate(Object(Symfony\\Component\\Console\\Input\\ArgvInput), 1)
+#37 {main}
+"} 
+[2020-05-26 15:22:03] production.ERROR: file_get_contents(C:\Users\user\Desktop\ray-wallet-api\.env): failed to open stream: No such file or directory {"exception":"[object] (ErrorException(code: 0): file_get_contents(C:\\Users\\user\\Desktop\ay-wallet-api\\.env): failed to open stream: No such file or directory at C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\KeyGenerateCommand.php:96)
+[stacktrace]
+#0 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(2, 'file_get_conten...', 'C:\\\\Users\\\\user\\\\D...', 96, Array)
+#1 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\KeyGenerateCommand.php(96): file_get_contents('C:\\\\Users\\\\user\\\\D...')
+#2 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\KeyGenerateCommand.php(80): Illuminate\\Foundation\\Console\\KeyGenerateCommand->writeNewEnvironmentFileWith('base64:3v+DtZ01...')
+#3 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\KeyGenerateCommand.php(45): Illuminate\\Foundation\\Console\\KeyGenerateCommand->setKeyInEnvironmentFile('base64:3v+DtZ01...')
+#4 [internal function]: Illuminate\\Foundation\\Console\\KeyGenerateCommand->handle()
+#5 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(32): call_user_func_array(Array, Array)
+#6 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(36): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#7 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(90): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#8 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(34): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#9 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(590): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#10 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(201): Illuminate\\Container\\Container->call(Array)
+#11 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\symfony\\console\\Command\\Command.php(255): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#12 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(188): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#13 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\symfony\\console\\Application.php(1012): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#14 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\symfony\\console\\Application.php(272): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Foundation\\Console\\KeyGenerateCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#15 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\symfony\\console\\Application.php(148): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#16 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(93): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#17 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(131): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#18 C:\\Users\\user\\Desktop\ay-wallet-api\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#19 {main}
+"} 
+[2020-05-26 15:22:03] production.ERROR: SQLSTATE[HY000] [1045] Access denied for user 'forge'@'localhost' (using password: NO) (SQL: select count(*) as aggregate from `telescope_entries` where `type` = exception and `family_hash` = 16794e742ed1d450d50c103828c9d562) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 1045): SQLSTATE[HY000] [1045] Access denied for user 'forge'@'localhost' (using password: NO) (SQL: select count(*) as aggregate from `telescope_entries` where `type` = exception and `family_hash` = 16794e742ed1d450d50c103828c9d562) at C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php:669)
+[stacktrace]
+#0 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(629): Illuminate\\Database\\Connection->runQueryCallback('select count(*)...', Array, Object(Closure))
+#1 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(338): Illuminate\\Database\\Connection->run('select count(*)...', Array, Object(Closure))
+#2 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2132): Illuminate\\Database\\Connection->select('select count(*)...', Array, true)
+#3 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2120): Illuminate\\Database\\Query\\Builder->runSelect()
+#4 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2586): Illuminate\\Database\\Query\\Builder->Illuminate\\Database\\Query\\{closure}()
+#5 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2121): Illuminate\\Database\\Query\\Builder->onceWithColumns(Array, Object(Closure))
+#6 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2513): Illuminate\\Database\\Query\\Builder->get(Array)
+#7 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2441): Illuminate\\Database\\Query\\Builder->aggregate('count', Array)
+#8 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Storage\\DatabaseEntriesRepository.php(122): Illuminate\\Database\\Query\\Builder->count()
+#9 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Storage\\DatabaseEntriesRepository.php(164): Laravel\\Telescope\\Storage\\DatabaseEntriesRepository->countExceptionOccurences(Object(Laravel\\Telescope\\IncomingExceptionEntry))
+#10 [internal function]: Laravel\\Telescope\\Storage\\DatabaseEntriesRepository->Laravel\\Telescope\\Storage\\{closure}(Object(Laravel\\Telescope\\IncomingExceptionEntry), 0)
+#11 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Collection.php(638): array_map(Object(Closure), Array, Array)
+#12 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Storage\\DatabaseEntriesRepository.php(177): Illuminate\\Support\\Collection->map(Object(Closure))
+#13 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Traits\\EnumeratesValues.php(176): Laravel\\Telescope\\Storage\\DatabaseEntriesRepository->Laravel\\Telescope\\Storage\\{closure}(Object(Illuminate\\Support\\Collection), 0)
+#14 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Storage\\DatabaseEntriesRepository.php(178): Illuminate\\Support\\Collection->each(Object(Closure))
+#15 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Storage\\DatabaseEntriesRepository.php(139): Laravel\\Telescope\\Storage\\DatabaseEntriesRepository->storeExceptions(Object(Illuminate\\Support\\Collection))
+#16 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Telescope.php(568): Laravel\\Telescope\\Storage\\DatabaseEntriesRepository->store(Object(Illuminate\\Support\\Collection))
+#17 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\ListensForStorageOpportunities.php(44): Laravel\\Telescope\\Telescope::store(Object(Laravel\\Telescope\\Storage\\DatabaseEntriesRepository))
+#18 [internal function]: Laravel\\Telescope\\Telescope::Laravel\\Telescope\\{closure}()
+#19 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(32): call_user_func_array(Object(Closure), Array)
+#20 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(36): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#21 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(78): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#22 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(34): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Object(Closure), Object(Closure))
+#23 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(590): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Object(Closure), Array, NULL)
+#24 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1047): Illuminate\\Container\\Container->call(Object(Closure))
+#25 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(158): Illuminate\\Foundation\\Application->terminate()
+#26 C:\\Users\\user\\Desktop\ay-wallet-api\\artisan(51): Illuminate\\Foundation\\Console\\Kernel->terminate(Object(Symfony\\Component\\Console\\Input\\ArgvInput), 1)
+#27 {main}
+
+[previous exception] [object] (PDOException(code: 1045): SQLSTATE[HY000] [1045] Access denied for user 'forge'@'localhost' (using password: NO) at C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connectors\\Connector.php:70)
+[stacktrace]
+#0 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connectors\\Connector.php(70): PDO->__construct('mysql:host=127....', 'forge', '', Array)
+#1 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connectors\\Connector.php(46): Illuminate\\Database\\Connectors\\Connector->createPdoConnection('mysql:host=127....', 'forge', '', Array)
+#2 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connectors\\MySqlConnector.php(24): Illuminate\\Database\\Connectors\\Connector->createConnection('mysql:host=127....', Array, Array)
+#3 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connectors\\ConnectionFactory.php(182): Illuminate\\Database\\Connectors\\MySqlConnector->connect(Array)
+#4 [internal function]: Illuminate\\Database\\Connectors\\ConnectionFactory->Illuminate\\Database\\Connectors\\{closure}()
+#5 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(924): call_user_func(Object(Closure))
+#6 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(959): Illuminate\\Database\\Connection->getPdo()
+#7 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(404): Illuminate\\Database\\Connection->getReadPdo()
+#8 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(330): Illuminate\\Database\\Connection->getPdoForSelect(true)
+#9 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(662): Illuminate\\Database\\Connection->Illuminate\\Database\\{closure}('select count(*)...', Array)
+#10 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(629): Illuminate\\Database\\Connection->runQueryCallback('select count(*)...', Array, Object(Closure))
+#11 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(338): Illuminate\\Database\\Connection->run('select count(*)...', Array, Object(Closure))
+#12 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2132): Illuminate\\Database\\Connection->select('select count(*)...', Array, true)
+#13 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2120): Illuminate\\Database\\Query\\Builder->runSelect()
+#14 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2586): Illuminate\\Database\\Query\\Builder->Illuminate\\Database\\Query\\{closure}()
+#15 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2121): Illuminate\\Database\\Query\\Builder->onceWithColumns(Array, Object(Closure))
+#16 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2513): Illuminate\\Database\\Query\\Builder->get(Array)
+#17 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2441): Illuminate\\Database\\Query\\Builder->aggregate('count', Array)
+#18 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Storage\\DatabaseEntriesRepository.php(122): Illuminate\\Database\\Query\\Builder->count()
+#19 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Storage\\DatabaseEntriesRepository.php(164): Laravel\\Telescope\\Storage\\DatabaseEntriesRepository->countExceptionOccurences(Object(Laravel\\Telescope\\IncomingExceptionEntry))
+#20 [internal function]: Laravel\\Telescope\\Storage\\DatabaseEntriesRepository->Laravel\\Telescope\\Storage\\{closure}(Object(Laravel\\Telescope\\IncomingExceptionEntry), 0)
+#21 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Collection.php(638): array_map(Object(Closure), Array, Array)
+#22 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Storage\\DatabaseEntriesRepository.php(177): Illuminate\\Support\\Collection->map(Object(Closure))
+#23 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Traits\\EnumeratesValues.php(176): Laravel\\Telescope\\Storage\\DatabaseEntriesRepository->Laravel\\Telescope\\Storage\\{closure}(Object(Illuminate\\Support\\Collection), 0)
+#24 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Storage\\DatabaseEntriesRepository.php(178): Illuminate\\Support\\Collection->each(Object(Closure))
+#25 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Storage\\DatabaseEntriesRepository.php(139): Laravel\\Telescope\\Storage\\DatabaseEntriesRepository->storeExceptions(Object(Illuminate\\Support\\Collection))
+#26 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Telescope.php(568): Laravel\\Telescope\\Storage\\DatabaseEntriesRepository->store(Object(Illuminate\\Support\\Collection))
+#27 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\ListensForStorageOpportunities.php(44): Laravel\\Telescope\\Telescope::store(Object(Laravel\\Telescope\\Storage\\DatabaseEntriesRepository))
+#28 [internal function]: Laravel\\Telescope\\Telescope::Laravel\\Telescope\\{closure}()
+#29 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(32): call_user_func_array(Object(Closure), Array)
+#30 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(36): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#31 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(78): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#32 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(34): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Object(Closure), Object(Closure))
+#33 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(590): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Object(Closure), Array, NULL)
+#34 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1047): Illuminate\\Container\\Container->call(Object(Closure))
+#35 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(158): Illuminate\\Foundation\\Application->terminate()
+#36 C:\\Users\\user\\Desktop\ay-wallet-api\\artisan(51): Illuminate\\Foundation\\Console\\Kernel->terminate(Object(Symfony\\Component\\Console\\Input\\ArgvInput), 1)
+#37 {main}
+"} 
+[2020-05-26 15:22:34] local.ERROR: SQLSTATE[HY000] [1049] Unknown database 'ray-wallet-api' (SQL: insert into `telescope_entries` (`batch_id`, `content`, `created_at`, `family_hash`, `type`, `uuid`) values (90a7ddd2-61ab-4ed3-b5d0-7f681c3d8be6, {"command":"key:generate","exit_code":0,"arguments":{"command":"key:generate"},"options":{"show":false,"force":false,"help":false,"quiet":false,"verbose":false,"version":false,"ansi":false,"no-ansi":false,"no-interaction":false,"env":null},"hostname":"DESKTOP-S5U3C8A"}, 2020-05-26 15:22:34, ?, command, 90a7ddd2-5e5c-4494-9c7f-8580abd751a8)) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 1049): SQLSTATE[HY000] [1049] Unknown database 'ray-wallet-api' (SQL: insert into `telescope_entries` (`batch_id`, `content`, `created_at`, `family_hash`, `type`, `uuid`) values (90a7ddd2-61ab-4ed3-b5d0-7f681c3d8be6, {\"command\":\"key:generate\",\"exit_code\":0,\"arguments\":{\"command\":\"key:generate\"},\"options\":{\"show\":false,\"force\":false,\"help\":false,\"quiet\":false,\"verbose\":false,\"version\":false,\"ansi\":false,\"no-ansi\":false,\"no-interaction\":false,\"env\":null},\"hostname\":\"DESKTOP-S5U3C8A\"}, 2020-05-26 15:22:34, ?, command, 90a7ddd2-5e5c-4494-9c7f-8580abd751a8)) at C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php:669)
+[stacktrace]
+#0 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(629): Illuminate\\Database\\Connection->runQueryCallback('insert into `te...', Array, Object(Closure))
+#1 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(464): Illuminate\\Database\\Connection->run('insert into `te...', Array, Object(Closure))
+#2 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(416): Illuminate\\Database\\Connection->statement('insert into `te...', Array)
+#3 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2628): Illuminate\\Database\\Connection->insert('insert into `te...', Array)
+#4 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Storage\\DatabaseEntriesRepository.php(148): Illuminate\\Database\\Query\\Builder->insert(Array)
+#5 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Traits\\EnumeratesValues.php(176): Laravel\\Telescope\\Storage\\DatabaseEntriesRepository->Laravel\\Telescope\\Storage\\{closure}(Object(Illuminate\\Support\\Collection), 0)
+#6 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Storage\\DatabaseEntriesRepository.php(149): Illuminate\\Support\\Collection->each(Object(Closure))
+#7 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Telescope.php(568): Laravel\\Telescope\\Storage\\DatabaseEntriesRepository->store(Object(Illuminate\\Support\\Collection))
+#8 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\ListensForStorageOpportunities.php(44): Laravel\\Telescope\\Telescope::store(Object(Laravel\\Telescope\\Storage\\DatabaseEntriesRepository))
+#9 [internal function]: Laravel\\Telescope\\Telescope::Laravel\\Telescope\\{closure}()
+#10 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(32): call_user_func_array(Object(Closure), Array)
+#11 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(36): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#12 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(78): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#13 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(34): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Object(Closure), Object(Closure))
+#14 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(590): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Object(Closure), Array, NULL)
+#15 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1047): Illuminate\\Container\\Container->call(Object(Closure))
+#16 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(158): Illuminate\\Foundation\\Application->terminate()
+#17 C:\\Users\\user\\Desktop\ay-wallet-api\\artisan(51): Illuminate\\Foundation\\Console\\Kernel->terminate(Object(Symfony\\Component\\Console\\Input\\ArgvInput), 0)
+#18 {main}
+
+[previous exception] [object] (PDOException(code: 1049): SQLSTATE[HY000] [1049] Unknown database 'ray-wallet-api' at C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connectors\\Connector.php:70)
+[stacktrace]
+#0 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connectors\\Connector.php(70): PDO->__construct('mysql:host=127....', 'root', '', Array)
+#1 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connectors\\Connector.php(46): Illuminate\\Database\\Connectors\\Connector->createPdoConnection('mysql:host=127....', 'root', '', Array)
+#2 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connectors\\MySqlConnector.php(24): Illuminate\\Database\\Connectors\\Connector->createConnection('mysql:host=127....', Array, Array)
+#3 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connectors\\ConnectionFactory.php(182): Illuminate\\Database\\Connectors\\MySqlConnector->connect(Array)
+#4 [internal function]: Illuminate\\Database\\Connectors\\ConnectionFactory->Illuminate\\Database\\Connectors\\{closure}()
+#5 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(924): call_user_func(Object(Closure))
+#6 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(457): Illuminate\\Database\\Connection->getPdo()
+#7 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(662): Illuminate\\Database\\Connection->Illuminate\\Database\\{closure}('insert into `te...', Array)
+#8 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(629): Illuminate\\Database\\Connection->runQueryCallback('insert into `te...', Array, Object(Closure))
+#9 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(464): Illuminate\\Database\\Connection->run('insert into `te...', Array, Object(Closure))
+#10 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(416): Illuminate\\Database\\Connection->statement('insert into `te...', Array)
+#11 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2628): Illuminate\\Database\\Connection->insert('insert into `te...', Array)
+#12 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Storage\\DatabaseEntriesRepository.php(148): Illuminate\\Database\\Query\\Builder->insert(Array)
+#13 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Traits\\EnumeratesValues.php(176): Laravel\\Telescope\\Storage\\DatabaseEntriesRepository->Laravel\\Telescope\\Storage\\{closure}(Object(Illuminate\\Support\\Collection), 0)
+#14 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Storage\\DatabaseEntriesRepository.php(149): Illuminate\\Support\\Collection->each(Object(Closure))
+#15 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Telescope.php(568): Laravel\\Telescope\\Storage\\DatabaseEntriesRepository->store(Object(Illuminate\\Support\\Collection))
+#16 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\ListensForStorageOpportunities.php(44): Laravel\\Telescope\\Telescope::store(Object(Laravel\\Telescope\\Storage\\DatabaseEntriesRepository))
+#17 [internal function]: Laravel\\Telescope\\Telescope::Laravel\\Telescope\\{closure}()
+#18 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(32): call_user_func_array(Object(Closure), Array)
+#19 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(36): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#20 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(78): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#21 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(34): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Object(Closure), Object(Closure))
+#22 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(590): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Object(Closure), Array, NULL)
+#23 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1047): Illuminate\\Container\\Container->call(Object(Closure))
+#24 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(158): Illuminate\\Foundation\\Application->terminate()
+#25 C:\\Users\\user\\Desktop\ay-wallet-api\\artisan(51): Illuminate\\Foundation\\Console\\Kernel->terminate(Object(Symfony\\Component\\Console\\Input\\ArgvInput), 0)
+#26 {main}
+"} 
+[2020-05-26 15:22:47] local.ERROR: SQLSTATE[HY000] [1049] Unknown database 'ray-wallet-api' (SQL: insert into `telescope_entries` (`batch_id`, `content`, `created_at`, `family_hash`, `type`, `uuid`) values (90a7dde5-6930-4015-a14c-9915833e0f90, {"command":"config:cache","exit_code":0,"arguments":{"command":"config:cache"},"options":{"help":false,"quiet":false,"verbose":false,"version":false,"ansi":false,"no-ansi":false,"no-interaction":false,"env":null},"hostname":"DESKTOP-S5U3C8A"}, 2020-05-26 15:22:47, ?, command, 90a7dde5-66f5-432f-9930-2484e403dee2)) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 1049): SQLSTATE[HY000] [1049] Unknown database 'ray-wallet-api' (SQL: insert into `telescope_entries` (`batch_id`, `content`, `created_at`, `family_hash`, `type`, `uuid`) values (90a7dde5-6930-4015-a14c-9915833e0f90, {\"command\":\"config:cache\",\"exit_code\":0,\"arguments\":{\"command\":\"config:cache\"},\"options\":{\"help\":false,\"quiet\":false,\"verbose\":false,\"version\":false,\"ansi\":false,\"no-ansi\":false,\"no-interaction\":false,\"env\":null},\"hostname\":\"DESKTOP-S5U3C8A\"}, 2020-05-26 15:22:47, ?, command, 90a7dde5-66f5-432f-9930-2484e403dee2)) at C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php:669)
+[stacktrace]
+#0 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(629): Illuminate\\Database\\Connection->runQueryCallback('insert into `te...', Array, Object(Closure))
+#1 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(464): Illuminate\\Database\\Connection->run('insert into `te...', Array, Object(Closure))
+#2 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(416): Illuminate\\Database\\Connection->statement('insert into `te...', Array)
+#3 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2628): Illuminate\\Database\\Connection->insert('insert into `te...', Array)
+#4 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Storage\\DatabaseEntriesRepository.php(148): Illuminate\\Database\\Query\\Builder->insert(Array)
+#5 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Traits\\EnumeratesValues.php(176): Laravel\\Telescope\\Storage\\DatabaseEntriesRepository->Laravel\\Telescope\\Storage\\{closure}(Object(Illuminate\\Support\\Collection), 0)
+#6 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Storage\\DatabaseEntriesRepository.php(149): Illuminate\\Support\\Collection->each(Object(Closure))
+#7 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Telescope.php(568): Laravel\\Telescope\\Storage\\DatabaseEntriesRepository->store(Object(Illuminate\\Support\\Collection))
+#8 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\ListensForStorageOpportunities.php(44): Laravel\\Telescope\\Telescope::store(Object(Laravel\\Telescope\\Storage\\DatabaseEntriesRepository))
+#9 [internal function]: Laravel\\Telescope\\Telescope::Laravel\\Telescope\\{closure}()
+#10 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(32): call_user_func_array(Object(Closure), Array)
+#11 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(36): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#12 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(78): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#13 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(34): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Object(Closure), Object(Closure))
+#14 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(590): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Object(Closure), Array, NULL)
+#15 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1047): Illuminate\\Container\\Container->call(Object(Closure))
+#16 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(158): Illuminate\\Foundation\\Application->terminate()
+#17 C:\\Users\\user\\Desktop\ay-wallet-api\\artisan(51): Illuminate\\Foundation\\Console\\Kernel->terminate(Object(Symfony\\Component\\Console\\Input\\ArgvInput), 0)
+#18 {main}
+
+[previous exception] [object] (PDOException(code: 1049): SQLSTATE[HY000] [1049] Unknown database 'ray-wallet-api' at C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connectors\\Connector.php:70)
+[stacktrace]
+#0 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connectors\\Connector.php(70): PDO->__construct('mysql:host=127....', 'root', '', Array)
+#1 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connectors\\Connector.php(46): Illuminate\\Database\\Connectors\\Connector->createPdoConnection('mysql:host=127....', 'root', '', Array)
+#2 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connectors\\MySqlConnector.php(24): Illuminate\\Database\\Connectors\\Connector->createConnection('mysql:host=127....', Array, Array)
+#3 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connectors\\ConnectionFactory.php(182): Illuminate\\Database\\Connectors\\MySqlConnector->connect(Array)
+#4 [internal function]: Illuminate\\Database\\Connectors\\ConnectionFactory->Illuminate\\Database\\Connectors\\{closure}()
+#5 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(924): call_user_func(Object(Closure))
+#6 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(457): Illuminate\\Database\\Connection->getPdo()
+#7 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(662): Illuminate\\Database\\Connection->Illuminate\\Database\\{closure}('insert into `te...', Array)
+#8 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(629): Illuminate\\Database\\Connection->runQueryCallback('insert into `te...', Array, Object(Closure))
+#9 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(464): Illuminate\\Database\\Connection->run('insert into `te...', Array, Object(Closure))
+#10 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(416): Illuminate\\Database\\Connection->statement('insert into `te...', Array)
+#11 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2628): Illuminate\\Database\\Connection->insert('insert into `te...', Array)
+#12 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Storage\\DatabaseEntriesRepository.php(148): Illuminate\\Database\\Query\\Builder->insert(Array)
+#13 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Traits\\EnumeratesValues.php(176): Laravel\\Telescope\\Storage\\DatabaseEntriesRepository->Laravel\\Telescope\\Storage\\{closure}(Object(Illuminate\\Support\\Collection), 0)
+#14 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Storage\\DatabaseEntriesRepository.php(149): Illuminate\\Support\\Collection->each(Object(Closure))
+#15 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Telescope.php(568): Laravel\\Telescope\\Storage\\DatabaseEntriesRepository->store(Object(Illuminate\\Support\\Collection))
+#16 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\ListensForStorageOpportunities.php(44): Laravel\\Telescope\\Telescope::store(Object(Laravel\\Telescope\\Storage\\DatabaseEntriesRepository))
+#17 [internal function]: Laravel\\Telescope\\Telescope::Laravel\\Telescope\\{closure}()
+#18 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(32): call_user_func_array(Object(Closure), Array)
+#19 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(36): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#20 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(78): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#21 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(34): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Object(Closure), Object(Closure))
+#22 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(590): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Object(Closure), Array, NULL)
+#23 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1047): Illuminate\\Container\\Container->call(Object(Closure))
+#24 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(158): Illuminate\\Foundation\\Application->terminate()
+#25 C:\\Users\\user\\Desktop\ay-wallet-api\\artisan(51): Illuminate\\Foundation\\Console\\Kernel->terminate(Object(Symfony\\Component\\Console\\Input\\ArgvInput), 0)
+#26 {main}
+"} 
+[2020-05-26 15:22:55] local.ERROR: SQLSTATE[HY000] [1049] Unknown database 'ray-wallet-api' (SQL: insert into `telescope_entries` (`batch_id`, `content`, `created_at`, `family_hash`, `type`, `uuid`) values (90a7ddf1-4f46-41f3-a40a-210c1e948eb5, {"name":"cache:clearing","payload":[null,[]],"listeners":[],"broadcast":false,"hostname":"DESKTOP-S5U3C8A"}, 2020-05-26 15:22:55, ?, event, 90a7ddf1-359d-4882-bef5-7044ec8d26ee), (90a7ddf1-4f46-41f3-a40a-210c1e948eb5, {"name":"cache:cleared","payload":[null,[]],"listeners":[],"broadcast":false,"hostname":"DESKTOP-S5U3C8A"}, 2020-05-26 15:22:55, ?, event, 90a7ddf1-4e9f-4bd4-a838-a6e5974bf88f), (90a7ddf1-4f46-41f3-a40a-210c1e948eb5, {"command":"cache:clear","exit_code":0,"arguments":{"command":"cache:clear","store":null},"options":{"tags":null,"help":false,"quiet":false,"verbose":false,"version":false,"ansi":false,"no-ansi":false,"no-interaction":false,"env":null},"hostname":"DESKTOP-S5U3C8A"}, 2020-05-26 15:22:55, ?, command, 90a7ddf1-4f2a-4b00-aa89-818a3bc1e081)) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 1049): SQLSTATE[HY000] [1049] Unknown database 'ray-wallet-api' (SQL: insert into `telescope_entries` (`batch_id`, `content`, `created_at`, `family_hash`, `type`, `uuid`) values (90a7ddf1-4f46-41f3-a40a-210c1e948eb5, {\"name\":\"cache:clearing\",\"payload\":[null,[]],\"listeners\":[],\"broadcast\":false,\"hostname\":\"DESKTOP-S5U3C8A\"}, 2020-05-26 15:22:55, ?, event, 90a7ddf1-359d-4882-bef5-7044ec8d26ee), (90a7ddf1-4f46-41f3-a40a-210c1e948eb5, {\"name\":\"cache:cleared\",\"payload\":[null,[]],\"listeners\":[],\"broadcast\":false,\"hostname\":\"DESKTOP-S5U3C8A\"}, 2020-05-26 15:22:55, ?, event, 90a7ddf1-4e9f-4bd4-a838-a6e5974bf88f), (90a7ddf1-4f46-41f3-a40a-210c1e948eb5, {\"command\":\"cache:clear\",\"exit_code\":0,\"arguments\":{\"command\":\"cache:clear\",\"store\":null},\"options\":{\"tags\":null,\"help\":false,\"quiet\":false,\"verbose\":false,\"version\":false,\"ansi\":false,\"no-ansi\":false,\"no-interaction\":false,\"env\":null},\"hostname\":\"DESKTOP-S5U3C8A\"}, 2020-05-26 15:22:55, ?, command, 90a7ddf1-4f2a-4b00-aa89-818a3bc1e081)) at C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php:669)
+[stacktrace]
+#0 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(629): Illuminate\\Database\\Connection->runQueryCallback('insert into `te...', Array, Object(Closure))
+#1 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(464): Illuminate\\Database\\Connection->run('insert into `te...', Array, Object(Closure))
+#2 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(416): Illuminate\\Database\\Connection->statement('insert into `te...', Array)
+#3 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2628): Illuminate\\Database\\Connection->insert('insert into `te...', Array)
+#4 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Storage\\DatabaseEntriesRepository.php(148): Illuminate\\Database\\Query\\Builder->insert(Array)
+#5 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Traits\\EnumeratesValues.php(176): Laravel\\Telescope\\Storage\\DatabaseEntriesRepository->Laravel\\Telescope\\Storage\\{closure}(Object(Illuminate\\Support\\Collection), 0)
+#6 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Storage\\DatabaseEntriesRepository.php(149): Illuminate\\Support\\Collection->each(Object(Closure))
+#7 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Telescope.php(568): Laravel\\Telescope\\Storage\\DatabaseEntriesRepository->store(Object(Illuminate\\Support\\Collection))
+#8 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\ListensForStorageOpportunities.php(44): Laravel\\Telescope\\Telescope::store(Object(Laravel\\Telescope\\Storage\\DatabaseEntriesRepository))
+#9 [internal function]: Laravel\\Telescope\\Telescope::Laravel\\Telescope\\{closure}()
+#10 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(32): call_user_func_array(Object(Closure), Array)
+#11 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(36): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#12 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(78): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#13 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(34): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Object(Closure), Object(Closure))
+#14 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(590): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Object(Closure), Array, NULL)
+#15 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1047): Illuminate\\Container\\Container->call(Object(Closure))
+#16 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(158): Illuminate\\Foundation\\Application->terminate()
+#17 C:\\Users\\user\\Desktop\ay-wallet-api\\artisan(51): Illuminate\\Foundation\\Console\\Kernel->terminate(Object(Symfony\\Component\\Console\\Input\\ArgvInput), 0)
+#18 {main}
+
+[previous exception] [object] (PDOException(code: 1049): SQLSTATE[HY000] [1049] Unknown database 'ray-wallet-api' at C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connectors\\Connector.php:70)
+[stacktrace]
+#0 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connectors\\Connector.php(70): PDO->__construct('mysql:host=127....', 'root', '', Array)
+#1 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connectors\\Connector.php(46): Illuminate\\Database\\Connectors\\Connector->createPdoConnection('mysql:host=127....', 'root', '', Array)
+#2 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connectors\\MySqlConnector.php(24): Illuminate\\Database\\Connectors\\Connector->createConnection('mysql:host=127....', Array, Array)
+#3 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connectors\\ConnectionFactory.php(182): Illuminate\\Database\\Connectors\\MySqlConnector->connect(Array)
+#4 [internal function]: Illuminate\\Database\\Connectors\\ConnectionFactory->Illuminate\\Database\\Connectors\\{closure}()
+#5 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(924): call_user_func(Object(Closure))
+#6 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(457): Illuminate\\Database\\Connection->getPdo()
+#7 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(662): Illuminate\\Database\\Connection->Illuminate\\Database\\{closure}('insert into `te...', Array)
+#8 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(629): Illuminate\\Database\\Connection->runQueryCallback('insert into `te...', Array, Object(Closure))
+#9 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(464): Illuminate\\Database\\Connection->run('insert into `te...', Array, Object(Closure))
+#10 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(416): Illuminate\\Database\\Connection->statement('insert into `te...', Array)
+#11 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2628): Illuminate\\Database\\Connection->insert('insert into `te...', Array)
+#12 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Storage\\DatabaseEntriesRepository.php(148): Illuminate\\Database\\Query\\Builder->insert(Array)
+#13 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Traits\\EnumeratesValues.php(176): Laravel\\Telescope\\Storage\\DatabaseEntriesRepository->Laravel\\Telescope\\Storage\\{closure}(Object(Illuminate\\Support\\Collection), 0)
+#14 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Storage\\DatabaseEntriesRepository.php(149): Illuminate\\Support\\Collection->each(Object(Closure))
+#15 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Telescope.php(568): Laravel\\Telescope\\Storage\\DatabaseEntriesRepository->store(Object(Illuminate\\Support\\Collection))
+#16 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\ListensForStorageOpportunities.php(44): Laravel\\Telescope\\Telescope::store(Object(Laravel\\Telescope\\Storage\\DatabaseEntriesRepository))
+#17 [internal function]: Laravel\\Telescope\\Telescope::Laravel\\Telescope\\{closure}()
+#18 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(32): call_user_func_array(Object(Closure), Array)
+#19 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(36): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#20 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(78): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#21 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(34): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Object(Closure), Object(Closure))
+#22 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(590): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Object(Closure), Array, NULL)
+#23 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1047): Illuminate\\Container\\Container->call(Object(Closure))
+#24 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(158): Illuminate\\Foundation\\Application->terminate()
+#25 C:\\Users\\user\\Desktop\ay-wallet-api\\artisan(51): Illuminate\\Foundation\\Console\\Kernel->terminate(Object(Symfony\\Component\\Console\\Input\\ArgvInput), 0)
+#26 {main}
+"} 
+[2020-05-26 15:26:05] local.ERROR: SQLSTATE[HY000] [1049] Unknown database 'ray-wallet-api' (SQL: insert into `telescope_entries` (`batch_id`, `content`, `created_at`, `family_hash`, `type`, `uuid`) values (90a7df13-64b0-4d40-920e-6d79aade39a0, {"command":"config:cache","exit_code":0,"arguments":{"command":"config:cache"},"options":{"help":false,"quiet":false,"verbose":false,"version":false,"ansi":false,"no-ansi":false,"no-interaction":false,"env":null},"hostname":"DESKTOP-S5U3C8A"}, 2020-05-26 15:26:05, ?, command, 90a7df13-6186-4929-9dd1-0485f17b92c8)) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 1049): SQLSTATE[HY000] [1049] Unknown database 'ray-wallet-api' (SQL: insert into `telescope_entries` (`batch_id`, `content`, `created_at`, `family_hash`, `type`, `uuid`) values (90a7df13-64b0-4d40-920e-6d79aade39a0, {\"command\":\"config:cache\",\"exit_code\":0,\"arguments\":{\"command\":\"config:cache\"},\"options\":{\"help\":false,\"quiet\":false,\"verbose\":false,\"version\":false,\"ansi\":false,\"no-ansi\":false,\"no-interaction\":false,\"env\":null},\"hostname\":\"DESKTOP-S5U3C8A\"}, 2020-05-26 15:26:05, ?, command, 90a7df13-6186-4929-9dd1-0485f17b92c8)) at C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php:669)
+[stacktrace]
+#0 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(629): Illuminate\\Database\\Connection->runQueryCallback('insert into `te...', Array, Object(Closure))
+#1 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(464): Illuminate\\Database\\Connection->run('insert into `te...', Array, Object(Closure))
+#2 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(416): Illuminate\\Database\\Connection->statement('insert into `te...', Array)
+#3 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2628): Illuminate\\Database\\Connection->insert('insert into `te...', Array)
+#4 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Storage\\DatabaseEntriesRepository.php(148): Illuminate\\Database\\Query\\Builder->insert(Array)
+#5 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Traits\\EnumeratesValues.php(176): Laravel\\Telescope\\Storage\\DatabaseEntriesRepository->Laravel\\Telescope\\Storage\\{closure}(Object(Illuminate\\Support\\Collection), 0)
+#6 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Storage\\DatabaseEntriesRepository.php(149): Illuminate\\Support\\Collection->each(Object(Closure))
+#7 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Telescope.php(568): Laravel\\Telescope\\Storage\\DatabaseEntriesRepository->store(Object(Illuminate\\Support\\Collection))
+#8 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\ListensForStorageOpportunities.php(44): Laravel\\Telescope\\Telescope::store(Object(Laravel\\Telescope\\Storage\\DatabaseEntriesRepository))
+#9 [internal function]: Laravel\\Telescope\\Telescope::Laravel\\Telescope\\{closure}()
+#10 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(32): call_user_func_array(Object(Closure), Array)
+#11 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(36): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#12 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(78): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#13 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(34): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Object(Closure), Object(Closure))
+#14 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(590): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Object(Closure), Array, NULL)
+#15 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1047): Illuminate\\Container\\Container->call(Object(Closure))
+#16 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(158): Illuminate\\Foundation\\Application->terminate()
+#17 C:\\Users\\user\\Desktop\ay-wallet-api\\artisan(51): Illuminate\\Foundation\\Console\\Kernel->terminate(Object(Symfony\\Component\\Console\\Input\\ArgvInput), 0)
+#18 {main}
+
+[previous exception] [object] (PDOException(code: 1049): SQLSTATE[HY000] [1049] Unknown database 'ray-wallet-api' at C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connectors\\Connector.php:70)
+[stacktrace]
+#0 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connectors\\Connector.php(70): PDO->__construct('mysql:host=127....', 'root', '', Array)
+#1 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connectors\\Connector.php(46): Illuminate\\Database\\Connectors\\Connector->createPdoConnection('mysql:host=127....', 'root', '', Array)
+#2 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connectors\\MySqlConnector.php(24): Illuminate\\Database\\Connectors\\Connector->createConnection('mysql:host=127....', Array, Array)
+#3 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connectors\\ConnectionFactory.php(182): Illuminate\\Database\\Connectors\\MySqlConnector->connect(Array)
+#4 [internal function]: Illuminate\\Database\\Connectors\\ConnectionFactory->Illuminate\\Database\\Connectors\\{closure}()
+#5 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(924): call_user_func(Object(Closure))
+#6 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(457): Illuminate\\Database\\Connection->getPdo()
+#7 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(662): Illuminate\\Database\\Connection->Illuminate\\Database\\{closure}('insert into `te...', Array)
+#8 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(629): Illuminate\\Database\\Connection->runQueryCallback('insert into `te...', Array, Object(Closure))
+#9 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(464): Illuminate\\Database\\Connection->run('insert into `te...', Array, Object(Closure))
+#10 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(416): Illuminate\\Database\\Connection->statement('insert into `te...', Array)
+#11 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2628): Illuminate\\Database\\Connection->insert('insert into `te...', Array)
+#12 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Storage\\DatabaseEntriesRepository.php(148): Illuminate\\Database\\Query\\Builder->insert(Array)
+#13 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Traits\\EnumeratesValues.php(176): Laravel\\Telescope\\Storage\\DatabaseEntriesRepository->Laravel\\Telescope\\Storage\\{closure}(Object(Illuminate\\Support\\Collection), 0)
+#14 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Storage\\DatabaseEntriesRepository.php(149): Illuminate\\Support\\Collection->each(Object(Closure))
+#15 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Telescope.php(568): Laravel\\Telescope\\Storage\\DatabaseEntriesRepository->store(Object(Illuminate\\Support\\Collection))
+#16 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\ListensForStorageOpportunities.php(44): Laravel\\Telescope\\Telescope::store(Object(Laravel\\Telescope\\Storage\\DatabaseEntriesRepository))
+#17 [internal function]: Laravel\\Telescope\\Telescope::Laravel\\Telescope\\{closure}()
+#18 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(32): call_user_func_array(Object(Closure), Array)
+#19 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(36): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#20 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(78): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#21 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(34): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Object(Closure), Object(Closure))
+#22 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(590): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Object(Closure), Array, NULL)
+#23 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1047): Illuminate\\Container\\Container->call(Object(Closure))
+#24 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(158): Illuminate\\Foundation\\Application->terminate()
+#25 C:\\Users\\user\\Desktop\ay-wallet-api\\artisan(51): Illuminate\\Foundation\\Console\\Kernel->terminate(Object(Symfony\\Component\\Console\\Input\\ArgvInput), 0)
+#26 {main}
+"} 
+[2020-05-26 15:26:08] local.ERROR: SQLSTATE[HY000] [1049] Unknown database 'ray-wallet-api' (SQL: insert into `telescope_entries` (`batch_id`, `content`, `created_at`, `family_hash`, `type`, `uuid`) values (90a7df17-8a98-42d8-a5ff-fa652a861ec9, {"name":"cache:clearing","payload":[null,[]],"listeners":[],"broadcast":false,"hostname":"DESKTOP-S5U3C8A"}, 2020-05-26 15:26:07, ?, event, 90a7df17-86a2-47c7-99b2-ab75341bfb76), (90a7df17-8a98-42d8-a5ff-fa652a861ec9, {"name":"cache:cleared","payload":[null,[]],"listeners":[],"broadcast":false,"hostname":"DESKTOP-S5U3C8A"}, 2020-05-26 15:26:08, ?, event, 90a7df17-8a0b-4cdf-9f4f-ef40a27b0729), (90a7df17-8a98-42d8-a5ff-fa652a861ec9, {"command":"cache:clear","exit_code":0,"arguments":{"command":"cache:clear","store":null},"options":{"tags":null,"help":false,"quiet":false,"verbose":false,"version":false,"ansi":false,"no-ansi":false,"no-interaction":false,"env":null},"hostname":"DESKTOP-S5U3C8A"}, 2020-05-26 15:26:08, ?, command, 90a7df17-8a6e-420a-bb07-6f444f13008b)) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 1049): SQLSTATE[HY000] [1049] Unknown database 'ray-wallet-api' (SQL: insert into `telescope_entries` (`batch_id`, `content`, `created_at`, `family_hash`, `type`, `uuid`) values (90a7df17-8a98-42d8-a5ff-fa652a861ec9, {\"name\":\"cache:clearing\",\"payload\":[null,[]],\"listeners\":[],\"broadcast\":false,\"hostname\":\"DESKTOP-S5U3C8A\"}, 2020-05-26 15:26:07, ?, event, 90a7df17-86a2-47c7-99b2-ab75341bfb76), (90a7df17-8a98-42d8-a5ff-fa652a861ec9, {\"name\":\"cache:cleared\",\"payload\":[null,[]],\"listeners\":[],\"broadcast\":false,\"hostname\":\"DESKTOP-S5U3C8A\"}, 2020-05-26 15:26:08, ?, event, 90a7df17-8a0b-4cdf-9f4f-ef40a27b0729), (90a7df17-8a98-42d8-a5ff-fa652a861ec9, {\"command\":\"cache:clear\",\"exit_code\":0,\"arguments\":{\"command\":\"cache:clear\",\"store\":null},\"options\":{\"tags\":null,\"help\":false,\"quiet\":false,\"verbose\":false,\"version\":false,\"ansi\":false,\"no-ansi\":false,\"no-interaction\":false,\"env\":null},\"hostname\":\"DESKTOP-S5U3C8A\"}, 2020-05-26 15:26:08, ?, command, 90a7df17-8a6e-420a-bb07-6f444f13008b)) at C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php:669)
+[stacktrace]
+#0 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(629): Illuminate\\Database\\Connection->runQueryCallback('insert into `te...', Array, Object(Closure))
+#1 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(464): Illuminate\\Database\\Connection->run('insert into `te...', Array, Object(Closure))
+#2 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(416): Illuminate\\Database\\Connection->statement('insert into `te...', Array)
+#3 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2628): Illuminate\\Database\\Connection->insert('insert into `te...', Array)
+#4 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Storage\\DatabaseEntriesRepository.php(148): Illuminate\\Database\\Query\\Builder->insert(Array)
+#5 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Traits\\EnumeratesValues.php(176): Laravel\\Telescope\\Storage\\DatabaseEntriesRepository->Laravel\\Telescope\\Storage\\{closure}(Object(Illuminate\\Support\\Collection), 0)
+#6 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Storage\\DatabaseEntriesRepository.php(149): Illuminate\\Support\\Collection->each(Object(Closure))
+#7 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Telescope.php(568): Laravel\\Telescope\\Storage\\DatabaseEntriesRepository->store(Object(Illuminate\\Support\\Collection))
+#8 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\ListensForStorageOpportunities.php(44): Laravel\\Telescope\\Telescope::store(Object(Laravel\\Telescope\\Storage\\DatabaseEntriesRepository))
+#9 [internal function]: Laravel\\Telescope\\Telescope::Laravel\\Telescope\\{closure}()
+#10 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(32): call_user_func_array(Object(Closure), Array)
+#11 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(36): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#12 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(78): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#13 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(34): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Object(Closure), Object(Closure))
+#14 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(590): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Object(Closure), Array, NULL)
+#15 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1047): Illuminate\\Container\\Container->call(Object(Closure))
+#16 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(158): Illuminate\\Foundation\\Application->terminate()
+#17 C:\\Users\\user\\Desktop\ay-wallet-api\\artisan(51): Illuminate\\Foundation\\Console\\Kernel->terminate(Object(Symfony\\Component\\Console\\Input\\ArgvInput), 0)
+#18 {main}
+
+[previous exception] [object] (PDOException(code: 1049): SQLSTATE[HY000] [1049] Unknown database 'ray-wallet-api' at C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connectors\\Connector.php:70)
+[stacktrace]
+#0 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connectors\\Connector.php(70): PDO->__construct('mysql:host=127....', 'root', '', Array)
+#1 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connectors\\Connector.php(46): Illuminate\\Database\\Connectors\\Connector->createPdoConnection('mysql:host=127....', 'root', '', Array)
+#2 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connectors\\MySqlConnector.php(24): Illuminate\\Database\\Connectors\\Connector->createConnection('mysql:host=127....', Array, Array)
+#3 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connectors\\ConnectionFactory.php(182): Illuminate\\Database\\Connectors\\MySqlConnector->connect(Array)
+#4 [internal function]: Illuminate\\Database\\Connectors\\ConnectionFactory->Illuminate\\Database\\Connectors\\{closure}()
+#5 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(924): call_user_func(Object(Closure))
+#6 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(457): Illuminate\\Database\\Connection->getPdo()
+#7 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(662): Illuminate\\Database\\Connection->Illuminate\\Database\\{closure}('insert into `te...', Array)
+#8 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(629): Illuminate\\Database\\Connection->runQueryCallback('insert into `te...', Array, Object(Closure))
+#9 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(464): Illuminate\\Database\\Connection->run('insert into `te...', Array, Object(Closure))
+#10 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(416): Illuminate\\Database\\Connection->statement('insert into `te...', Array)
+#11 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2628): Illuminate\\Database\\Connection->insert('insert into `te...', Array)
+#12 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Storage\\DatabaseEntriesRepository.php(148): Illuminate\\Database\\Query\\Builder->insert(Array)
+#13 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Traits\\EnumeratesValues.php(176): Laravel\\Telescope\\Storage\\DatabaseEntriesRepository->Laravel\\Telescope\\Storage\\{closure}(Object(Illuminate\\Support\\Collection), 0)
+#14 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Storage\\DatabaseEntriesRepository.php(149): Illuminate\\Support\\Collection->each(Object(Closure))
+#15 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Telescope.php(568): Laravel\\Telescope\\Storage\\DatabaseEntriesRepository->store(Object(Illuminate\\Support\\Collection))
+#16 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\ListensForStorageOpportunities.php(44): Laravel\\Telescope\\Telescope::store(Object(Laravel\\Telescope\\Storage\\DatabaseEntriesRepository))
+#17 [internal function]: Laravel\\Telescope\\Telescope::Laravel\\Telescope\\{closure}()
+#18 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(32): call_user_func_array(Object(Closure), Array)
+#19 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(36): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#20 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(78): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#21 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(34): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Object(Closure), Object(Closure))
+#22 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(590): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Object(Closure), Array, NULL)
+#23 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1047): Illuminate\\Container\\Container->call(Object(Closure))
+#24 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(158): Illuminate\\Foundation\\Application->terminate()
+#25 C:\\Users\\user\\Desktop\ay-wallet-api\\artisan(51): Illuminate\\Foundation\\Console\\Kernel->terminate(Object(Symfony\\Component\\Console\\Input\\ArgvInput), 0)
+#26 {main}
+"} 
+[2020-05-26 15:26:18] local.ERROR: SQLSTATE[HY000] [1049] Unknown database 'ray-wallet-api' (SQL: insert into `telescope_entries` (`batch_id`, `content`, `created_at`, `family_hash`, `type`, `uuid`) values (90a7df27-a81d-4fa4-a8ab-a69e30658cd1, {"uri":"\/","method":"GET","controller_action":"Closure","middleware":["web"],"headers":{"host":"localhost:8000","connection":"keep-alive","upgrade-insecure-requests":"1","user-agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/81.0.4044.138 Safari\/537.36","accept":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,image\/webp,image\/apng,*\/*;q=0.8,application\/signed-exchange;v=b3;q=0.9","sec-fetch-site":"none","sec-fetch-mode":"navigate","sec-fetch-user":"?1","sec-fetch-dest":"document","accept-encoding":"gzip, deflate, br","accept-language":"en-US,en;q=0.9","cookie":"__tawkuuid=e::localhost::N405uENHJi173B\/95aDL9saxAYl+P20+qchWZeO6po48oDUZjcf\/oKJtiPcN09uN::2; TawkConnectionTime=0"},"payload":[],"session":{"_token":"RAjeVfn3VeHS4Jop4pNEvSifowbRupLtGz5BSkP6","_previous":{"url":"http:\/\/localhost:8000"},"_flash":{"old":[],"new":[]}},"response_status":200,"response":{"name":"Welcome to genius consult API service","version":"1.0","base_url":""},"duration":1386,"memory":14,"hostname":"DESKTOP-S5U3C8A"}, 2020-05-26 15:26:18, ?, request, 90a7df27-a63d-417b-a1eb-ea3adaeb2d0a)) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 1049): SQLSTATE[HY000] [1049] Unknown database 'ray-wallet-api' (SQL: insert into `telescope_entries` (`batch_id`, `content`, `created_at`, `family_hash`, `type`, `uuid`) values (90a7df27-a81d-4fa4-a8ab-a69e30658cd1, {\"uri\":\"\\/\",\"method\":\"GET\",\"controller_action\":\"Closure\",\"middleware\":[\"web\"],\"headers\":{\"host\":\"localhost:8000\",\"connection\":\"keep-alive\",\"upgrade-insecure-requests\":\"1\",\"user-agent\":\"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/81.0.4044.138 Safari\\/537.36\",\"accept\":\"text\\/html,application\\/xhtml+xml,application\\/xml;q=0.9,image\\/webp,image\\/apng,*\\/*;q=0.8,application\\/signed-exchange;v=b3;q=0.9\",\"sec-fetch-site\":\"none\",\"sec-fetch-mode\":\"navigate\",\"sec-fetch-user\":\"?1\",\"sec-fetch-dest\":\"document\",\"accept-encoding\":\"gzip, deflate, br\",\"accept-language\":\"en-US,en;q=0.9\",\"cookie\":\"__tawkuuid=e::localhost::N405uENHJi173B\\/95aDL9saxAYl+P20+qchWZeO6po48oDUZjcf\\/oKJtiPcN09uN::2; TawkConnectionTime=0\"},\"payload\":[],\"session\":{\"_token\":\"RAjeVfn3VeHS4Jop4pNEvSifowbRupLtGz5BSkP6\",\"_previous\":{\"url\":\"http:\\/\\/localhost:8000\"},\"_flash\":{\"old\":[],\"new\":[]}},\"response_status\":200,\"response\":{\"name\":\"Welcome to genius consult API service\",\"version\":\"1.0\",\"base_url\":\"\"},\"duration\":1386,\"memory\":14,\"hostname\":\"DESKTOP-S5U3C8A\"}, 2020-05-26 15:26:18, ?, request, 90a7df27-a63d-417b-a1eb-ea3adaeb2d0a)) at C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php:669)
+[stacktrace]
+#0 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(629): Illuminate\\Database\\Connection->runQueryCallback('insert into `te...', Array, Object(Closure))
+#1 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(464): Illuminate\\Database\\Connection->run('insert into `te...', Array, Object(Closure))
+#2 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(416): Illuminate\\Database\\Connection->statement('insert into `te...', Array)
+#3 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2628): Illuminate\\Database\\Connection->insert('insert into `te...', Array)
+#4 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Storage\\DatabaseEntriesRepository.php(148): Illuminate\\Database\\Query\\Builder->insert(Array)
+#5 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Traits\\EnumeratesValues.php(176): Laravel\\Telescope\\Storage\\DatabaseEntriesRepository->Laravel\\Telescope\\Storage\\{closure}(Object(Illuminate\\Support\\Collection), 0)
+#6 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Storage\\DatabaseEntriesRepository.php(149): Illuminate\\Support\\Collection->each(Object(Closure))
+#7 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Telescope.php(568): Laravel\\Telescope\\Storage\\DatabaseEntriesRepository->store(Object(Illuminate\\Support\\Collection))
+#8 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\ListensForStorageOpportunities.php(44): Laravel\\Telescope\\Telescope::store(Object(Laravel\\Telescope\\Storage\\DatabaseEntriesRepository))
+#9 [internal function]: Laravel\\Telescope\\Telescope::Laravel\\Telescope\\{closure}()
+#10 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(32): call_user_func_array(Object(Closure), Array)
+#11 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(36): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#12 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(78): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#13 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(34): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Object(Closure), Object(Closure))
+#14 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(590): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Object(Closure), Array, NULL)
+#15 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1047): Illuminate\\Container\\Container->call(Object(Closure))
+#16 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(185): Illuminate\\Foundation\\Application->terminate()
+#17 C:\\Users\\user\\Desktop\ay-wallet-api\\public\\index.php(60): Illuminate\\Foundation\\Http\\Kernel->terminate(Object(Illuminate\\Http\\Request), Object(Illuminate\\Http\\JsonResponse))
+#18 C:\\Users\\user\\Desktop\ay-wallet-api\\server.php(21): require_once('C:\\\\Users\\\\user\\\\D...')
+#19 {main}
+
+[previous exception] [object] (PDOException(code: 1049): SQLSTATE[HY000] [1049] Unknown database 'ray-wallet-api' at C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connectors\\Connector.php:70)
+[stacktrace]
+#0 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connectors\\Connector.php(70): PDO->__construct('mysql:host=127....', 'root', '', Array)
+#1 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connectors\\Connector.php(46): Illuminate\\Database\\Connectors\\Connector->createPdoConnection('mysql:host=127....', 'root', '', Array)
+#2 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connectors\\MySqlConnector.php(24): Illuminate\\Database\\Connectors\\Connector->createConnection('mysql:host=127....', Array, Array)
+#3 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connectors\\ConnectionFactory.php(182): Illuminate\\Database\\Connectors\\MySqlConnector->connect(Array)
+#4 [internal function]: Illuminate\\Database\\Connectors\\ConnectionFactory->Illuminate\\Database\\Connectors\\{closure}()
+#5 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(924): call_user_func(Object(Closure))
+#6 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(457): Illuminate\\Database\\Connection->getPdo()
+#7 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(662): Illuminate\\Database\\Connection->Illuminate\\Database\\{closure}('insert into `te...', Array)
+#8 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(629): Illuminate\\Database\\Connection->runQueryCallback('insert into `te...', Array, Object(Closure))
+#9 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(464): Illuminate\\Database\\Connection->run('insert into `te...', Array, Object(Closure))
+#10 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(416): Illuminate\\Database\\Connection->statement('insert into `te...', Array)
+#11 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2628): Illuminate\\Database\\Connection->insert('insert into `te...', Array)
+#12 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Storage\\DatabaseEntriesRepository.php(148): Illuminate\\Database\\Query\\Builder->insert(Array)
+#13 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Traits\\EnumeratesValues.php(176): Laravel\\Telescope\\Storage\\DatabaseEntriesRepository->Laravel\\Telescope\\Storage\\{closure}(Object(Illuminate\\Support\\Collection), 0)
+#14 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Storage\\DatabaseEntriesRepository.php(149): Illuminate\\Support\\Collection->each(Object(Closure))
+#15 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Telescope.php(568): Laravel\\Telescope\\Storage\\DatabaseEntriesRepository->store(Object(Illuminate\\Support\\Collection))
+#16 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\ListensForStorageOpportunities.php(44): Laravel\\Telescope\\Telescope::store(Object(Laravel\\Telescope\\Storage\\DatabaseEntriesRepository))
+#17 [internal function]: Laravel\\Telescope\\Telescope::Laravel\\Telescope\\{closure}()
+#18 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(32): call_user_func_array(Object(Closure), Array)
+#19 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(36): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#20 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(78): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#21 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(34): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Object(Closure), Object(Closure))
+#22 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(590): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Object(Closure), Array, NULL)
+#23 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1047): Illuminate\\Container\\Container->call(Object(Closure))
+#24 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(185): Illuminate\\Foundation\\Application->terminate()
+#25 C:\\Users\\user\\Desktop\ay-wallet-api\\public\\index.php(60): Illuminate\\Foundation\\Http\\Kernel->terminate(Object(Illuminate\\Http\\Request), Object(Illuminate\\Http\\JsonResponse))
+#26 C:\\Users\\user\\Desktop\ay-wallet-api\\server.php(21): require_once('C:\\\\Users\\\\user\\\\D...')
+#27 {main}
+"} 
