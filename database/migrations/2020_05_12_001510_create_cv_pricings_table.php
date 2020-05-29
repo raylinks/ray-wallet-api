@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Createcv_pricingsTable extends Migration
+class CreateCvPricingsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -29,6 +29,6 @@ class Createcv_pricingsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cv_pricings');
+        Schema::dropIfExists('cvpricings');
     }
 }
