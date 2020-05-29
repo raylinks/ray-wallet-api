@@ -25,6 +25,7 @@ class RegisterRequest extends FormRequest
     {
         return [
             'email' => 'required|string|unique:users|email',
+            'name' => 'required|string',
             'password' => 'required|string'
         ];
     }
@@ -32,6 +33,7 @@ class RegisterRequest extends FormRequest
     {
         return [
             "email.required" => "Enter a valid email address",
+            'name.required' =>  'Enter a valid name',
             "password.required" => "Enter your password"
         ];
     }

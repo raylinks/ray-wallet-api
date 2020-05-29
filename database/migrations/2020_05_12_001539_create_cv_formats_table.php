@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCVformatsTable extends Migration
+class CreateCvFormatsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -28,6 +28,6 @@ class CreateCVformatsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cv_formats');
+        Schema::dropIfExists('cvformats');
     }
 }
