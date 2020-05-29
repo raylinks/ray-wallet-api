@@ -37,6 +37,7 @@ class AuthenticationAction
         $callback_url = $request->callback_url;
         $user = new User;
         $user->assignRole('customer');
+        $user->name = $request->name;
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
         $user->email_token = $this->random_str(6);
