@@ -2294,3 +2294,613 @@ ay-wallet-api\\server.php(21): require_once('C:\\\\Users\\\\user\\\\D...')
 #54 {main}
 >>>>>>> 82811f1d0725f2dc4358c650269a8e02e80a4159
 "}
+[2020-05-31 20:37:38] local.ERROR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'ray.telescope_entries' doesn't exist (SQL: insert into `telescope_entries` (`batch_id`, `content`, `created_at`, `family_hash`, `type`, `uuid`) values (90b25d6a-1488-4e92-9b34-bd8ed3bf7196, {"command":"config:cache","exit_code":0,"arguments":{"command":"config:cache"},"options":{"help":false,"quiet":false,"verbose":false,"version":false,"ansi":false,"no-ansi":false,"no-interaction":false,"env":null},"hostname":"DESKTOP-S5U3C8A"}, 2020-05-31 20:37:38, ?, command, 90b25d6a-0a9b-4710-91a2-6431435f5d4c)) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 42S02): SQLSTATE[42S02]: Base table or view not found: 1146 Table 'ray.telescope_entries' doesn't exist (SQL: insert into `telescope_entries` (`batch_id`, `content`, `created_at`, `family_hash`, `type`, `uuid`) values (90b25d6a-1488-4e92-9b34-bd8ed3bf7196, {\"command\":\"config:cache\",\"exit_code\":0,\"arguments\":{\"command\":\"config:cache\"},\"options\":{\"help\":false,\"quiet\":false,\"verbose\":false,\"version\":false,\"ansi\":false,\"no-ansi\":false,\"no-interaction\":false,\"env\":null},\"hostname\":\"DESKTOP-S5U3C8A\"}, 2020-05-31 20:37:38, ?, command, 90b25d6a-0a9b-4710-91a2-6431435f5d4c)) at C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php:669)
+[stacktrace]
+#0 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(629): Illuminate\\Database\\Connection->runQueryCallback('insert into `te...', Array, Object(Closure))
+#1 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(464): Illuminate\\Database\\Connection->run('insert into `te...', Array, Object(Closure))
+#2 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(416): Illuminate\\Database\\Connection->statement('insert into `te...', Array)
+#3 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2628): Illuminate\\Database\\Connection->insert('insert into `te...', Array)
+#4 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Storage\\DatabaseEntriesRepository.php(148): Illuminate\\Database\\Query\\Builder->insert(Array)
+#5 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Traits\\EnumeratesValues.php(176): Laravel\\Telescope\\Storage\\DatabaseEntriesRepository->Laravel\\Telescope\\Storage\\{closure}(Object(Illuminate\\Support\\Collection), 0)
+#6 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Storage\\DatabaseEntriesRepository.php(149): Illuminate\\Support\\Collection->each(Object(Closure))
+#7 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Telescope.php(590): Laravel\\Telescope\\Storage\\DatabaseEntriesRepository->store(Object(Illuminate\\Support\\Collection))
+#8 [internal function]: Laravel\\Telescope\\Telescope::Laravel\\Telescope\\{closure}()
+#9 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Telescope.php(234): call_user_func(Object(Closure))
+#10 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Telescope.php(601): Laravel\\Telescope\\Telescope::withoutRecording(Object(Closure))
+#11 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\ListensForStorageOpportunities.php(44): Laravel\\Telescope\\Telescope::store(Object(Laravel\\Telescope\\Storage\\DatabaseEntriesRepository))
+#12 [internal function]: Laravel\\Telescope\\Telescope::Laravel\\Telescope\\{closure}()
+#13 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(32): call_user_func_array(Object(Closure), Array)
+#14 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(36): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#15 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(78): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#16 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(34): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Object(Closure), Object(Closure))
+#17 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(590): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Object(Closure), Array, NULL)
+#18 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1047): Illuminate\\Container\\Container->call(Object(Closure))
+#19 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(158): Illuminate\\Foundation\\Application->terminate()
+#20 C:\\Users\\user\\Desktop\ay-wallet-api\\artisan(51): Illuminate\\Foundation\\Console\\Kernel->terminate(Object(Symfony\\Component\\Console\\Input\\ArgvInput), 0)
+#21 {main}
+
+[previous exception] [object] (PDOException(code: 42S02): SQLSTATE[42S02]: Base table or view not found: 1146 Table 'ray.telescope_entries' doesn't exist at C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php:457)
+[stacktrace]
+#0 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(457): PDO->prepare('insert into `te...')
+#1 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(662): Illuminate\\Database\\Connection->Illuminate\\Database\\{closure}('insert into `te...', Array)
+#2 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(629): Illuminate\\Database\\Connection->runQueryCallback('insert into `te...', Array, Object(Closure))
+#3 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(464): Illuminate\\Database\\Connection->run('insert into `te...', Array, Object(Closure))
+#4 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(416): Illuminate\\Database\\Connection->statement('insert into `te...', Array)
+#5 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2628): Illuminate\\Database\\Connection->insert('insert into `te...', Array)
+#6 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Storage\\DatabaseEntriesRepository.php(148): Illuminate\\Database\\Query\\Builder->insert(Array)
+#7 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Traits\\EnumeratesValues.php(176): Laravel\\Telescope\\Storage\\DatabaseEntriesRepository->Laravel\\Telescope\\Storage\\{closure}(Object(Illuminate\\Support\\Collection), 0)
+#8 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Storage\\DatabaseEntriesRepository.php(149): Illuminate\\Support\\Collection->each(Object(Closure))
+#9 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Telescope.php(590): Laravel\\Telescope\\Storage\\DatabaseEntriesRepository->store(Object(Illuminate\\Support\\Collection))
+#10 [internal function]: Laravel\\Telescope\\Telescope::Laravel\\Telescope\\{closure}()
+#11 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Telescope.php(234): call_user_func(Object(Closure))
+#12 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Telescope.php(601): Laravel\\Telescope\\Telescope::withoutRecording(Object(Closure))
+#13 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\ListensForStorageOpportunities.php(44): Laravel\\Telescope\\Telescope::store(Object(Laravel\\Telescope\\Storage\\DatabaseEntriesRepository))
+#14 [internal function]: Laravel\\Telescope\\Telescope::Laravel\\Telescope\\{closure}()
+#15 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(32): call_user_func_array(Object(Closure), Array)
+#16 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(36): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#17 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(78): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#18 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(34): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Object(Closure), Object(Closure))
+#19 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(590): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Object(Closure), Array, NULL)
+#20 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1047): Illuminate\\Container\\Container->call(Object(Closure))
+#21 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(158): Illuminate\\Foundation\\Application->terminate()
+#22 C:\\Users\\user\\Desktop\ay-wallet-api\\artisan(51): Illuminate\\Foundation\\Console\\Kernel->terminate(Object(Symfony\\Component\\Console\\Input\\ArgvInput), 0)
+#23 {main}
+"} 
+[2020-05-31 20:37:52] local.ERROR: There are no commands defined in the "clear" namespace. {"exception":"[object] (Symfony\\Component\\Console\\Exception\\NamespaceNotFoundException(code: 0): There are no commands defined in the \"clear\" namespace. at C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\symfony\\console\\Application.php:598)
+[stacktrace]
+#0 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\symfony\\console\\Application.php(651): Symfony\\Component\\Console\\Application->findNamespace('clear')
+#1 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\symfony\\console\\Application.php(236): Symfony\\Component\\Console\\Application->find('clear:cache')
+#2 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\symfony\\console\\Application.php(148): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(93): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(131): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 C:\\Users\\user\\Desktop\ay-wallet-api\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#6 {main}
+"} 
+[2020-05-31 20:37:52] local.ERROR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'ray.telescope_entries' doesn't exist (SQL: select count(*) as aggregate from `telescope_entries` where `type` = exception and `family_hash` = 7d160a95980a1a4642ffe8a3b5f873f3) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 42S02): SQLSTATE[42S02]: Base table or view not found: 1146 Table 'ray.telescope_entries' doesn't exist (SQL: select count(*) as aggregate from `telescope_entries` where `type` = exception and `family_hash` = 7d160a95980a1a4642ffe8a3b5f873f3) at C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php:669)
+[stacktrace]
+#0 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(629): Illuminate\\Database\\Connection->runQueryCallback('select count(*)...', Array, Object(Closure))
+#1 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(338): Illuminate\\Database\\Connection->run('select count(*)...', Array, Object(Closure))
+#2 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2132): Illuminate\\Database\\Connection->select('select count(*)...', Array, true)
+#3 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2120): Illuminate\\Database\\Query\\Builder->runSelect()
+#4 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2586): Illuminate\\Database\\Query\\Builder->Illuminate\\Database\\Query\\{closure}()
+#5 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2121): Illuminate\\Database\\Query\\Builder->onceWithColumns(Array, Object(Closure))
+#6 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2513): Illuminate\\Database\\Query\\Builder->get(Array)
+#7 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2441): Illuminate\\Database\\Query\\Builder->aggregate('count', Array)
+#8 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Storage\\DatabaseEntriesRepository.php(122): Illuminate\\Database\\Query\\Builder->count()
+#9 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Storage\\DatabaseEntriesRepository.php(164): Laravel\\Telescope\\Storage\\DatabaseEntriesRepository->countExceptionOccurences(Object(Laravel\\Telescope\\IncomingExceptionEntry))
+#10 [internal function]: Laravel\\Telescope\\Storage\\DatabaseEntriesRepository->Laravel\\Telescope\\Storage\\{closure}(Object(Laravel\\Telescope\\IncomingExceptionEntry), 0)
+#11 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Collection.php(638): array_map(Object(Closure), Array, Array)
+#12 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Storage\\DatabaseEntriesRepository.php(177): Illuminate\\Support\\Collection->map(Object(Closure))
+#13 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Traits\\EnumeratesValues.php(176): Laravel\\Telescope\\Storage\\DatabaseEntriesRepository->Laravel\\Telescope\\Storage\\{closure}(Object(Illuminate\\Support\\Collection), 0)
+#14 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Storage\\DatabaseEntriesRepository.php(178): Illuminate\\Support\\Collection->each(Object(Closure))
+#15 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Storage\\DatabaseEntriesRepository.php(139): Laravel\\Telescope\\Storage\\DatabaseEntriesRepository->storeExceptions(Object(Illuminate\\Support\\Collection))
+#16 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Telescope.php(590): Laravel\\Telescope\\Storage\\DatabaseEntriesRepository->store(Object(Illuminate\\Support\\Collection))
+#17 [internal function]: Laravel\\Telescope\\Telescope::Laravel\\Telescope\\{closure}()
+#18 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Telescope.php(234): call_user_func(Object(Closure))
+#19 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Telescope.php(601): Laravel\\Telescope\\Telescope::withoutRecording(Object(Closure))
+#20 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\ListensForStorageOpportunities.php(44): Laravel\\Telescope\\Telescope::store(Object(Laravel\\Telescope\\Storage\\DatabaseEntriesRepository))
+#21 [internal function]: Laravel\\Telescope\\Telescope::Laravel\\Telescope\\{closure}()
+#22 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(32): call_user_func_array(Object(Closure), Array)
+#23 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(36): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#24 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(78): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#25 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(34): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Object(Closure), Object(Closure))
+#26 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(590): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Object(Closure), Array, NULL)
+#27 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1047): Illuminate\\Container\\Container->call(Object(Closure))
+#28 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(158): Illuminate\\Foundation\\Application->terminate()
+#29 C:\\Users\\user\\Desktop\ay-wallet-api\\artisan(51): Illuminate\\Foundation\\Console\\Kernel->terminate(Object(Symfony\\Component\\Console\\Input\\ArgvInput), 1)
+#30 {main}
+
+[previous exception] [object] (PDOException(code: 42S02): SQLSTATE[42S02]: Base table or view not found: 1146 Table 'ray.telescope_entries' doesn't exist at C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php:331)
+[stacktrace]
+#0 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(331): PDO->prepare('select count(*)...')
+#1 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(662): Illuminate\\Database\\Connection->Illuminate\\Database\\{closure}('select count(*)...', Array)
+#2 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(629): Illuminate\\Database\\Connection->runQueryCallback('select count(*)...', Array, Object(Closure))
+#3 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(338): Illuminate\\Database\\Connection->run('select count(*)...', Array, Object(Closure))
+#4 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2132): Illuminate\\Database\\Connection->select('select count(*)...', Array, true)
+#5 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2120): Illuminate\\Database\\Query\\Builder->runSelect()
+#6 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2586): Illuminate\\Database\\Query\\Builder->Illuminate\\Database\\Query\\{closure}()
+#7 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2121): Illuminate\\Database\\Query\\Builder->onceWithColumns(Array, Object(Closure))
+#8 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2513): Illuminate\\Database\\Query\\Builder->get(Array)
+#9 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2441): Illuminate\\Database\\Query\\Builder->aggregate('count', Array)
+#10 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Storage\\DatabaseEntriesRepository.php(122): Illuminate\\Database\\Query\\Builder->count()
+#11 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Storage\\DatabaseEntriesRepository.php(164): Laravel\\Telescope\\Storage\\DatabaseEntriesRepository->countExceptionOccurences(Object(Laravel\\Telescope\\IncomingExceptionEntry))
+#12 [internal function]: Laravel\\Telescope\\Storage\\DatabaseEntriesRepository->Laravel\\Telescope\\Storage\\{closure}(Object(Laravel\\Telescope\\IncomingExceptionEntry), 0)
+#13 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Collection.php(638): array_map(Object(Closure), Array, Array)
+#14 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Storage\\DatabaseEntriesRepository.php(177): Illuminate\\Support\\Collection->map(Object(Closure))
+#15 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Traits\\EnumeratesValues.php(176): Laravel\\Telescope\\Storage\\DatabaseEntriesRepository->Laravel\\Telescope\\Storage\\{closure}(Object(Illuminate\\Support\\Collection), 0)
+#16 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Storage\\DatabaseEntriesRepository.php(178): Illuminate\\Support\\Collection->each(Object(Closure))
+#17 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Storage\\DatabaseEntriesRepository.php(139): Laravel\\Telescope\\Storage\\DatabaseEntriesRepository->storeExceptions(Object(Illuminate\\Support\\Collection))
+#18 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Telescope.php(590): Laravel\\Telescope\\Storage\\DatabaseEntriesRepository->store(Object(Illuminate\\Support\\Collection))
+#19 [internal function]: Laravel\\Telescope\\Telescope::Laravel\\Telescope\\{closure}()
+#20 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Telescope.php(234): call_user_func(Object(Closure))
+#21 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Telescope.php(601): Laravel\\Telescope\\Telescope::withoutRecording(Object(Closure))
+#22 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\ListensForStorageOpportunities.php(44): Laravel\\Telescope\\Telescope::store(Object(Laravel\\Telescope\\Storage\\DatabaseEntriesRepository))
+#23 [internal function]: Laravel\\Telescope\\Telescope::Laravel\\Telescope\\{closure}()
+#24 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(32): call_user_func_array(Object(Closure), Array)
+#25 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(36): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#26 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(78): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#27 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(34): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Object(Closure), Object(Closure))
+#28 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(590): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Object(Closure), Array, NULL)
+#29 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1047): Illuminate\\Container\\Container->call(Object(Closure))
+#30 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(158): Illuminate\\Foundation\\Application->terminate()
+#31 C:\\Users\\user\\Desktop\ay-wallet-api\\artisan(51): Illuminate\\Foundation\\Console\\Kernel->terminate(Object(Symfony\\Component\\Console\\Input\\ArgvInput), 1)
+#32 {main}
+"} 
+[2020-05-31 20:38:01] local.ERROR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'ray.telescope_entries' doesn't exist (SQL: insert into `telescope_entries` (`batch_id`, `content`, `created_at`, `family_hash`, `type`, `uuid`) values (90b25d8d-836c-4a66-bf51-264dd38fe374, {"name":"cache:clearing","payload":[null,[]],"listeners":[],"broadcast":false,"hostname":"DESKTOP-S5U3C8A"}, 2020-05-31 20:38:01, ?, event, 90b25d8d-7c9c-4be6-8961-2b77a7c6be40), (90b25d8d-836c-4a66-bf51-264dd38fe374, {"name":"cache:cleared","payload":[null,[]],"listeners":[],"broadcast":false,"hostname":"DESKTOP-S5U3C8A"}, 2020-05-31 20:38:01, ?, event, 90b25d8d-82b6-469a-8b35-d54b4d4a07fc), (90b25d8d-836c-4a66-bf51-264dd38fe374, {"command":"cache:clear","exit_code":0,"arguments":{"command":"cache:clear","store":null},"options":{"tags":null,"help":false,"quiet":false,"verbose":false,"version":false,"ansi":false,"no-ansi":false,"no-interaction":false,"env":null},"hostname":"DESKTOP-S5U3C8A"}, 2020-05-31 20:38:01, ?, command, 90b25d8d-834e-4ea5-8f6c-664676ed8248)) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 42S02): SQLSTATE[42S02]: Base table or view not found: 1146 Table 'ray.telescope_entries' doesn't exist (SQL: insert into `telescope_entries` (`batch_id`, `content`, `created_at`, `family_hash`, `type`, `uuid`) values (90b25d8d-836c-4a66-bf51-264dd38fe374, {\"name\":\"cache:clearing\",\"payload\":[null,[]],\"listeners\":[],\"broadcast\":false,\"hostname\":\"DESKTOP-S5U3C8A\"}, 2020-05-31 20:38:01, ?, event, 90b25d8d-7c9c-4be6-8961-2b77a7c6be40), (90b25d8d-836c-4a66-bf51-264dd38fe374, {\"name\":\"cache:cleared\",\"payload\":[null,[]],\"listeners\":[],\"broadcast\":false,\"hostname\":\"DESKTOP-S5U3C8A\"}, 2020-05-31 20:38:01, ?, event, 90b25d8d-82b6-469a-8b35-d54b4d4a07fc), (90b25d8d-836c-4a66-bf51-264dd38fe374, {\"command\":\"cache:clear\",\"exit_code\":0,\"arguments\":{\"command\":\"cache:clear\",\"store\":null},\"options\":{\"tags\":null,\"help\":false,\"quiet\":false,\"verbose\":false,\"version\":false,\"ansi\":false,\"no-ansi\":false,\"no-interaction\":false,\"env\":null},\"hostname\":\"DESKTOP-S5U3C8A\"}, 2020-05-31 20:38:01, ?, command, 90b25d8d-834e-4ea5-8f6c-664676ed8248)) at C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php:669)
+[stacktrace]
+#0 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(629): Illuminate\\Database\\Connection->runQueryCallback('insert into `te...', Array, Object(Closure))
+#1 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(464): Illuminate\\Database\\Connection->run('insert into `te...', Array, Object(Closure))
+#2 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(416): Illuminate\\Database\\Connection->statement('insert into `te...', Array)
+#3 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2628): Illuminate\\Database\\Connection->insert('insert into `te...', Array)
+#4 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Storage\\DatabaseEntriesRepository.php(148): Illuminate\\Database\\Query\\Builder->insert(Array)
+#5 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Traits\\EnumeratesValues.php(176): Laravel\\Telescope\\Storage\\DatabaseEntriesRepository->Laravel\\Telescope\\Storage\\{closure}(Object(Illuminate\\Support\\Collection), 0)
+#6 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Storage\\DatabaseEntriesRepository.php(149): Illuminate\\Support\\Collection->each(Object(Closure))
+#7 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Telescope.php(590): Laravel\\Telescope\\Storage\\DatabaseEntriesRepository->store(Object(Illuminate\\Support\\Collection))
+#8 [internal function]: Laravel\\Telescope\\Telescope::Laravel\\Telescope\\{closure}()
+#9 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Telescope.php(234): call_user_func(Object(Closure))
+#10 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Telescope.php(601): Laravel\\Telescope\\Telescope::withoutRecording(Object(Closure))
+#11 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\ListensForStorageOpportunities.php(44): Laravel\\Telescope\\Telescope::store(Object(Laravel\\Telescope\\Storage\\DatabaseEntriesRepository))
+#12 [internal function]: Laravel\\Telescope\\Telescope::Laravel\\Telescope\\{closure}()
+#13 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(32): call_user_func_array(Object(Closure), Array)
+#14 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(36): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#15 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(78): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#16 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(34): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Object(Closure), Object(Closure))
+#17 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(590): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Object(Closure), Array, NULL)
+#18 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1047): Illuminate\\Container\\Container->call(Object(Closure))
+#19 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(158): Illuminate\\Foundation\\Application->terminate()
+#20 C:\\Users\\user\\Desktop\ay-wallet-api\\artisan(51): Illuminate\\Foundation\\Console\\Kernel->terminate(Object(Symfony\\Component\\Console\\Input\\ArgvInput), 0)
+#21 {main}
+
+[previous exception] [object] (PDOException(code: 42S02): SQLSTATE[42S02]: Base table or view not found: 1146 Table 'ray.telescope_entries' doesn't exist at C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php:457)
+[stacktrace]
+#0 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(457): PDO->prepare('insert into `te...')
+#1 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(662): Illuminate\\Database\\Connection->Illuminate\\Database\\{closure}('insert into `te...', Array)
+#2 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(629): Illuminate\\Database\\Connection->runQueryCallback('insert into `te...', Array, Object(Closure))
+#3 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(464): Illuminate\\Database\\Connection->run('insert into `te...', Array, Object(Closure))
+#4 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(416): Illuminate\\Database\\Connection->statement('insert into `te...', Array)
+#5 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2628): Illuminate\\Database\\Connection->insert('insert into `te...', Array)
+#6 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Storage\\DatabaseEntriesRepository.php(148): Illuminate\\Database\\Query\\Builder->insert(Array)
+#7 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Traits\\EnumeratesValues.php(176): Laravel\\Telescope\\Storage\\DatabaseEntriesRepository->Laravel\\Telescope\\Storage\\{closure}(Object(Illuminate\\Support\\Collection), 0)
+#8 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Storage\\DatabaseEntriesRepository.php(149): Illuminate\\Support\\Collection->each(Object(Closure))
+#9 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Telescope.php(590): Laravel\\Telescope\\Storage\\DatabaseEntriesRepository->store(Object(Illuminate\\Support\\Collection))
+#10 [internal function]: Laravel\\Telescope\\Telescope::Laravel\\Telescope\\{closure}()
+#11 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Telescope.php(234): call_user_func(Object(Closure))
+#12 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\Telescope.php(601): Laravel\\Telescope\\Telescope::withoutRecording(Object(Closure))
+#13 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\telescope\\src\\ListensForStorageOpportunities.php(44): Laravel\\Telescope\\Telescope::store(Object(Laravel\\Telescope\\Storage\\DatabaseEntriesRepository))
+#14 [internal function]: Laravel\\Telescope\\Telescope::Laravel\\Telescope\\{closure}()
+#15 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(32): call_user_func_array(Object(Closure), Array)
+#16 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(36): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#17 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(78): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#18 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(34): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Object(Closure), Object(Closure))
+#19 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(590): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Object(Closure), Array, NULL)
+#20 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1047): Illuminate\\Container\\Container->call(Object(Closure))
+#21 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(158): Illuminate\\Foundation\\Application->terminate()
+#22 C:\\Users\\user\\Desktop\ay-wallet-api\\artisan(51): Illuminate\\Foundation\\Console\\Kernel->terminate(Object(Symfony\\Component\\Console\\Input\\ArgvInput), 0)
+#23 {main}
+"} 
+[2020-05-31 20:47:13] local.ERROR: There is no role named `customer`. {"exception":"[object] (Spatie\\Permission\\Exceptions\\RoleDoesNotExist(code: 0): There is no role named `customer`. at C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\spatie\\laravel-permission\\src\\Exceptions\\RoleDoesNotExist.php:11)
+[stacktrace]
+#0 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\spatie\\laravel-permission\\src\\Models\\Role.php(87): Spatie\\Permission\\Exceptions\\RoleDoesNotExist::named('customer')
+#1 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\spatie\\laravel-permission\\src\\Traits\\HasRoles.php(283): Spatie\\Permission\\Models\\Role::findByName('customer', 'api')
+#2 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\spatie\\laravel-permission\\src\\Traits\\HasRoles.php(106): App\\User->getStoredRole('customer')
+#3 [internal function]: App\\User->Spatie\\Permission\\Traits\\{closure}('customer', 0)
+#4 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Collection.php(638): array_map(Object(Closure), Array, Array)
+#5 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\spatie\\laravel-permission\\src\\Traits\\HasRoles.php(107): Illuminate\\Support\\Collection->map(Object(Closure))
+#6 C:\\Users\\user\\Desktop\ay-wallet-api\\app\\Http\\Actions\\AuthenticationAction.php(39): App\\User->assignRole('customer')
+#7 C:\\Users\\user\\Desktop\ay-wallet-api\\app\\Http\\Controllers\\Api\\UsersController.php(20): App\\Http\\Actions\\AuthenticationAction->execute(Object(App\\Http\\Requests\\RegisterRequest))
+#8 [internal function]: App\\Http\\Controllers\\Api\\UsersController->Register(Object(Illuminate\\Http\\Request))
+#9 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): call_user_func_array(Array, Array)
+#10 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('Register', Array)
+#11 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\Api\\UsersController), 'Register')
+#12 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(176): Illuminate\\Routing\\Route->runController()
+#13 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(681): Illuminate\\Routing\\Route->run()
+#14 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#15 C:\\Users\\user\\Desktop\ay-wallet-api\\app\\Http\\Middleware\\Cors.php(11): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#16 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): App\\Http\\Middleware\\Cors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#17 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\fruitcake\\laravel-cors\\src\\HandleCors.php(31): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#18 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Fruitcake\\Cors\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#19 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(41): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#20 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#21 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php(59): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#22 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\ThrottleRequests->handle(Object(Illuminate\\Http\\Request), Object(Closure), 500, '1')
+#23 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#24 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(683): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#25 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(658): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#26 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(624): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#27 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(613): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#28 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(170): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#29 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#30 C:\\Users\\user\\Desktop\ay-wallet-api\\app\\Http\\Middleware\\Cors.php(11): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#31 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): App\\Http\\Middleware\\Cors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#32 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\fruitcake\\laravel-cors\\src\\HandleCors.php(31): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#33 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Fruitcake\\Cors\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#34 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#35 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#36 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#37 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#38 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#39 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#40 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode.php(63): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#41 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#42 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\fideloper\\proxy\\src\\TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#43 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Fideloper\\Proxy\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#44 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#45 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(145): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#46 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(110): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#47 C:\\Users\\user\\Desktop\ay-wallet-api\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#48 C:\\Users\\user\\Desktop\ay-wallet-api\\server.php(21): require_once('C:\\\\Users\\\\user\\\\D...')
+#49 {main}
+"} 
+[2020-05-31 20:50:13] local.ERROR: There is no role named `customer`. {"exception":"[object] (Spatie\\Permission\\Exceptions\\RoleDoesNotExist(code: 0): There is no role named `customer`. at C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\spatie\\laravel-permission\\src\\Exceptions\\RoleDoesNotExist.php:11)
+[stacktrace]
+#0 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\spatie\\laravel-permission\\src\\Models\\Role.php(87): Spatie\\Permission\\Exceptions\\RoleDoesNotExist::named('customer')
+#1 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\spatie\\laravel-permission\\src\\Traits\\HasRoles.php(283): Spatie\\Permission\\Models\\Role::findByName('customer', 'api')
+#2 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\spatie\\laravel-permission\\src\\Traits\\HasRoles.php(106): App\\User->getStoredRole('customer')
+#3 [internal function]: App\\User->Spatie\\Permission\\Traits\\{closure}('customer', 0)
+#4 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Collection.php(638): array_map(Object(Closure), Array, Array)
+#5 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\spatie\\laravel-permission\\src\\Traits\\HasRoles.php(107): Illuminate\\Support\\Collection->map(Object(Closure))
+#6 C:\\Users\\user\\Desktop\ay-wallet-api\\app\\Http\\Actions\\AuthenticationAction.php(39): App\\User->assignRole('customer')
+#7 C:\\Users\\user\\Desktop\ay-wallet-api\\app\\Http\\Controllers\\Api\\UsersController.php(20): App\\Http\\Actions\\AuthenticationAction->execute(Object(App\\Http\\Requests\\RegisterRequest))
+#8 [internal function]: App\\Http\\Controllers\\Api\\UsersController->Register(Object(Illuminate\\Http\\Request))
+#9 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): call_user_func_array(Array, Array)
+#10 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('Register', Array)
+#11 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\Api\\UsersController), 'Register')
+#12 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(176): Illuminate\\Routing\\Route->runController()
+#13 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(681): Illuminate\\Routing\\Route->run()
+#14 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#15 C:\\Users\\user\\Desktop\ay-wallet-api\\app\\Http\\Middleware\\Cors.php(11): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#16 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): App\\Http\\Middleware\\Cors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#17 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\fruitcake\\laravel-cors\\src\\HandleCors.php(31): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#18 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Fruitcake\\Cors\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#19 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(41): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#20 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#21 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php(59): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#22 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\ThrottleRequests->handle(Object(Illuminate\\Http\\Request), Object(Closure), 500, '1')
+#23 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#24 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(683): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#25 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(658): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#26 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(624): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#27 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(613): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#28 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(170): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#29 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#30 C:\\Users\\user\\Desktop\ay-wallet-api\\app\\Http\\Middleware\\Cors.php(11): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#31 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): App\\Http\\Middleware\\Cors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#32 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\fruitcake\\laravel-cors\\src\\HandleCors.php(31): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#33 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Fruitcake\\Cors\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#34 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#35 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#36 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#37 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#38 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#39 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#40 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode.php(63): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#41 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#42 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\fideloper\\proxy\\src\\TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#43 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Fideloper\\Proxy\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#44 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#45 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(145): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#46 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(110): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#47 C:\\Users\\user\\Desktop\ay-wallet-api\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#48 C:\\Users\\user\\Desktop\ay-wallet-api\\server.php(21): require_once('C:\\\\Users\\\\user\\\\D...')
+#49 {main}
+"} 
+[2020-05-31 20:52:50] local.ERROR: There is no role named `customer`. {"exception":"[object] (Spatie\\Permission\\Exceptions\\RoleDoesNotExist(code: 0): There is no role named `customer`. at C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\spatie\\laravel-permission\\src\\Exceptions\\RoleDoesNotExist.php:11)
+[stacktrace]
+#0 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\spatie\\laravel-permission\\src\\Models\\Role.php(87): Spatie\\Permission\\Exceptions\\RoleDoesNotExist::named('customer')
+#1 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\spatie\\laravel-permission\\src\\Traits\\HasRoles.php(283): Spatie\\Permission\\Models\\Role::findByName('customer', 'api')
+#2 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\spatie\\laravel-permission\\src\\Traits\\HasRoles.php(106): App\\User->getStoredRole('customer')
+#3 [internal function]: App\\User->Spatie\\Permission\\Traits\\{closure}('customer', 0)
+#4 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Collection.php(638): array_map(Object(Closure), Array, Array)
+#5 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\spatie\\laravel-permission\\src\\Traits\\HasRoles.php(107): Illuminate\\Support\\Collection->map(Object(Closure))
+#6 C:\\Users\\user\\Desktop\ay-wallet-api\\app\\Http\\Actions\\AuthenticationAction.php(39): App\\User->assignRole('customer')
+#7 C:\\Users\\user\\Desktop\ay-wallet-api\\app\\Http\\Controllers\\Api\\UsersController.php(20): App\\Http\\Actions\\AuthenticationAction->execute(Object(App\\Http\\Requests\\RegisterRequest))
+#8 [internal function]: App\\Http\\Controllers\\Api\\UsersController->Register(Object(Illuminate\\Http\\Request))
+#9 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): call_user_func_array(Array, Array)
+#10 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('Register', Array)
+#11 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\Api\\UsersController), 'Register')
+#12 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(176): Illuminate\\Routing\\Route->runController()
+#13 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(681): Illuminate\\Routing\\Route->run()
+#14 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#15 C:\\Users\\user\\Desktop\ay-wallet-api\\app\\Http\\Middleware\\Cors.php(11): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#16 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): App\\Http\\Middleware\\Cors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#17 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\fruitcake\\laravel-cors\\src\\HandleCors.php(31): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#18 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Fruitcake\\Cors\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#19 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(41): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#20 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#21 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php(59): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#22 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\ThrottleRequests->handle(Object(Illuminate\\Http\\Request), Object(Closure), 500, '1')
+#23 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#24 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(683): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#25 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(658): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#26 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(624): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#27 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(613): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#28 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(170): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#29 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#30 C:\\Users\\user\\Desktop\ay-wallet-api\\app\\Http\\Middleware\\Cors.php(11): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#31 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): App\\Http\\Middleware\\Cors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#32 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\fruitcake\\laravel-cors\\src\\HandleCors.php(31): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#33 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Fruitcake\\Cors\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#34 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#35 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#36 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#37 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#38 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#39 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#40 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode.php(63): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#41 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#42 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\fideloper\\proxy\\src\\TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#43 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Fideloper\\Proxy\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#44 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#45 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(145): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#46 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(110): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#47 C:\\Users\\user\\Desktop\ay-wallet-api\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#48 C:\\Users\\user\\Desktop\ay-wallet-api\\server.php(21): require_once('C:\\\\Users\\\\user\\\\D...')
+#49 {main}
+"} 
+[2020-05-31 21:00:38] local.ERROR: The given role or permission should use guard `api` instead of `web`. {"exception":"[object] (Spatie\\Permission\\Exceptions\\GuardDoesNotMatch(code: 0): The given role or permission should use guard `api` instead of `web`. at C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\spatie\\laravel-permission\\src\\Exceptions\\GuardDoesNotMatch.php:12)
+[stacktrace]
+#0 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\spatie\\laravel-permission\\src\\Traits\\HasPermissions.php(407): Spatie\\Permission\\Exceptions\\GuardDoesNotMatch::create('web', Object(Illuminate\\Support\\Collection))
+#1 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\spatie\\laravel-permission\\src\\Traits\\HasRoles.php(112): App\\User->ensureModelSharesGuard(Object(Spatie\\Permission\\Models\\Role))
+#2 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Traits\\EnumeratesValues.php(176): App\\User->Spatie\\Permission\\Traits\\{closure}(Object(Spatie\\Permission\\Models\\Role), 0)
+#3 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\spatie\\laravel-permission\\src\\Traits\\HasRoles.php(113): Illuminate\\Support\\Collection->each(Object(Closure))
+#4 C:\\Users\\user\\Desktop\ay-wallet-api\\app\\Http\\Actions\\AuthenticationAction.php(40): App\\User->assignRole(Object(Spatie\\Permission\\Models\\Role))
+#5 C:\\Users\\user\\Desktop\ay-wallet-api\\app\\Http\\Controllers\\Api\\UsersController.php(20): App\\Http\\Actions\\AuthenticationAction->execute(Object(App\\Http\\Requests\\RegisterRequest))
+#6 [internal function]: App\\Http\\Controllers\\Api\\UsersController->Register(Object(Illuminate\\Http\\Request))
+#7 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): call_user_func_array(Array, Array)
+#8 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('Register', Array)
+#9 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\Api\\UsersController), 'Register')
+#10 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(176): Illuminate\\Routing\\Route->runController()
+#11 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(681): Illuminate\\Routing\\Route->run()
+#12 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#13 C:\\Users\\user\\Desktop\ay-wallet-api\\app\\Http\\Middleware\\Cors.php(11): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#14 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): App\\Http\\Middleware\\Cors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#15 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\fruitcake\\laravel-cors\\src\\HandleCors.php(31): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#16 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Fruitcake\\Cors\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#17 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(41): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#18 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#19 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php(59): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#20 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\ThrottleRequests->handle(Object(Illuminate\\Http\\Request), Object(Closure), 500, '1')
+#21 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#22 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(683): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#23 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(658): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#24 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(624): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#25 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(613): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#26 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(170): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#27 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#28 C:\\Users\\user\\Desktop\ay-wallet-api\\app\\Http\\Middleware\\Cors.php(11): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#29 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): App\\Http\\Middleware\\Cors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#30 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\fruitcake\\laravel-cors\\src\\HandleCors.php(31): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#31 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Fruitcake\\Cors\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#32 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#33 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#34 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#35 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#36 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#37 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#38 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode.php(63): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#39 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#40 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\fideloper\\proxy\\src\\TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#41 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Fideloper\\Proxy\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#42 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#43 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(145): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#44 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(110): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#45 C:\\Users\\user\\Desktop\ay-wallet-api\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#46 C:\\Users\\user\\Desktop\ay-wallet-api\\server.php(21): require_once('C:\\\\Users\\\\user\\\\D...')
+#47 {main}
+"} 
+[2020-05-31 21:01:19] local.ERROR: The given role or permission should use guard `api` instead of `web`. {"exception":"[object] (Spatie\\Permission\\Exceptions\\GuardDoesNotMatch(code: 0): The given role or permission should use guard `api` instead of `web`. at C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\spatie\\laravel-permission\\src\\Exceptions\\GuardDoesNotMatch.php:12)
+[stacktrace]
+#0 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\spatie\\laravel-permission\\src\\Traits\\HasPermissions.php(407): Spatie\\Permission\\Exceptions\\GuardDoesNotMatch::create('web', Object(Illuminate\\Support\\Collection))
+#1 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\spatie\\laravel-permission\\src\\Traits\\HasRoles.php(112): App\\User->ensureModelSharesGuard(Object(Spatie\\Permission\\Models\\Role))
+#2 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Traits\\EnumeratesValues.php(176): App\\User->Spatie\\Permission\\Traits\\{closure}(Object(Spatie\\Permission\\Models\\Role), 0)
+#3 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\spatie\\laravel-permission\\src\\Traits\\HasRoles.php(113): Illuminate\\Support\\Collection->each(Object(Closure))
+#4 C:\\Users\\user\\Desktop\ay-wallet-api\\app\\Http\\Actions\\AuthenticationAction.php(40): App\\User->assignRole(Object(Spatie\\Permission\\Models\\Role))
+#5 C:\\Users\\user\\Desktop\ay-wallet-api\\app\\Http\\Controllers\\Api\\UsersController.php(20): App\\Http\\Actions\\AuthenticationAction->execute(Object(App\\Http\\Requests\\RegisterRequest))
+#6 [internal function]: App\\Http\\Controllers\\Api\\UsersController->Register(Object(Illuminate\\Http\\Request))
+#7 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): call_user_func_array(Array, Array)
+#8 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('Register', Array)
+#9 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\Api\\UsersController), 'Register')
+#10 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(176): Illuminate\\Routing\\Route->runController()
+#11 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(681): Illuminate\\Routing\\Route->run()
+#12 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#13 C:\\Users\\user\\Desktop\ay-wallet-api\\app\\Http\\Middleware\\Cors.php(11): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#14 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): App\\Http\\Middleware\\Cors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#15 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\fruitcake\\laravel-cors\\src\\HandleCors.php(31): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#16 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Fruitcake\\Cors\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#17 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(41): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#18 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#19 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php(59): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#20 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\ThrottleRequests->handle(Object(Illuminate\\Http\\Request), Object(Closure), 500, '1')
+#21 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#22 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(683): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#23 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(658): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#24 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(624): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#25 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(613): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#26 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(170): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#27 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#28 C:\\Users\\user\\Desktop\ay-wallet-api\\app\\Http\\Middleware\\Cors.php(11): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#29 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): App\\Http\\Middleware\\Cors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#30 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\fruitcake\\laravel-cors\\src\\HandleCors.php(31): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#31 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Fruitcake\\Cors\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#32 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#33 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#34 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#35 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#36 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#37 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#38 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode.php(63): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#39 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#40 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\fideloper\\proxy\\src\\TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#41 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Fideloper\\Proxy\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#42 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#43 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(145): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#44 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(110): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#45 C:\\Users\\user\\Desktop\ay-wallet-api\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#46 C:\\Users\\user\\Desktop\ay-wallet-api\\server.php(21): require_once('C:\\\\Users\\\\user\\\\D...')
+#47 {main}
+"} 
+[2020-05-31 21:01:43] local.ERROR: The given role or permission should use guard `api` instead of `web`. {"exception":"[object] (Spatie\\Permission\\Exceptions\\GuardDoesNotMatch(code: 0): The given role or permission should use guard `api` instead of `web`. at C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\spatie\\laravel-permission\\src\\Exceptions\\GuardDoesNotMatch.php:12)
+[stacktrace]
+#0 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\spatie\\laravel-permission\\src\\Traits\\HasPermissions.php(407): Spatie\\Permission\\Exceptions\\GuardDoesNotMatch::create('web', Object(Illuminate\\Support\\Collection))
+#1 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\spatie\\laravel-permission\\src\\Traits\\HasRoles.php(112): App\\User->ensureModelSharesGuard(Object(Spatie\\Permission\\Models\\Role))
+#2 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Traits\\EnumeratesValues.php(176): App\\User->Spatie\\Permission\\Traits\\{closure}(Object(Spatie\\Permission\\Models\\Role), 0)
+#3 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\spatie\\laravel-permission\\src\\Traits\\HasRoles.php(113): Illuminate\\Support\\Collection->each(Object(Closure))
+#4 C:\\Users\\user\\Desktop\ay-wallet-api\\app\\Http\\Actions\\AuthenticationAction.php(40): App\\User->assignRole(Object(Spatie\\Permission\\Models\\Role))
+#5 C:\\Users\\user\\Desktop\ay-wallet-api\\app\\Http\\Controllers\\Api\\UsersController.php(20): App\\Http\\Actions\\AuthenticationAction->execute(Object(App\\Http\\Requests\\RegisterRequest))
+#6 [internal function]: App\\Http\\Controllers\\Api\\UsersController->Register(Object(Illuminate\\Http\\Request))
+#7 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): call_user_func_array(Array, Array)
+#8 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('Register', Array)
+#9 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\Api\\UsersController), 'Register')
+#10 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(176): Illuminate\\Routing\\Route->runController()
+#11 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(681): Illuminate\\Routing\\Route->run()
+#12 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#13 C:\\Users\\user\\Desktop\ay-wallet-api\\app\\Http\\Middleware\\Cors.php(11): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#14 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): App\\Http\\Middleware\\Cors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#15 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\fruitcake\\laravel-cors\\src\\HandleCors.php(31): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#16 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Fruitcake\\Cors\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#17 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(41): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#18 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#19 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php(59): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#20 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\ThrottleRequests->handle(Object(Illuminate\\Http\\Request), Object(Closure), 500, '1')
+#21 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#22 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(683): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#23 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(658): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#24 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(624): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#25 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(613): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#26 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(170): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#27 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#28 C:\\Users\\user\\Desktop\ay-wallet-api\\app\\Http\\Middleware\\Cors.php(11): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#29 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): App\\Http\\Middleware\\Cors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#30 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\fruitcake\\laravel-cors\\src\\HandleCors.php(31): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#31 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Fruitcake\\Cors\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#32 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#33 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#34 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#35 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#36 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#37 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#38 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode.php(63): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#39 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#40 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\fideloper\\proxy\\src\\TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#41 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Fideloper\\Proxy\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#42 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#43 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(145): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#44 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(110): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#45 C:\\Users\\user\\Desktop\ay-wallet-api\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#46 C:\\Users\\user\\Desktop\ay-wallet-api\\server.php(21): require_once('C:\\\\Users\\\\user\\\\D...')
+#47 {main}
+"} 
+[2020-05-31 21:02:47] local.ERROR: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'name' cannot be null (SQL: insert into `users` (`name`, `email`, `password`, `email_token`, `updated_at`, `created_at`) values (?, UcheAchay3@gmail.com, $2y$10$CNlEsKRQSO0AJcu/FNtYtOHV2QqgnY3Uh0DdtsC1IunJ9aIMo83FS, BGULFC, 2020-05-31 21:02:47, 2020-05-31 21:02:47)) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 23000): SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'name' cannot be null (SQL: insert into `users` (`name`, `email`, `password`, `email_token`, `updated_at`, `created_at`) values (?, UcheAchay3@gmail.com, $2y$10$CNlEsKRQSO0AJcu/FNtYtOHV2QqgnY3Uh0DdtsC1IunJ9aIMo83FS, BGULFC, 2020-05-31 21:02:47, 2020-05-31 21:02:47)) at C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php:669)
+[stacktrace]
+#0 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(629): Illuminate\\Database\\Connection->runQueryCallback('insert into `us...', Array, Object(Closure))
+#1 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(464): Illuminate\\Database\\Connection->run('insert into `us...', Array, Object(Closure))
+#2 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(416): Illuminate\\Database\\Connection->statement('insert into `us...', Array)
+#3 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Processors\\Processor.php(32): Illuminate\\Database\\Connection->insert('insert into `us...', Array)
+#4 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2672): Illuminate\\Database\\Query\\Processors\\Processor->processInsertGetId(Object(Illuminate\\Database\\Query\\Builder), 'insert into `us...', Array, 'id')
+#5 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Builder.php(1366): Illuminate\\Database\\Query\\Builder->insertGetId(Array, 'id')
+#6 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Model.php(839): Illuminate\\Database\\Eloquent\\Builder->__call('insertGetId', Array)
+#7 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Model.php(804): Illuminate\\Database\\Eloquent\\Model->insertAndSetId(Object(Illuminate\\Database\\Eloquent\\Builder), Array)
+#8 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Model.php(667): Illuminate\\Database\\Eloquent\\Model->performInsert(Object(Illuminate\\Database\\Eloquent\\Builder))
+#9 C:\\Users\\user\\Desktop\ay-wallet-api\\app\\Http\\Actions\\AuthenticationAction.php(45): Illuminate\\Database\\Eloquent\\Model->save()
+#10 C:\\Users\\user\\Desktop\ay-wallet-api\\app\\Http\\Controllers\\Api\\UsersController.php(20): App\\Http\\Actions\\AuthenticationAction->execute(Object(App\\Http\\Requests\\RegisterRequest))
+#11 [internal function]: App\\Http\\Controllers\\Api\\UsersController->Register(Object(Illuminate\\Http\\Request))
+#12 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): call_user_func_array(Array, Array)
+#13 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('Register', Array)
+#14 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\Api\\UsersController), 'Register')
+#15 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(176): Illuminate\\Routing\\Route->runController()
+#16 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(681): Illuminate\\Routing\\Route->run()
+#17 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#18 C:\\Users\\user\\Desktop\ay-wallet-api\\app\\Http\\Middleware\\Cors.php(11): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#19 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): App\\Http\\Middleware\\Cors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#20 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\fruitcake\\laravel-cors\\src\\HandleCors.php(31): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#21 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Fruitcake\\Cors\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#22 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(41): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#23 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#24 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php(59): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#25 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\ThrottleRequests->handle(Object(Illuminate\\Http\\Request), Object(Closure), 500, '1')
+#26 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#27 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(683): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#28 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(658): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#29 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(624): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#30 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(613): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#31 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(170): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#32 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#33 C:\\Users\\user\\Desktop\ay-wallet-api\\app\\Http\\Middleware\\Cors.php(11): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#34 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): App\\Http\\Middleware\\Cors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#35 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\fruitcake\\laravel-cors\\src\\HandleCors.php(31): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#36 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Fruitcake\\Cors\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#37 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#38 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#39 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#40 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#41 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#42 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#43 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode.php(63): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#44 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#45 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\fideloper\\proxy\\src\\TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#46 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Fideloper\\Proxy\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#47 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#48 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(145): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#49 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(110): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#50 C:\\Users\\user\\Desktop\ay-wallet-api\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#51 C:\\Users\\user\\Desktop\ay-wallet-api\\server.php(21): require_once('C:\\\\Users\\\\user\\\\D...')
+#52 {main}
+
+[previous exception] [object] (PDOException(code: 23000): SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'name' cannot be null at C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php:463)
+[stacktrace]
+#0 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(463): PDOStatement->execute()
+#1 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(662): Illuminate\\Database\\Connection->Illuminate\\Database\\{closure}('insert into `us...', Array)
+#2 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(629): Illuminate\\Database\\Connection->runQueryCallback('insert into `us...', Array, Object(Closure))
+#3 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(464): Illuminate\\Database\\Connection->run('insert into `us...', Array, Object(Closure))
+#4 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(416): Illuminate\\Database\\Connection->statement('insert into `us...', Array)
+#5 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Processors\\Processor.php(32): Illuminate\\Database\\Connection->insert('insert into `us...', Array)
+#6 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2672): Illuminate\\Database\\Query\\Processors\\Processor->processInsertGetId(Object(Illuminate\\Database\\Query\\Builder), 'insert into `us...', Array, 'id')
+#7 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Builder.php(1366): Illuminate\\Database\\Query\\Builder->insertGetId(Array, 'id')
+#8 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Model.php(839): Illuminate\\Database\\Eloquent\\Builder->__call('insertGetId', Array)
+#9 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Model.php(804): Illuminate\\Database\\Eloquent\\Model->insertAndSetId(Object(Illuminate\\Database\\Eloquent\\Builder), Array)
+#10 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Model.php(667): Illuminate\\Database\\Eloquent\\Model->performInsert(Object(Illuminate\\Database\\Eloquent\\Builder))
+#11 C:\\Users\\user\\Desktop\ay-wallet-api\\app\\Http\\Actions\\AuthenticationAction.php(45): Illuminate\\Database\\Eloquent\\Model->save()
+#12 C:\\Users\\user\\Desktop\ay-wallet-api\\app\\Http\\Controllers\\Api\\UsersController.php(20): App\\Http\\Actions\\AuthenticationAction->execute(Object(App\\Http\\Requests\\RegisterRequest))
+#13 [internal function]: App\\Http\\Controllers\\Api\\UsersController->Register(Object(Illuminate\\Http\\Request))
+#14 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): call_user_func_array(Array, Array)
+#15 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('Register', Array)
+#16 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\Api\\UsersController), 'Register')
+#17 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(176): Illuminate\\Routing\\Route->runController()
+#18 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(681): Illuminate\\Routing\\Route->run()
+#19 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#20 C:\\Users\\user\\Desktop\ay-wallet-api\\app\\Http\\Middleware\\Cors.php(11): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#21 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): App\\Http\\Middleware\\Cors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#22 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\fruitcake\\laravel-cors\\src\\HandleCors.php(31): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#23 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Fruitcake\\Cors\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#24 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(41): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#25 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#26 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php(59): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#27 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\ThrottleRequests->handle(Object(Illuminate\\Http\\Request), Object(Closure), 500, '1')
+#28 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#29 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(683): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#30 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(658): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#31 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(624): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#32 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(613): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#33 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(170): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#34 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#35 C:\\Users\\user\\Desktop\ay-wallet-api\\app\\Http\\Middleware\\Cors.php(11): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#36 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): App\\Http\\Middleware\\Cors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#37 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\fruitcake\\laravel-cors\\src\\HandleCors.php(31): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#38 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Fruitcake\\Cors\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#39 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#40 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#41 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#42 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#43 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#44 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#45 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode.php(63): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#46 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#47 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\fideloper\\proxy\\src\\TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#48 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Fideloper\\Proxy\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#49 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#50 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(145): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#51 C:\\Users\\user\\Desktop\ay-wallet-api\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(110): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#52 C:\\Users\\user\\Desktop\ay-wallet-api\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#53 C:\\Users\\user\\Desktop\ay-wallet-api\\server.php(21): require_once('C:\\\\Users\\\\user\\\\D...')
+#54 {main}
+"} 
