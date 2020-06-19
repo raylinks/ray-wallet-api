@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Api\Auth;
 
 use App\Http\Actions\PermissionsAction;
-use App\Http\Actions\RolesActions;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Notifications\Notifiable;

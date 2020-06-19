@@ -16,7 +16,7 @@
 
             valign="top">
             {{--  Hi <b>{{ $username }}</b>, Welcome to Patricia.  --}}
-            <h3 style="font-size:22px">Welcome to Raybaba.</h3>
+            <h3 style="font-size:22px">Welcome to Genius Consult.</h3>
         </td>
     </tr>
     <tr style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; margin: 0;">
@@ -30,8 +30,8 @@
             <br>
             We may need to send you critical information about our service and it is important that we have an accurate email address.
                 valign="top"
-                  Hi <b>{{ $email }}</b>, Welcome to Raybaba site
-                <h3 style="font-size:22px">Welcome to Raybaba.</h3>
+                  Hi <b>{{ $email }}</b>, Welcome to  Genius Consult
+                <h3 style="font-size:22px">Welcome to Genius Consult.</h3>
             </td>
         </tr>
         <tr style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; margin: 0;">
@@ -43,7 +43,7 @@
                 {{--  Hi <b>{{ $user->userDetails->}}</b>, --}}
                 <br>
                 <br>
-                We may need to send you critical information about our service and it is important that we have an accurate email address.
+                Welcome to Genius Consult Services Kindly click on the button below to verify your email
 
                 <br>
                 <p>Click on the button below to confirm your email address.</p>
@@ -64,7 +64,7 @@
             <td class="content-block"
                 style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; vertical-align: top; margin: 0; padding: 0 0 20px; float: right"
                 valign="top">
-                Patricia Admin.
+                Genius Consult Services.
             </td>
         </tr>
     </table>

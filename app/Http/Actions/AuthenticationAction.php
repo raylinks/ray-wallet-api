@@ -14,8 +14,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
-
-
+use Spatie\Permission\Models\Role;
 
 class AuthenticationAction
 {
@@ -29,14 +28,17 @@ class AuthenticationAction
         $validation = Validator::make($validation->all(), $validation->rules(), $validation->messages());
 
         if ($validation->fails()) {
-         return $this->formValidationErrorAlert($validation->errors());
+            return $this->formValidationErrorAlert($validation->errors());
         }
 
 
         $url = config('app.url');
         $callback_url = $request->callback_url;
         $user = new User;
-        $user->assignRole('customer');
+        $role = 'customer';
+        $assigned_role = Role::where('name', '=', $role)->firstOrFail();
+        $user->assignRole($assigned_role);
+        $user->name = $request->name;
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
         $user->email_token = $this->random_str(6);
@@ -54,8 +56,7 @@ class AuthenticationAction
             // $user->givePermissionTo('edit articles');
             $data['email_token'] = $user->email_token;
             $data['url'] = $url;
-            $data['email'] =$user->email ;
-
+            $data['email'] = $user->email;
         }
 
         // Send Confirm Email Notification to User
@@ -71,7 +72,6 @@ class AuthenticationAction
 
 
         return $this->successResponse($user);
-
     }
 
 
@@ -96,10 +96,9 @@ class AuthenticationAction
         $ext = "only supported jpeg files";
         $extension = $request->file('avatar')->extension();
         $os = array("jpeg", "png");
-        if (!in_array("ooo", $os))
-       {
-           return $this->formValidationErrorAlert(ooo);
-       }
+        if (!in_array("ooo", $os)) {
+            return $this->formValidationErrorAlert(ooo);
+        }
 
         // store file locally
         Storage::disk('local')->put('file.txt', 'Contents');
@@ -108,12 +107,8 @@ class AuthenticationAction
         $path = Storage::putFile('avatars', $request->file('avatar'));
 
         $path = $request->file('avatar')->store('avatars');
-       $fileee =  $request->file('avatar')->store::putFileAs('ray_image_bucket', 'gcp',$user->id);
+        $fileee =  $request->file('avatar')->store::putFileAs('ray_image_bucket', 'gcp', $user->id);
         $path = Storage::putFile('avatars', $request->file('avatar'));
         return $fileee;
     }
-
-
-
-
 }

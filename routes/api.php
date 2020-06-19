@@ -37,34 +37,34 @@ Route::middleware(['cors'])->group(function () {
     Route::post('personal/details', 'Api\ResumeController@PersonalDetails');
     Route::post('skills/details', 'Api\ResumeController@PostSkills');
     Route::post('education/details', 'Api\ResumeController@Education');
-     Route::post('reference/details', 'Api\ResumeController@sumitReference');
-     Route::post('award/details', 'Api\ResumeController@Award');
-     Route::post('work/experience', 'Api\ResumeController@WorkExperience');
-      Route::post('certificate', 'Api\ResumeController@postCertificate');
+    Route::post('reference/details', 'Api\ResumeController@sumitReference');
+    Route::post('award/details', 'Api\ResumeController@Award');
+    Route::post('work/experience', 'Api\ResumeController@WorkExperience');
+    Route::post('certificate', 'Api\ResumeController@postCertificate');
 
       //Recruitment  route
-      Route::post('post/recruitment', 'Api\RecruitmentController@Recruitment');
-      Route::get('get/recruitment', 'Api\RecruitmentController@getAllRecruitment');
-       Route::post('publish/recruitment', 'Api\RecruitmentController@pulishRecruitment');
-      Route::get('get/all/jobs', 'Api\RecruitmentController@ShowUsersJobs');
+    Route::post('post/recruitment', 'Api\RecruitmentController@Recruitment');
+    Route::get('get/recruitment', 'Api\RecruitmentController@getAllRecruitment');
+    Route::post('publish/recruitment', 'Api\RecruitmentController@pulishRecruitment');
+    Route::get('get/all/jobs', 'Api\RecruitmentController@ShowUsersJobs');
 
 
        //Blog  route
-       Route::post('submit/posts', 'Api\PostController@submitPost');
-       Route::post('update/post/{id}/', 'Api\PostController@UpdatePost');
-       Route::get('get/posts/users', 'Api\PostController@displayPostToUsers');
-       Route::get('admin/all/posts', 'Api\PostController@getPostToAdmin');
-       Route::post('admin/publish/posts', 'Api\PostController@AdminToPublishPost');
+    Route::post('submit/posts', 'Api\PostController@submitPost');
+    Route::post('update/post/{id}/', 'Api\PostController@UpdatePost');
+    Route::get('get/posts/users', 'Api\PostController@displayPostToUsers');
+    Route::get('admin/all/posts', 'Api\PostController@getPostToAdmin');
+    Route::post('admin/publish/posts', 'Api\PostController@AdminToPublishPost');
       // Route::get('get/comment/post', 'Api\CommentController@getCommentPost');
-       Route::post('submit/comment', 'Api\CommentController@submitComment');
+    Route::post('submit/comment', 'Api\CommentController@submitComment');
       // Route::get('get/commentable', 'Api\CommentController@Commentable');
-         Route::get('post/{id}/', 'Api\PostController@showPostByID');
+    Route::get('post/{id}/', 'Api\PostController@showPostByID');
 
-         Route::post('submit/cvformat', 'Api\ResumeController@postCvformat');
-         Route::post('submit/cvpricing', 'Api\ResumeController@postCvpricing');
-        Route::post('submit/cvtransaction', 'Api\ResumeController@cvFormatTransaction');
-         Route::get('get/cvpricing', 'Api\ResumeController@getAllPricing');
-        Route::get('get/cvformat', 'Api\ResumeController@getAllCvFormat');
+    Route::post('submit/cvformat', 'Api\ResumeController@postCvformat');
+    Route::post('submit/cvpricing', 'Api\ResumeController@postCvpricing');
+    Route::post('submit/cvtransaction', 'Api\ResumeController@cvFormatTransaction');
+    Route::get('get/cvpricing', 'Api\ResumeController@getAllPricing');
+    Route::get('get/cvformat', 'Api\ResumeController@getAllCvFormat');
 
 
     //blog  like  and Unlike
@@ -77,16 +77,16 @@ Route::middleware(['cors'])->group(function () {
    // Route::middleware(['role:Admin|Supervisor'])->group(static function () {
     Route::post('post/role', 'Api\RolesAndPermissionController@createRole');
   //  Route::post('update/role/{id}/', 'Api\RolesAndPermissionController@ChangeUserRole');
-     Route::post('create/permission', 'Api\RolesAndPermissionController@createPermission');
+    Route::post('create/permission', 'Api\RolesAndPermissionController@createPermission');
      // Route::post('assign/role/permission', 'Api\RolesAndPermissionController@assignPermission');
-      Route::get('all/permission', 'Api\RolesAndPermissionController@allPermisson');
+    Route::get('all/permission', 'Api\RolesAndPermissionController@allPermisson');
     Route::get('all/roles', 'Api\RolesAndPermissionController@index');
  //   });
 
 
     //Flutterwave Routes
     Route::post('redirection', 'Api\FlutterwaveController@flutterwaveRedirectLink');
-     Route::post('verify/flutterwave/{redirect_callback}/', 'Api\FlutterwaveController@verifyFlutterwavePayment');
+    Route::post('verify/flutterwave/{redirect_callback}/', 'Api\FlutterwaveController@verifyFlutterwavePayment');
 
 
 });
@@ -95,10 +95,10 @@ Route::middleware(['cors'])->group(function () {
 //Route::get('login/github/callback', 'Auth\LoginController@handleProviderCallback');
 
 
-Route::get('auth/{provider}', 'Api\Auth\LoginController@redirectToProvider');
-Route::get('auth/{provider}/callback', 'Api\Auth\LoginController@handleProviderCallback');
+    Route::get('auth/{provider}', 'Api\Auth\LoginController@redirectToProvider');
+    Route::get('auth/{provider}/callback', 'Api\Auth\LoginController@handleProviderCallback');
 
-Route::group(['middleware' => 'auth:api'], function () {
+    Route::group(['middleware' => 'auth:api'], function () {
     Route::get('post/all', 'Api\PostController@self');
 
 
