@@ -43,7 +43,6 @@ class RecruitmentAction
             'qualification'=> $request->qualification,
             'scope_of_work' => $request->scope_of_work,
             'closing_date'=> $request->closing_date,
-
         ]);
 
         $message = "You have created Recruitment postal ";

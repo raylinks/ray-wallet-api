@@ -306,4 +306,16 @@ class CurriculumAction
 
      }
 
+     public function linkedInOptimization(Request $request){
+        $user = Auth::user();
+
+        $linkedin = LinkedIn::create([
+            'user_id' => $user->id,
+            'url' => $request->linkedin_url,
+            'image'=> $request->cv
+        ]);
+
+        return $this->successResponse($linkedin);
+     }
+
 }

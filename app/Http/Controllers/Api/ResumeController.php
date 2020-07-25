@@ -89,4 +89,9 @@ class ResumeController extends Controller
         return (new CurriculumAction())->formatPricingTransacTion();
 
     }
+
+    public function  processLinkedIn(){
+        return (new CurriculumAction())->linkedInOptimization();
+
+    }
 }

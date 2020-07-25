@@ -41,6 +41,7 @@ Route::middleware(['cors'])->group(function () {
      Route::post('award/details', 'Api\ResumeController@Award');
      Route::post('work/experience', 'Api\ResumeController@WorkExperience');
       Route::post('certificate', 'Api\ResumeController@postCertificate');
+      Route::post('process/linkedin', 'Api\ResumeController@processLinkedIn');
 
       //Recruitment  route
       Route::post('post/recruitment', 'Api\RecruitmentController@Recruitment');
